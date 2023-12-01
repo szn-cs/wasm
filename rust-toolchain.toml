@@ -1,0 +1,3 @@
+# otherwise setup with $`rustup default nightly`
+[toolchain]
+channel = "nightly-x86_64-unknown-linux-gnu"
