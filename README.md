@@ -1,4 +1,7 @@
+# 🚨 STATUS: NOT COMPILING due to Parquet2 dependency compilation failures
+
 # wasm disaggregated-storage pushdown
+
 
 # WASM Threading parallelisation of pushdown operations: 
 
@@ -61,3 +64,11 @@ ___
 
 # GPU 
 -   https://github.com/juj/wasm_webgpu
+
+___
+
+## TODO
+- [ ] WASI + WASIX
+- [ ] Parquet2 parallel read
+- [ ] performance under docker
+- [ ] 

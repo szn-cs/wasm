@@ -1,5 +1,6 @@
 pub mod parquet;
 
+#[cfg(feature = "wasm_multithread")]
 pub mod example {
     use rayon::prelude::*;
     use std::env;
