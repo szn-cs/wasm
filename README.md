@@ -1,5 +1,3 @@
-# 🚨 STATUS: NOT COMPILING due to Parquet2 dependency compilation failures
-
 # wasm disaggregated-storage pushdown
 
 
@@ -33,16 +31,24 @@ ___
 - https://webassembly.github.io/spec/
     - https://webassembly.github.io/spec/core/index.html
 - WASI spec https://wasi.dev/
-    - Wasmer extension WASIX https://wasix.org/docs
+    - Wasmer extension WASIX https://wasix.org/docs 
+    - https://doc.rust-lang.org/stable/nightly-rustc/rustc_target/spec/wasm32_wasi/index.html 
+    - https://github.com/bytecodealliance/wasmtime/blob/main/docs/WASI-tutorial.md
 - Threads draft spec & proposal
     - https://github.com/WebAssembly/threads
     - https://github.com/WebAssembly/wasi-threads
 - Capability based security https://github.com/bytecodealliance/wasmtime/blob/main/docs/WASI-capabilities.md
 
 
-- https://webassembly.github.io/wabt/demo/wat2wasm/
-- Binary tools https://github.com/webassembly/wabt
-- Rust wasm modules for npm https://rustwasm.github.io/docs/wasm-pack/
+- tools
+    - Binary tools https://github.com/webassembly/wabt
+    - https://github.com/WebAssembly/binaryen
+    - wasm-opt
+    - https://bytecodealliance.github.io/cargo-wasi/steps.html
+    - Datasets https://www.tablab.app/datasets/sample/parquet
+-   Rust wasm modules for npm https://rustwasm.github.io/docs/wasm-pack/
+- https://github.com/rustwasm
+- https://doc.rust-lang.org/rustc/ 
 - https://developer.mozilla.org/en-US/docs/WebAssembly
 - https://wasmbyexample.dev/home.en-us.html
 - [✅ skim] Tutorial & Template for Rust-Wasm project targeting the web (wasm32-unknown-unknown): https://rustwasm.github.io/docs/book/
@@ -60,7 +66,8 @@ ___
 - Parquet info & wasm https://github.com/kylebarron/parquet-wasm/tree/main
 - Benchmark multithread parquet https://wesmckinney.com/blog/python-parquet-multithreading/
 - Arrow thread https://arrow.apache.org/docs/cpp/threading.html
-- Mutlithread parquet2 Rust https://rustrepo.com/repo/jorgecarleitao-parquet2
+- Mutlithread parquet2 Rust https://rustrepo.com/repo/jorgecarleitao-parquet2 
+- https://medium.com/@learnwithshobhit/web-assembly-feasibility-analysis-in-a-nutshell-wasi-wasm-762c231474ff
 
 # GPU 
 -   https://github.com/juj/wasm_webgpu
@@ -68,7 +75,7 @@ ___
 ___
 
 ## TODO
-- [ ] WASI + WASIX
+- [x] WASI + WASIX
 - [ ] Parquet2 parallel read
 - [ ] performance under docker
-- [ ] 
+- [ ] Intergrate benchmark implementations

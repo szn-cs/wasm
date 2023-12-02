@@ -1,0 +1,5 @@
+wasmer 4.2.4
+cargo-wasix 0.1.23
+wasmtime-cli 15.0.1
+rustc 1.76.0-nightly (87e1447aa 2023-11-30)
+cargo 1.76.0-nightly (26333c732 2023-11-28)

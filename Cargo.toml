@@ -5,12 +5,18 @@ name = "wasm_assessment"
 version = "0.1.0"
 edition = "2021"
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
-
 [features]
-wasm_multithread = []
+wasm_multithread = ["parquet2"]
+example = []
+
+[package.metadata.docs.rs]
+all-features = true
+default-target = "wasm32-wasmer-wasi"
+
+# [package.metadata]
+# wasm-opt = true
 
 [dependencies]
 chrono = "0.4.31"
-parquet2 = "0.17.2"
+parquet2 = { version = "0.17.2", optional = true }
 rayon = "1.8.0"

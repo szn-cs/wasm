@@ -3,11 +3,45 @@
 # $`(source script.sh && <function_name>)`
 
 run() {
-    cargo +nightly run --bin read_parallel
+    { # native ✅
+        cargo +nightly run --bin example --features example
 
-    # TODO: fix feature definintion
-    cargo build --target wasm32-unknown-unknown --release --features wasm_multithread
-    cargo build --target wasm32-wasi --release
+        cargo +nightly build -v --features wasm_multithread,example
+        ./target/debug/example
+        ./target/debug/read_parquet_parallel
+    }
+
+    { # wasm32-unknown-unknown → ❌ missing _start function
+        cargo +nightly build -v --target wasm32-unknown-unknown --features example
+        wasmer run ./target/wasm32-unknown-unknown/debug/example.wasm
+        mkdir -p tmp && ./dependency/wabt/bin/wasm2wat ./target/wasm32-unknown-unknown/debug/example.wasm >tmp/example-\[wasm32-unknown-unknown,debug\].wat
+    }
+
+    { # wasm-wasi - example ✅
+        cargo +nightly build -v --target wasm32-wasi --release --features example
+        wasmer run ./target/wasm32-wasi/release/example.wasm
+        wasmtime ./target/wasm32-wasi/release/example.wasm
+        mkdir -p tmp && ./dependency/wabt/bin/wasm2wat ./target/wasm32-wasi/release/example.wasm >tmp/example-\[wasm32-wasi,release\].wat
+
+        cargo +nightly build -v --target wasm32-wasi --features example
+        wasmer run ./target/wasm32-wasi/debug/example.wasm
+        mkdir -p tmp && ./dependency/wabt/bin/wasm2wat ./target/wasm32-wasi/debug/example.wasm >tmp/example-\[wasm32-wasi,debug\].wat
+    }
+
+    { # wasm-wasi - parquet parallel read → ❌ compilation error with parquet2
+        cargo +nightly build -v --target wasm32-wasi --release --features wasm_multithread >./tmp/parquet2-compilation-error.txt 2>&1
+        wasmer run ./target/wasm32-wasi/release/read_parquet_parallel.wasm
+        wasmtime ./target/wasm32-wasi/release/read_parquet_parallel.wasm
+    }
+
+    { # wasm32-wasmer-wasi ✅
+        cargo +nightly wasix run --bin example --release --features example
+
+        cargo +nightly wasix build -v --features wasm_multithread,example
+        wasmer run ./target/wasm32-wasmer-wasi/release/read_parquet_parallel.wasm
+        wasmer run ./target/wasm32-wasmer-wasi/release/example.wasm
+
+    }
 }
 
 benchmark_env() {
@@ -30,11 +64,33 @@ setup() {
     tar xvf wasi-sdk-${WASI_VERSION_FULL}-linux.tar.gz
 
     # wasm targets
+    cargo install cargo-wasix && cargo wasix --version && rustup toolchain list | grep wasix
     rustup target add wasm32-wasi
     rustup target add wasm32-unknown-unknown
+    # rustup target add wasm64-unknown-unknown
+    # wasm32-wasi-preview1-threads https://doc.rust-lang.org/rustc/platform-support/wasm32-wasi-preview1-threads.html#wasm32-wasi-preview1-threads
 
     # Wasm runtimes
     curl https://wasmtime.dev/install.sh -sSf | bash
     curl https://get.wasmer.io -sSfL | sh
+
+    # wabt tool
+    sudo apt install -y build-essential cmake ninja-build
+    (cd ./dependency/wabt && git submodule update --init && make)
+
+    # repo
+    cargo +nightly update
+    cargo +nightly doc --all-features
+
+}
+
+version() {
+    # record version
+    version_info_filename=version-info.txt
+    wasmer --version >>$version_info_filename
+    cargo wasix --version >>$version_info_filename
+    wasmtime --version >>$version_info_filename
+    rustc --version >>$version_info_filename
+    cargo --version >>$version_info_filename
 
 }

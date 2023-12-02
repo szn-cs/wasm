@@ -1,0 +1,942 @@
+       Fresh autocfg v1.1.0
+       Fresh jobserver v0.1.27
+       Fresh cfg-if v1.0.0
+       Fresh pkg-config v0.3.27
+       Fresh cc v1.0.83
+       Fresh libc v0.2.150
+       Fresh scopeguard v1.2.0
+       Fresh alloc-no-stdlib v2.0.4
+       Fresh adler v1.0.2
+       Fresh fallible-streaming-iterator v0.1.9
+       Fresh seq-macro v0.3.5
+       Fresh xxhash-rust v0.8.7
+       Fresh crossbeam-utils v0.8.16
+       Fresh memoffset v0.9.0
+       Fresh alloc-stdlib v0.2.2
+       Fresh miniz_oxide v0.7.1
+       Fresh streaming-decompression v0.1.2
+       Fresh either v1.9.0
+       Fresh parquet-format-safe v0.2.4
+   Compiling zstd-sys v2.0.9+zstd.1.5.5
+       Fresh crossbeam-epoch v0.9.15
+   Compiling lz4-sys v1.9.4
+       Fresh brotli-decompressor v2.5.1
+       Fresh crc32fast v1.3.2
+       Fresh num-traits v0.2.17
+       Fresh snap v1.1.0
+       Fresh crossbeam-deque v0.8.3
+       Fresh flate2 v1.0.28
+       Fresh brotli v3.4.0
+       Fresh chrono v0.4.31
+     Running `/home/unixuser/code/wasm-assessment/target/release/build/zstd-sys-558c5611259b4b0e/build-script-build`
+       Fresh rayon-core v1.12.0
+       Fresh rayon v1.8.0
+     Running `/home/unixuser/code/wasm-assessment/target/release/build/lz4-sys-e4df5a6997b59369/build-script-build`
+The following warnings were emitted during compilation:
+
+warning: lz4-sys@1.9.4: In file included from liblz4/lib/lz4.c:117:
+warning: lz4-sys@1.9.4: In file included from liblz4/lib/lz4.h:659:
+warning: lz4-sys@1.9.4: In file included from /usr/lib/llvm-14/lib/clang/14.0.6/include/stdint.h:52:
+warning: lz4-sys@1.9.4: /usr/include/stdint.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+warning: lz4-sys@1.9.4: #include <bits/libc-header-start.h>
+warning: lz4-sys@1.9.4:          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+warning: lz4-sys@1.9.4: In file included from liblz4/lib/lz4hc.c:53:
+warning: lz4-sys@1.9.4: In file included from liblz4/lib/lz4hc.h:43:
+warning: lz4-sys@1.9.4: In file included from liblz4/lib/lz4.h:659:
+warning: lz4-sys@1.9.4: In file included from /usr/lib/llvm-14/lib/clang/14.0.6/include/stdint.h:52:
+warning: lz4-sys@1.9.4: /usr/include/stdint.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+warning: lz4-sys@1.9.4: #include <bits/libc-header-start.h>
+warning: lz4-sys@1.9.4:          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+warning: lz4-sys@1.9.4: In file included from liblz4/lib/lz4frame.c:71:
+warning: lz4-sys@1.9.4: In file included from liblz4/lib/lz4.h:659:
+warning: lz4-sys@1.9.4: In file included from /usr/lib/llvm-14/lib/clang/14.0.6/include/stdint.h:52:
+warning: lz4-sys@1.9.4: /usr/include/stdint.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+warning: lz4-sys@1.9.4: #include <bits/libc-header-start.h>
+warning: lz4-sys@1.9.4:          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+warning: lz4-sys@1.9.4: In file included from liblz4/lib/xxhash.c:107:
+warning: lz4-sys@1.9.4: /usr/include/stdlib.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+warning: lz4-sys@1.9.4: #include <bits/libc-header-start.h>
+warning: lz4-sys@1.9.4:          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+warning: lz4-sys@1.9.4: 1 error generated.
+warning: lz4-sys@1.9.4: 1 error generated.
+warning: lz4-sys@1.9.4: 1 error generated.
+warning: lz4-sys@1.9.4: 1 error generated.
+warning: lz4-sys@1.9.4: ToolExecError: Command "clang" "-O3" "-ffunction-sections" "-fdata-sections" "-fPIC" "--target=wasm32-wasi" "-Wall" "-Wextra" "-o" "/home/unixuser/code/wasm-assessment/target/wasm32-wasi/release/build/lz4-sys-b0505d1f78a9aa28/out/liblz4/lib/lz4.o" "-c" "liblz4/lib/lz4.c" with args "clang" did not execute successfully (status code exit status: 1).
+warning: lz4-sys@1.9.4: ToolExecError: Command "clang" "-O3" "-ffunction-sections" "-fdata-sections" "-fPIC" "--target=wasm32-wasi" "-Wall" "-Wextra" "-o" "/home/unixuser/code/wasm-assessment/target/wasm32-wasi/release/build/lz4-sys-b0505d1f78a9aa28/out/liblz4/lib/lz4frame.o" "-c" "liblz4/lib/lz4frame.c" with args "clang" did not execute successfully (status code exit status: 1).
+warning: lz4-sys@1.9.4: ToolExecError: Command "clang" "-O3" "-ffunction-sections" "-fdata-sections" "-fPIC" "--target=wasm32-wasi" "-Wall" "-Wextra" "-o" "/home/unixuser/code/wasm-assessment/target/wasm32-wasi/release/build/lz4-sys-b0505d1f78a9aa28/out/liblz4/lib/lz4hc.o" "-c" "liblz4/lib/lz4hc.c" with args "clang" did not execute successfully (status code exit status: 1).
+warning: lz4-sys@1.9.4: ToolExecError: Command "clang" "-O3" "-ffunction-sections" "-fdata-sections" "-fPIC" "--target=wasm32-wasi" "-Wall" "-Wextra" "-o" "/home/unixuser/code/wasm-assessment/target/wasm32-wasi/release/build/lz4-sys-b0505d1f78a9aa28/out/liblz4/lib/xxhash.o" "-c" "liblz4/lib/xxhash.c" with args "clang" did not execute successfully (status code exit status: 1).
+
+error: failed to run custom build command for `lz4-sys v1.9.4`
+
+Caused by:
+  process didn't exit successfully: `/home/unixuser/code/wasm-assessment/target/release/build/lz4-sys-e4df5a6997b59369/build-script-build` (exit status: 1)
+  --- stdout
+  TARGET = Some("wasm32-wasi")
+  HOST = Some("x86_64-unknown-linux-gnu")
+  cargo:rerun-if-env-changed=CC_wasm32-wasi
+  CC_wasm32-wasi = None
+  cargo:rerun-if-env-changed=CC_wasm32_wasi
+  CC_wasm32_wasi = None
+  cargo:rerun-if-env-changed=TARGET_CC
+  TARGET_CC = None
+  cargo:rerun-if-env-changed=CC
+  CC = None
+  cargo:rerun-if-env-changed=CRATE_CC_NO_DEFAULTS
+  CRATE_CC_NO_DEFAULTS = None
+  DEBUG = Some("false")
+  cargo:rerun-if-env-changed=CFLAGS_wasm32-wasi
+  CFLAGS_wasm32-wasi = None
+  cargo:rerun-if-env-changed=CFLAGS_wasm32_wasi
+  CFLAGS_wasm32_wasi = None
+  cargo:rerun-if-env-changed=TARGET_CFLAGS
+  TARGET_CFLAGS = None
+  cargo:rerun-if-env-changed=CFLAGS
+  CFLAGS = None
+  running: "clang" "-O3" "-ffunction-sections" "-fdata-sections" "-fPIC" "--target=wasm32-wasi" "-Wall" "-Wextra" "-o" "/home/unixuser/code/wasm-assessment/target/wasm32-wasi/release/build/lz4-sys-b0505d1f78a9aa28/out/liblz4/lib/lz4.o" "-c" "liblz4/lib/lz4.c"
+  running: "clang" "-O3" "-ffunction-sections" "-fdata-sections" "-fPIC" "--target=wasm32-wasi" "-Wall" "-Wextra" "-o" "/home/unixuser/code/wasm-assessment/target/wasm32-wasi/release/build/lz4-sys-b0505d1f78a9aa28/out/liblz4/lib/lz4frame.o" "-c" "liblz4/lib/lz4frame.c"
+  running: "clang" "-O3" "-ffunction-sections" "-fdata-sections" "-fPIC" "--target=wasm32-wasi" "-Wall" "-Wextra" "-o" "/home/unixuser/code/wasm-assessment/target/wasm32-wasi/release/build/lz4-sys-b0505d1f78a9aa28/out/liblz4/lib/lz4hc.o" "-c" "liblz4/lib/lz4hc.c"
+  running: "clang" "-O3" "-ffunction-sections" "-fdata-sections" "-fPIC" "--target=wasm32-wasi" "-Wall" "-Wextra" "-o" "/home/unixuser/code/wasm-assessment/target/wasm32-wasi/release/build/lz4-sys-b0505d1f78a9aa28/out/liblz4/lib/xxhash.o" "-c" "liblz4/lib/xxhash.c"
+  cargo:warning=In file included from liblz4/lib/lz4.c:117:
+
+  cargo:warning=In file included from liblz4/lib/lz4.h:659:
+
+  cargo:warning=In file included from /usr/lib/llvm-14/lib/clang/14.0.6/include/stdint.h:52:
+
+  cargo:warning=/usr/include/stdint.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+
+  cargo:warning=#include <bits/libc-header-start.h>
+
+  cargo:warning=         ^~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  cargo:warning=In file included from liblz4/lib/lz4hc.c:53:
+
+  cargo:warning=In file included from liblz4/lib/lz4hc.h:43:
+
+  cargo:warning=In file included from liblz4/lib/lz4.h:659:
+
+  cargo:warning=In file included from /usr/lib/llvm-14/lib/clang/14.0.6/include/stdint.h:52:
+
+  cargo:warning=/usr/include/stdint.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+
+  cargo:warning=#include <bits/libc-header-start.h>
+
+  cargo:warning=         ^~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  cargo:warning=In file included from liblz4/lib/lz4frame.c:71:
+
+  cargo:warning=In file included from liblz4/lib/lz4.h:659:
+
+  cargo:warning=In file included from /usr/lib/llvm-14/lib/clang/14.0.6/include/stdint.h:52:
+
+  cargo:warning=/usr/include/stdint.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+
+  cargo:warning=#include <bits/libc-header-start.h>
+
+  cargo:warning=         ^~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  cargo:warning=In file included from liblz4/lib/xxhash.c:107:
+
+  cargo:warning=/usr/include/stdlib.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+
+  cargo:warning=#include <bits/libc-header-start.h>
+
+  cargo:warning=         ^~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  cargo:warning=1 error generated.
+
+  cargo:warning=1 error generated.
+
+  cargo:warning=1 error generated.
+
+  cargo:warning=1 error generated.
+
+  exit status: 1
+  cargo:warning=ToolExecError: Command "clang" "-O3" "-ffunction-sections" "-fdata-sections" "-fPIC" "--target=wasm32-wasi" "-Wall" "-Wextra" "-o" "/home/unixuser/code/wasm-assessment/target/wasm32-wasi/release/build/lz4-sys-b0505d1f78a9aa28/out/liblz4/lib/lz4.o" "-c" "liblz4/lib/lz4.c" with args "clang" did not execute successfully (status code exit status: 1).
+  exit status: 1
+  cargo:warning=ToolExecError: Command "clang" "-O3" "-ffunction-sections" "-fdata-sections" "-fPIC" "--target=wasm32-wasi" "-Wall" "-Wextra" "-o" "/home/unixuser/code/wasm-assessment/target/wasm32-wasi/release/build/lz4-sys-b0505d1f78a9aa28/out/liblz4/lib/lz4frame.o" "-c" "liblz4/lib/lz4frame.c" with args "clang" did not execute successfully (status code exit status: 1).
+  exit status: 1
+  cargo:warning=ToolExecError: Command "clang" "-O3" "-ffunction-sections" "-fdata-sections" "-fPIC" "--target=wasm32-wasi" "-Wall" "-Wextra" "-o" "/home/unixuser/code/wasm-assessment/target/wasm32-wasi/release/build/lz4-sys-b0505d1f78a9aa28/out/liblz4/lib/lz4hc.o" "-c" "liblz4/lib/lz4hc.c" with args "clang" did not execute successfully (status code exit status: 1).
+  exit status: 1
+  cargo:warning=ToolExecError: Command "clang" "-O3" "-ffunction-sections" "-fdata-sections" "-fPIC" "--target=wasm32-wasi" "-Wall" "-Wextra" "-o" "/home/unixuser/code/wasm-assessment/target/wasm32-wasi/release/build/lz4-sys-b0505d1f78a9aa28/out/liblz4/lib/xxhash.o" "-c" "liblz4/lib/xxhash.c" with args "clang" did not execute successfully (status code exit status: 1).
+
+  --- stderr
+
+
+  error occurred: Command "clang" "-O3" "-ffunction-sections" "-fdata-sections" "-fPIC" "--target=wasm32-wasi" "-Wall" "-Wextra" "-o" "/home/unixuser/code/wasm-assessment/target/wasm32-wasi/release/build/lz4-sys-b0505d1f78a9aa28/out/liblz4/lib/xxhash.o" "-c" "liblz4/lib/xxhash.c" with args "clang" did not execute successfully (status code exit status: 1).
+
+
+warning: build failed, waiting for other jobs to finish...
+The following warnings were emitted during compilation:
+
+warning: zstd-sys@2.0.9+zstd.1.5.5: In file included from zstd/lib/common/error_private.c:13:
+warning: zstd-sys@2.0.9+zstd.1.5.5: In file included from zstd/lib/common/error_private.h:27:
+warning: zstd-sys@2.0.9+zstd.1.5.5: In file included from zstd/lib/common/zstd_deps.h:27:
+warning: zstd-sys@2.0.9+zstd.1.5.5: In file included from /usr/lib/llvm-14/lib/clang/14.0.6/include/limits.h:21:
+warning: zstd-sys@2.0.9+zstd.1.5.5: /usr/include/limits.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+warning: zstd-sys@2.0.9+zstd.1.5.5: #include <bits/libc-header-start.h>
+warning: zstd-sys@2.0.9+zstd.1.5.5:          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+warning: zstd-sys@2.0.9+zstd.1.5.5: 1 error generated.
+warning: zstd-sys@2.0.9+zstd.1.5.5: In file included from zstd/lib/common/fse_decompress.c:20:
+warning: zstd-sys@2.0.9+zstd.1.5.5: In file included from zstd/lib/common/bitstream.h:29:
+warning: zstd-sys@2.0.9+zstd.1.5.5: In file included from zstd/lib/common/mem.h:24:
+warning: zstd-sys@2.0.9+zstd.1.5.5: In file included from zstd/lib/common/zstd_deps.h:27:
+warning: zstd-sys@2.0.9+zstd.1.5.5: In file included from /usr/lib/llvm-14/lib/clang/14.0.6/include/limits.h:21:
+warning: zstd-sys@2.0.9+zstd.1.5.5: /usr/include/limits.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+warning: zstd-sys@2.0.9+zstd.1.5.5: #include <bits/libc-header-start.h>
+warning: zstd-sys@2.0.9+zstd.1.5.5:          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+warning: zstd-sys@2.0.9+zstd.1.5.5: In file included from zstd/lib/common/entropy_common.c:18:
+warning: zstd-sys@2.0.9+zstd.1.5.5: In file included from zstd/lib/common/mem.h:24:
+warning: zstd-sys@2.0.9+zstd.1.5.5: In file included from zstd/lib/common/zstd_deps.h:27:
+warning: zstd-sys@2.0.9+zstd.1.5.5: In file included from /usr/lib/llvm-14/lib/clang/14.0.6/include/limits.h:21:
+warning: zstd-sys@2.0.9+zstd.1.5.5: /usr/include/limits.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+warning: zstd-sys@2.0.9+zstd.1.5.5: #include <bits/libc-header-start.h>
+warning: zstd-sys@2.0.9+zstd.1.5.5:          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+warning: zstd-sys@2.0.9+zstd.1.5.5: 1 error generated.
+warning: zstd-sys@2.0.9+zstd.1.5.5: In file included from zstd/lib/compress/fse_compress.c:19:
+warning: zstd-sys@2.0.9+zstd.1.5.5: In file included from zstd/lib/compress/../common/mem.h:24:
+warning: zstd-sys@2.0.9+zstd.1.5.5: In file included from zstd/lib/common/zstd_deps.h:27:
+warning: zstd-sys@2.0.9+zstd.1.5.5: In file included from /usr/lib/llvm-14/lib/clang/14.0.6/include/limits.h:21:
+warning: zstd-sys@2.0.9+zstd.1.5.5: /usr/include/limits.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+warning: zstd-sys@2.0.9+zstd.1.5.5: #include <bits/libc-header-start.h>
+warning: zstd-sys@2.0.9+zstd.1.5.5:          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+warning: zstd-sys@2.0.9+zstd.1.5.5: 1 error generated.
+warning: zstd-sys@2.0.9+zstd.1.5.5: ToolExecError: Command "clang" "-O3" "-ffunction-sections" "-fdata-sections" "-fPIC" "--target=wasm32-wasi" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-fvisibility=hidden" "-DXXH_STATIC_ASSERT=0" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-o" "/home/unixuser/code/wasm-assessment/target/wasm32-wasi/release/build/zstd-sys-6597f0f88add8d76/out/zstd/lib/common/error_private.o" "-c" "zstd/lib/common/error_private.c" with args "clang" did not execute successfully (status code exit status: 1).
+warning: zstd-sys@2.0.9+zstd.1.5.5: ToolExecError: Command "clang" "-O3" "-ffunction-sections" "-fdata-sections" "-fPIC" "--target=wasm32-wasi" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-fvisibility=hidden" "-DXXH_STATIC_ASSERT=0" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-o" "/home/unixuser/code/wasm-assessment/target/wasm32-wasi/release/build/zstd-sys-6597f0f88add8d76/out/zstd/lib/common/fse_decompress.o" "-c" "zstd/lib/common/fse_decompress.c" with args "clang" did not execute successfully (status code exit status: 1).running: "clang" "-O3" "-ffunction-sections" "-fdata-sections" "-fPIC" "--target=wasm32-wasi" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-fvisibility=hidden" "-DXXH_STATIC_ASSERT=0" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-o" "/home/unixuser/code/wasm-assessment/target/wasm32-wasi/release/build/zstd-sys-6597f0f88add8d76/out/zstd/lib/compress/zstd_lazy.o" "-c" "zstd/lib/compress/zstd_lazy.c"
+warning: zstd-sys@2.0.9+zstd.1.5.5: In file included from zstd/lib/common/zstd_common.c:17:
+warning: zstd-sys@2.0.9+zstd.1.5.5: In file included from zstd/lib/common/error_private.h:27:
+warning: zstd-sys@2.0.9+zstd.1.5.5: In file included from zstd/lib/common/zstd_deps.h:27:
+warning: zstd-sys@2.0.9+zstd.1.5.5: In file included from /usr/lib/llvm-14/lib/clang/14.0.6/include/limits.h:21:
+warning: zstd-sys@2.0.9+zstd.1.5.5: /usr/include/limits.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+warning: zstd-sys@2.0.9+zstd.1.5.5: #include <bits/libc-header-start.h>
+warning: zstd-sys@2.0.9+zstd.1.5.5:          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+warning: zstd-sys@2.0.9+zstd.1.5.5: In file included from zstd/lib/common/pool.c:13:
+warning: zstd-sys@2.0.9+zstd.1.5.5: In file included from zstd/lib/common/../common/allocations.h:15:
+warning: zstd-sys@2.0.9+zstd.1.5.5: In file included from zstd/lib/common/zstd_deps.h:27:
+warning: zstd-sys@2.0.9+zstd.1.5.5: In file included from /usr/lib/llvm-14/lib/clang/14.0.6/include/limits.h:21:
+warning: zstd-sys@2.0.9+zstd.1.5.5: /usr/include/limits.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+warning: zstd-sys@2.0.9+zstd.1.5.5: #include <bits/libc-header-start.h>
+warning: zstd-sys@2.0.9+zstd.1.5.5:          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+warning: zstd-sys@2.0.9+zstd.1.5.5: 1 error generated.
+warning: zstd-sys@2.0.9+zstd.1.5.5: In file included from zstd/lib/compress/hist.c:17:
+warning: zstd-sys@2.0.9+zstd.1.5.5: In file included from zstd/lib/compress/../common/mem.h:24:
+warning: zstd-sys@2.0.9+zstd.1.5.5: In file included from zstd/lib/common/zstd_deps.h:27:
+warning: zstd-sys@2.0.9+zstd.1.5.5: In file included from /usr/lib/llvm-14/lib/clang/14.0.6/include/limits.h:21:
+warning: zstd-sys@2.0.9+zstd.1.5.5: /usr/include/limits.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+warning: zstd-sys@2.0.9+zstd.1.5.5: #include <bits/libc-header-start.h>
+warning: zstd-sys@2.0.9+zstd.1.5.5:          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+warning: zstd-sys@2.0.9+zstd.1.5.5: 1 error generated.
+warning: zstd-sys@2.0.9+zstd.1.5.5: 1 error generated.
+warning: zstd-sys@2.0.9+zstd.1.5.5: In file included from zstd/lib/compress/zstd_compress_superblock.c:14:
+warning: zstd-sys@2.0.9+zstd.1.5.5: In file included from zstd/lib/compress/zstd_compress_superblock.h:18:
+warning: zstd-sys@2.0.9+zstd.1.5.5: In file included from zstd/lib/compress/../zstd.h:18:
+warning: zstd-sys@2.0.9+zstd.1.5.5: In file included from /usr/lib/llvm-14/lib/clang/14.0.6/include/limits.h:21:
+warning: zstd-sys@2.0.9+zstd.1.5.5: /usr/include/limits.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+warning: zstd-sys@2.0.9+zstd.1.5.5: #include <bits/libc-header-start.h>
+warning: zstd-sys@2.0.9+zstd.1.5.5:          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+warning: zstd-sys@2.0.9+zstd.1.5.5: In file included from zstd/lib/compress/zstd_compress_literals.c:14:
+warning: zstd-sys@2.0.9+zstd.1.5.5: In file included from zstd/lib/compress/zstd_compress_literals.h:14:
+warning: zstd-sys@2.0.9+zstd.1.5.5: In file included from zstd/lib/compress/zstd_compress_internal.h:21:
+warning: zstd-sys@2.0.9+zstd.1.5.5: In file included from zstd/lib/compress/../common/zstd_internal.h:23:
+warning: zstd-sys@2.0.9+zstd.1.5.5: In file included from zstd/lib/common/cpu.h:19:
+warning: zstd-sys@2.0.9+zstd.1.5.5: In file included from zstd/lib/common/mem.h:24:
+warning: zstd-sys@2.0.9+zstd.1.5.5: In file included from zstd/lib/common/zstd_deps.h:27:
+warning: zstd-sys@2.0.9+zstd.1.5.5: In file included from /usr/lib/llvm-14/lib/clang/14.0.6/include/limits.h:21:
+warning: zstd-sys@2.0.9+zstd.1.5.5: /usr/include/limits.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+warning: zstd-sys@2.0.9+zstd.1.5.5: #include <bits/libc-header-start.h>
+warning: zstd-sys@2.0.9+zstd.1.5.5:          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+warning: zstd-sys@2.0.9+zstd.1.5.5: In file included from zstd/lib/compress/zstd_fast.c:11:
+warning: zstd-sys@2.0.9+zstd.1.5.5: In file included from zstd/lib/compress/zstd_compress_internal.h:21:
+warning: zstd-sys@2.0.9+zstd.1.5.5: In file included from zstd/lib/compress/../common/zstd_internal.h:23:
+warning: zstd-sys@2.0.9+zstd.1.5.5: In file included from zstd/lib/common/cpu.h:19:
+warning: zstd-sys@2.0.9+zstd.1.5.5: In file included from zstd/lib/common/mem.h:24:
+warning: zstd-sys@2.0.9+zstd.1.5.5: In file included from zstd/lib/common/zstd_deps.h:27:
+warning: zstd-sys@2.0.9+zstd.1.5.5: In file included from /usr/lib/llvm-14/lib/clang/14.0.6/include/limits.h:21:
+warning: zstd-sys@2.0.9+zstd.1.5.5: /usr/include/limits.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+warning: zstd-sys@2.0.9+zstd.1.5.5: #include <bits/libc-header-start.h>
+warning: zstd-sys@2.0.9+zstd.1.5.5:          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+warning: zstd-sys@2.0.9+zstd.1.5.5: 1 error generated.
+warning: zstd-sys@2.0.9+zstd.1.5.5: In file included from zstd/lib/compress/zstd_compress.c:14:
+warning: zstd-sys@2.0.9+zstd.1.5.5: In file included from zstd/lib/compress/../common/allocations.h:15:
+warning: zstd-sys@2.0.9+zstd.1.5.5: In file included from zstd/lib/common/zstd_deps.h:27:
+warning: zstd-sys@2.0.9+zstd.1.5.5: In file included from /usr/lib/llvm-14/lib/clang/14.0.6/include/limits.h:21:
+warning: zstd-sys@2.0.9+zstd.1.5.5: /usr/include/limits.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+warning: zstd-sys@2.0.9+zstd.1.5.5: #include <bits/libc-header-start.h>
+warning: zstd-sys@2.0.9+zstd.1.5.5:          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+warning: zstd-sys@2.0.9+zstd.1.5.5: In file included from zstd/lib/compress/zstd_double_fast.c:11:
+warning: zstd-sys@2.0.9+zstd.1.5.5: In file included from zstd/lib/compress/zstd_compress_internal.h:21:
+warning: zstd-sys@2.0.9+zstd.1.5.5: In file included from zstd/lib/compress/../common/zstd_internal.h:23:
+warning: zstd-sys@2.0.9+zstd.1.5.5: In file included from zstd/lib/common/cpu.h:19:
+warning: zstd-sys@2.0.9+zstd.1.5.5: In file included from zstd/lib/common/mem.h:24:
+warning: zstd-sys@2.0.9+zstd.1.5.5: In file included from zstd/lib/common/zstd_deps.h:27:
+warning: zstd-sys@2.0.9+zstd.1.5.5: In file included from /usr/lib/llvm-14/lib/clang/14.0.6/include/limits.h:21:
+warning: zstd-sys@2.0.9+zstd.1.5.5: /usr/include/limits.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+warning: zstd-sys@2.0.9+zstd.1.5.5: #include <bits/libc-header-start.h>
+warning: zstd-sys@2.0.9+zstd.1.5.5:          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+warning: zstd-sys@2.0.9+zstd.1.5.5: In file included from zstd/lib/compress/huf_compress.c:26:
+warning: zstd-sys@2.0.9+zstd.1.5.5: In file included from zstd/lib/compress/../common/zstd_deps.h:27:
+warning: zstd-sys@2.0.9+zstd.1.5.5: In file included from /usr/lib/llvm-14/lib/clang/14.0.6/include/limits.h:21:
+warning: zstd-sys@2.0.9+zstd.1.5.5: /usr/include/limits.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+warning: zstd-sys@2.0.9+zstd.1.5.5: #include <bits/libc-header-start.h>
+warning: zstd-sys@2.0.9+zstd.1.5.5:          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+warning: zstd-sys@2.0.9+zstd.1.5.5: In file included from zstd/lib/compress/zstd_ldm.c:11:
+warning: zstd-sys@2.0.9+zstd.1.5.5: In file included from zstd/lib/compress/zstd_ldm.h:18:
+warning: zstd-sys@2.0.9+zstd.1.5.5: In file included from zstd/lib/compress/zstd_compress_internal.h:21:
+warning: zstd-sys@2.0.9+zstd.1.5.5: In file included from zstd/lib/compress/../common/zstd_internal.h:23:
+warning: zstd-sys@2.0.9+zstd.1.5.5: In file included from zstd/lib/common/cpu.h:19:
+warning: zstd-sys@2.0.9+zstd.1.5.5: In file included from zstd/lib/common/mem.h:24:
+warning: zstd-sys@2.0.9+zstd.1.5.5: In file included from zstd/lib/common/zstd_deps.h:27:
+warning: zstd-sys@2.0.9+zstd.1.5.5: In file included from /usr/lib/llvm-14/lib/clang/14.0.6/include/limits.h:21:
+warning: zstd-sys@2.0.9+zstd.1.5.5: /usr/include/limits.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+warning: zstd-sys@2.0.9+zstd.1.5.5: #include <bits/libc-header-start.h>
+warning: zstd-sys@2.0.9+zstd.1.5.5:          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+warning: zstd-sys@2.0.9+zstd.1.5.5: In file included from zstd/lib/compress/zstd_lazy.c:11:
+warning: zstd-sys@2.0.9+zstd.1.5.5: In file included from zstd/lib/compress/zstd_compress_internal.h:21:
+warning: zstd-sys@2.0.9+zstd.1.5.5: In file included from zstd/lib/compress/../common/zstd_internal.h:23:
+warning: zstd-sys@2.0.9+zstd.1.5.5: In file included from zstd/lib/common/cpu.h:19:
+warning: zstd-sys@2.0.9+zstd.1.5.5: In file included from zstd/lib/common/mem.h:24:
+warning: zstd-sys@2.0.9+zstd.1.5.5: In file included from zstd/lib/common/zstd_deps.h:27:
+warning: zstd-sys@2.0.9+zstd.1.5.5: In file included from /usr/lib/llvm-14/lib/clang/14.0.6/include/limits.h:21:
+warning: zstd-sys@2.0.9+zstd.1.5.5: /usr/include/limits.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+warning: zstd-sys@2.0.9+zstd.1.5.5: #include <bits/libc-header-start.h>
+warning: zstd-sys@2.0.9+zstd.1.5.5:          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+warning: zstd-sys@2.0.9+zstd.1.5.5: 1 error generated.
+warning: zstd-sys@2.0.9+zstd.1.5.5: 1 error generated.
+warning: zstd-sys@2.0.9+zstd.1.5.5: In file included from zstd/lib/compress/zstd_compress_sequences.c:14:
+warning: zstd-sys@2.0.9+zstd.1.5.5: In file included from zstd/lib/compress/zstd_compress_sequences.h:14:
+warning: zstd-sys@2.0.9+zstd.1.5.5: In file included from zstd/lib/compress/../common/fse.h:26:
+warning: zstd-sys@2.0.9+zstd.1.5.5: In file included from zstd/lib/common/zstd_deps.h:27:
+warning: zstd-sys@2.0.9+zstd.1.5.5: In file included from /usr/lib/llvm-14/lib/clang/14.0.6/include/limits.h:21:
+warning: zstd-sys@2.0.9+zstd.1.5.5: /usr/include/limits.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+warning: zstd-sys@2.0.9+zstd.1.5.5: #include <bits/libc-header-start.h>
+warning: zstd-sys@2.0.9+zstd.1.5.5:          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+warning: zstd-sys@2.0.9+zstd.1.5.5: 1 error generated.
+warning: zstd-sys@2.0.9+zstd.1.5.5: 1 error generated.
+warning: zstd-sys@2.0.9+zstd.1.5.5: In file included from zstd/lib/compress/zstd_opt.c:11:
+warning: zstd-sys@2.0.9+zstd.1.5.5: In file included from zstd/lib/compress/zstd_compress_internal.h:21:
+warning: zstd-sys@2.0.9+zstd.1.5.5: In file included from zstd/lib/compress/../common/zstd_internal.h:23:
+warning: zstd-sys@2.0.9+zstd.1.5.5: In file included from zstd/lib/common/cpu.h:19:
+warning: zstd-sys@2.0.9+zstd.1.5.5: In file included from zstd/lib/common/mem.h:24:
+warning: zstd-sys@2.0.9+zstd.1.5.5: In file included from zstd/lib/common/zstd_deps.h:27:
+warning: zstd-sys@2.0.9+zstd.1.5.5: In file included from /usr/lib/llvm-14/lib/clang/14.0.6/include/limits.h:21:
+warning: zstd-sys@2.0.9+zstd.1.5.5: /usr/include/limits.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+warning: zstd-sys@2.0.9+zstd.1.5.5: #include <bits/libc-header-start.h>
+warning: zstd-sys@2.0.9+zstd.1.5.5:          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+warning: zstd-sys@2.0.9+zstd.1.5.5: 1 error generated.
+warning: zstd-sys@2.0.9+zstd.1.5.5: 1 error generated.
+warning: zstd-sys@2.0.9+zstd.1.5.5: 1 error generated.
+warning: zstd-sys@2.0.9+zstd.1.5.5: 1 error generated.
+warning: zstd-sys@2.0.9+zstd.1.5.5: 1 error generated.
+warning: zstd-sys@2.0.9+zstd.1.5.5: 1 error generated.
+warning: zstd-sys@2.0.9+zstd.1.5.5: ToolExecError: Command "clang" "-O3" "-ffunction-sections" "-fdata-sections" "-fPIC" "--target=wasm32-wasi" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-fvisibility=hidden" "-DXXH_STATIC_ASSERT=0" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-o" "/home/unixuser/code/wasm-assessment/target/wasm32-wasi/release/build/zstd-sys-6597f0f88add8d76/out/zstd/lib/common/entropy_common.o" "-c" "zstd/lib/common/entropy_common.c" with args "clang" did not execute successfully (status code exit status: 1).
+warning: zstd-sys@2.0.9+zstd.1.5.5: ToolExecError: Command "clang" "-O3" "-ffunction-sections" "-fdata-sections" "-fPIC" "--target=wasm32-wasi" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-fvisibility=hidden" "-DXXH_STATIC_ASSERT=0" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-o" "/home/unixuser/code/wasm-assessment/target/wasm32-wasi/release/build/zstd-sys-6597f0f88add8d76/out/zstd/lib/common/pool.o" "-c" "zstd/lib/common/pool.c" with args "clang" did not execute successfully (status code exit status: 1).
+warning: zstd-sys@2.0.9+zstd.1.5.5: ToolExecError: Command "clang" "-O3" "-ffunction-sections" "-fdata-sections" "-fPIC" "--target=wasm32-wasi" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-fvisibility=hidden" "-DXXH_STATIC_ASSERT=0" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-o" "/home/unixuser/code/wasm-assessment/target/wasm32-wasi/release/build/zstd-sys-6597f0f88add8d76/out/zstd/lib/common/zstd_common.o" "-c" "zstd/lib/common/zstd_common.c" with args "clang" did not execute successfully (status code exit status: 1).
+warning: zstd-sys@2.0.9+zstd.1.5.5: ToolExecError: Command "clang" "-O3" "-ffunction-sections" "-fdata-sections" "-fPIC" "--target=wasm32-wasi" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-fvisibility=hidden" "-DXXH_STATIC_ASSERT=0" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-o" "/home/unixuser/code/wasm-assessment/target/wasm32-wasi/release/build/zstd-sys-6597f0f88add8d76/out/zstd/lib/compress/fse_compress.o" "-c" "zstd/lib/compress/fse_compress.c" with args "clang" did not execute successfully (status code exit status: 1).
+warning: zstd-sys@2.0.9+zstd.1.5.5: ToolExecError: Command "clang" "-O3" "-ffunction-sections" "-fdata-sections" "-fPIC" "--target=wasm32-wasi" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-fvisibility=hidden" "-DXXH_STATIC_ASSERT=0" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-o" "/home/unixuser/code/wasm-assessment/target/wasm32-wasi/release/build/zstd-sys-6597f0f88add8d76/out/zstd/lib/compress/hist.o" "-c" "zstd/lib/compress/hist.c" with args "clang" did not execute successfully (status code exit status: 1).
+warning: zstd-sys@2.0.9+zstd.1.5.5: ToolExecError: Command "clang" "-O3" "-ffunction-sections" "-fdata-sections" "-fPIC" "--target=wasm32-wasi" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-fvisibility=hidden" "-DXXH_STATIC_ASSERT=0" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-o" "/home/unixuser/code/wasm-assessment/target/wasm32-wasi/release/build/zstd-sys-6597f0f88add8d76/out/zstd/lib/compress/huf_compress.o" "-c" "zstd/lib/compress/huf_compress.c" with args "clang" did not execute successfully (status code exit status: 1).
+warning: zstd-sys@2.0.9+zstd.1.5.5: ToolExecError: Command "clang" "-O3" "-ffunction-sections" "-fdata-sections" "-fPIC" "--target=wasm32-wasi" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-fvisibility=hidden" "-DXXH_STATIC_ASSERT=0" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-o" "/home/unixuser/code/wasm-assessment/target/wasm32-wasi/release/build/zstd-sys-6597f0f88add8d76/out/zstd/lib/compress/zstd_compress.o" "-c" "zstd/lib/compress/zstd_compress.c" with args "clang" did not execute successfully (status code exit status: 1).
+warning: zstd-sys@2.0.9+zstd.1.5.5: ToolExecError: Command "clang" "-O3" "-ffunction-sections" "-fdata-sections" "-fPIC" "--target=wasm32-wasi" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-fvisibility=hidden" "-DXXH_STATIC_ASSERT=0" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-o" "/home/unixuser/code/wasm-assessment/target/wasm32-wasi/release/build/zstd-sys-6597f0f88add8d76/out/zstd/lib/compress/zstd_compress_literals.o" "-c" "zstd/lib/compress/zstd_compress_literals.c" with args "clang" did not execute successfully (status code exit status: 1).
+warning: zstd-sys@2.0.9+zstd.1.5.5: ToolExecError: Command "clang" "-O3" "-ffunction-sections" "-fdata-sections" "-fPIC" "--target=wasm32-wasi" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-fvisibility=hidden" "-DXXH_STATIC_ASSERT=0" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-o" "/home/unixuser/code/wasm-assessment/target/wasm32-wasi/release/build/zstd-sys-6597f0f88add8d76/out/zstd/lib/compress/zstd_compress_sequences.o" "-c" "zstd/lib/compress/zstd_compress_sequences.c" with args "clang" did not execute successfully (status code exit status: 1).
+warning: zstd-sys@2.0.9+zstd.1.5.5: ToolExecError: Command "clang" "-O3" "-ffunction-sections" "-fdata-sections" "-fPIC" "--target=wasm32-wasi" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-fvisibility=hidden" "-DXXH_STATIC_ASSERT=0" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-o" "/home/unixuser/code/wasm-assessment/target/wasm32-wasi/release/build/zstd-sys-6597f0f88add8d76/out/zstd/lib/compress/zstd_compress_superblock.o" "-c" "zstd/lib/compress/zstd_compress_superblock.c" with args "clang" did not execute successfully (status code exit status: 1).
+warning: zstd-sys@2.0.9+zstd.1.5.5: ToolExecError: Command "clang" "-O3" "-ffunction-sections" "-fdata-sections" "-fPIC" "--target=wasm32-wasi" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-fvisibility=hidden" "-DXXH_STATIC_ASSERT=0" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-o" "/home/unixuser/code/wasm-assessment/target/wasm32-wasi/release/build/zstd-sys-6597f0f88add8d76/out/zstd/lib/compress/zstd_double_fast.o" "-c" "zstd/lib/compress/zstd_double_fast.c" with args "clang" did not execute successfully (status code exit status: 1).running: "clang" "-O3" "-ffunction-sections" "-fdata-sections" "-fPIC" "--target=wasm32-wasi" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-fvisibility=hidden" "-DXXH_STATIC_ASSERT=0" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-o" "/home/unixuser/code/wasm-assessment/target/wasm32-wasi/release/build/zstd-sys-6597f0f88add8d76/out/zstd/lib/compress/zstdmt_compress.o" "-c" "zstd/lib/compress/zstdmt_compress.c"
+warning: zstd-sys@2.0.9+zstd.1.5.5: ToolExecError: Command "clang" "-O3" "-ffunction-sections" "-fdata-sections" "-fPIC" "--target=wasm32-wasi" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-fvisibility=hidden" "-DXXH_STATIC_ASSERT=0" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-o" "/home/unixuser/code/wasm-assessment/target/wasm32-wasi/release/build/zstd-sys-6597f0f88add8d76/out/zstd/lib/compress/zstd_fast.o" "-c" "zstd/lib/compress/zstd_fast.c" with args "clang" did not execute successfully (status code exit status: 1).
+warning: zstd-sys@2.0.9+zstd.1.5.5: ToolExecError: Command "clang" "-O3" "-ffunction-sections" "-fdata-sections" "-fPIC" "--target=wasm32-wasi" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-fvisibility=hidden" "-DXXH_STATIC_ASSERT=0" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-o" "/home/unixuser/code/wasm-assessment/target/wasm32-wasi/release/build/zstd-sys-6597f0f88add8d76/out/zstd/lib/compress/zstd_lazy.o" "-c" "zstd/lib/compress/zstd_lazy.c" with args "clang" did not execute successfully (status code exit status: 1).
+warning: zstd-sys@2.0.9+zstd.1.5.5: ToolExecError: Command "clang" "-O3" "-ffunction-sections" "-fdata-sections" "-fPIC" "--target=wasm32-wasi" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-fvisibility=hidden" "-DXXH_STATIC_ASSERT=0" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-o" "/home/unixuser/code/wasm-assessment/target/wasm32-wasi/release/build/zstd-sys-6597f0f88add8d76/out/zstd/lib/compress/zstd_ldm.o" "-c" "zstd/lib/compress/zstd_ldm.c" with args "clang" did not execute successfully (status code exit status: 1).
+warning: zstd-sys@2.0.9+zstd.1.5.5: ToolExecError: Command "clang" "-O3" "-ffunction-sections" "-fdata-sections" "-fPIC" "--target=wasm32-wasi" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-fvisibility=hidden" "-DXXH_STATIC_ASSERT=0" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-o" "/home/unixuser/code/wasm-assessment/target/wasm32-wasi/release/build/zstd-sys-6597f0f88add8d76/out/zstd/lib/compress/zstd_opt.o" "-c" "zstd/lib/compress/zstd_opt.c" with args "clang" did not execute successfully (status code exit status: 1).running: "clang" "-O3" "-ffunction-sections" "-fdata-sections" "-fPIC" "--target=wasm32-wasi" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-fvisibility=hidden" "-DXXH_STATIC_ASSERT=0" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-o" "/home/unixuser/code/wasm-assessment/target/wasm32-wasi/release/build/zstd-sys-6597f0f88add8d76/out/zstd/lib/decompress/huf_decompress.o" "-c" "zstd/lib/decompress/huf_decompress.c"
+warning: zstd-sys@2.0.9+zstd.1.5.5: In file included from In file included from zstd/lib/compress/zstdmt_compress.c:23:
+warning: zstd-sys@2.0.9+zstd.1.5.5: In file included from zstd/lib/compress/../common/allocations.h:15:
+warning: zstd-sys@2.0.9+zstd.1.5.5: In file included from zstd/lib/common/zstd_deps.h:27:
+warning: zstd-sys@2.0.9+zstd.1.5.5: In file included from /usr/lib/llvm-14/lib/clang/14.0.6/include/limits.h:21:
+warning: zstd-sys@2.0.9+zstd.1.5.5: /usr/include/limits.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+warning: zstd-sys@2.0.9+zstd.1.5.5: In file included from zstd/lib/decompress/zstd_decompress.c:58:
+warning: zstd-sys@2.0.9+zstd.1.5.5: In file included from zstd/lib/decompress/../common/allocations.h:15:
+warning: zstd-sys@2.0.9+zstd.1.5.5: In file included from zstd/lib/common/zstd_deps.h:27:
+warning: zstd-sys@2.0.9+zstd.1.5.5: In file included from /usr/lib/llvm-14/lib/clang/14.0.6/include/limits.h:21:
+warning: zstd-sys@2.0.9+zstd.1.5.5: /usr/include/limits.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+warning: zstd-sys@2.0.9+zstd.1.5.5: zstd/lib/decompress/zstd_ddict.c:17:
+warning: zstd-sys@2.0.9+zstd.1.5.5: In file included from zstd/lib/decompress/../common/allocations.h:15:
+warning: zstd-sys@2.0.9+zstd.1.5.5: In file included from zstd/lib/common/zstd_deps.h:27:
+warning: zstd-sys@2.0.9+zstd.1.5.5: In file included from /usr/lib/llvm-14/lib/clang/14.0.6/include/limits.h:21:
+warning: zstd-sys@2.0.9+zstd.1.5.5: /usr/include/limits.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+warning: zstd-sys@2.0.9+zstd.1.5.5: #include <bits/libc-header-start.h>
+warning: zstd-sys@2.0.9+zstd.1.5.5:          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+warning: zstd-sys@2.0.9+zstd.1.5.5: #include <bits/libc-header-start.h>
+warning: zstd-sys@2.0.9+zstd.1.5.5:          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+warning: zstd-sys@2.0.9+zstd.1.5.5: #include <bits/libc-header-start.h>
+warning: zstd-sys@2.0.9+zstd.1.5.5:          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+warning: zstd-sys@2.0.9+zstd.1.5.5: In file included from zstd/lib/decompress/huf_decompress.c:18:
+warning: zstd-sys@2.0.9+zstd.1.5.5: In file included from zstd/lib/decompress/../common/zstd_deps.h:27:
+warning: zstd-sys@2.0.9+zstd.1.5.5: In file included from /usr/lib/llvm-14/lib/clang/14.0.6/include/limits.h:21:
+warning: zstd-sys@2.0.9+zstd.1.5.5: /usr/include/limits.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+warning: zstd-sys@2.0.9+zstd.1.5.5: #include <bits/libc-header-start.h>
+warning: zstd-sys@2.0.9+zstd.1.5.5:          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+warning: zstd-sys@2.0.9+zstd.1.5.5: In file included from zstd/lib/decompress/zstd_decompress_block.c:17:
+warning: zstd-sys@2.0.9+zstd.1.5.5: In file included from zstd/lib/decompress/../common/zstd_deps.h:27:
+warning: zstd-sys@2.0.9+zstd.1.5.5: In file included from /usr/lib/llvm-14/lib/clang/14.0.6/include/limits.h:21:
+warning: zstd-sys@2.0.9+zstd.1.5.5: /usr/include/limits.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+warning: zstd-sys@2.0.9+zstd.1.5.5: #include <bits/libc-header-start.h>
+warning: zstd-sys@2.0.9+zstd.1.5.5:          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+warning: zstd-sys@2.0.9+zstd.1.5.5: 1 error generated.
+warning: zstd-sys@2.0.9+zstd.1.5.5: 1 error generated.
+warning: zstd-sys@2.0.9+zstd.1.5.5: 1 error generated.
+warning: zstd-sys@2.0.9+zstd.1.5.5: 1 error generated.
+warning: zstd-sys@2.0.9+zstd.1.5.5: 1 error generated.
+warning: zstd-sys@2.0.9+zstd.1.5.5: ToolExecError: Command "clang" "-O3" "-ffunction-sections" "-fdata-sections" "-fPIC" "--target=wasm32-wasi" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-fvisibility=hidden" "-DXXH_STATIC_ASSERT=0" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-o" "/home/unixuser/code/wasm-assessment/target/wasm32-wasi/release/build/zstd-sys-6597f0f88add8d76/out/zstd/lib/compress/zstdmt_compress.o" "-c" "zstd/lib/compress/zstdmt_compress.c" with args "clang" did not execute successfully (status code exit status: 1).
+warning: zstd-sys@2.0.9+zstd.1.5.5: ToolExecError: Command "clang" "-O3" "-ffunction-sections" "-fdata-sections" "-fPIC" "--target=wasm32-wasi" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-fvisibility=hidden" "-DXXH_STATIC_ASSERT=0" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-o" "/home/unixuser/code/wasm-assessment/target/wasm32-wasi/release/build/zstd-sys-6597f0f88add8d76/out/zstd/lib/decompress/huf_decompress.o" "-c" "zstd/lib/decompress/huf_decompress.c" with args "clang" did not execute successfully (status code exit status: 1).
+warning: zstd-sys@2.0.9+zstd.1.5.5: ToolExecError: Command "clang" "-O3" "-ffunction-sections" "-fdata-sections" "-fPIC" "--target=wasm32-wasi" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-fvisibility=hidden" "-DXXH_STATIC_ASSERT=0" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-o" "/home/unixuser/code/wasm-assessment/target/wasm32-wasi/release/build/zstd-sys-6597f0f88add8d76/out/zstd/lib/decompress/zstd_ddict.o" "-c" "zstd/lib/decompress/zstd_ddict.c" with args "clang" did not execute successfully (status code exit status: 1).
+warning: zstd-sys@2.0.9+zstd.1.5.5: ToolExecError: Command "clang" "-O3" "-ffunction-sections" "-fdata-sections" "-fPIC" "--target=wasm32-wasi" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-fvisibility=hidden" "-DXXH_STATIC_ASSERT=0" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-o" "/home/unixuser/code/wasm-assessment/target/wasm32-wasi/release/build/zstd-sys-6597f0f88add8d76/out/zstd/lib/decompress/zstd_decompress.o" "-c" "zstd/lib/decompress/zstd_decompress.c" with args "clang" did not execute successfully (status code exit status: 1).
+warning: zstd-sys@2.0.9+zstd.1.5.5: ToolExecError: Command "clang" "-O3" "-ffunction-sections" "-fdata-sections" "-fPIC" "--target=wasm32-wasi" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-fvisibility=hidden" "-DXXH_STATIC_ASSERT=0" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-o" "/home/unixuser/code/wasm-assessment/target/wasm32-wasi/release/build/zstd-sys-6597f0f88add8d76/out/zstd/lib/decompress/zstd_decompress_block.o" "-c" "zstd/lib/decompress/zstd_decompress_block.c" with args "clang" did not execute successfully (status code exit status: 1).
+
+error: failed to run custom build command for `zstd-sys v2.0.9+zstd.1.5.5`
+
+Caused by:
+  process didn't exit successfully: `/home/unixuser/code/wasm-assessment/target/release/build/zstd-sys-558c5611259b4b0e/build-script-build` (exit status: 1)
+  --- stdout
+  cargo:rerun-if-env-changed=ZSTD_SYS_USE_PKG_CONFIG
+  cargo:rustc-cfg=feature="std"
+  cargo:rerun-if-changed=wasm-shim/stdlib.h
+  cargo:rerun-if-changed=wasm-shim/string.h
+  TARGET = Some("wasm32-wasi")
+  OPT_LEVEL = Some("3")
+  HOST = Some("x86_64-unknown-linux-gnu")
+  cargo:rerun-if-env-changed=CC_wasm32-wasi
+  CC_wasm32-wasi = None
+  cargo:rerun-if-env-changed=CC_wasm32_wasi
+  CC_wasm32_wasi = None
+  cargo:rerun-if-env-changed=TARGET_CC
+  TARGET_CC = None
+  cargo:rerun-if-env-changed=CC
+  CC = None
+  cargo:rerun-if-env-changed=CRATE_CC_NO_DEFAULTS
+  CRATE_CC_NO_DEFAULTS = None
+  DEBUG = Some("false")
+  cargo:rerun-if-env-changed=CFLAGS_wasm32-wasi
+  CFLAGS_wasm32-wasi = None
+  cargo:rerun-if-env-changed=CFLAGS_wasm32_wasi
+  CFLAGS_wasm32_wasi = None
+  cargo:rerun-if-env-changed=TARGET_CFLAGS
+  TARGET_CFLAGS = None
+  cargo:rerun-if-env-changed=CFLAGS
+  CFLAGS = None
+  cargo:rerun-if-env-changed=CC_wasm32-wasi
+  CC_wasm32-wasi = None
+  cargo:rerun-if-env-changed=CC_wasm32_wasi
+  CC_wasm32_wasi = None
+  cargo:rerun-if-env-changed=TARGET_CC
+  TARGET_CC = None
+  cargo:rerun-if-env-changed=CC
+  CC = None
+  cargo:rerun-if-env-changed=CRATE_CC_NO_DEFAULTS
+  CRATE_CC_NO_DEFAULTS = None
+  cargo:rerun-if-env-changed=CFLAGS_wasm32-wasi
+  CFLAGS_wasm32-wasi = None
+  cargo:rerun-if-env-changed=CFLAGS_wasm32_wasi
+  CFLAGS_wasm32_wasi = None
+  cargo:rerun-if-env-changed=TARGET_CFLAGS
+  TARGET_CFLAGS = None
+  cargo:rerun-if-env-changed=CFLAGS
+  CFLAGS = None
+  cargo:rerun-if-env-changed=CC_wasm32-wasi
+  CC_wasm32-wasi = None
+  cargo:rerun-if-env-changed=CC_wasm32_wasi
+  CC_wasm32_wasi = None
+  cargo:rerun-if-env-changed=TARGET_CC
+  TARGET_CC = None
+  cargo:rerun-if-env-changed=CC
+  CC = None
+  cargo:rerun-if-env-changed=CRATE_CC_NO_DEFAULTS
+  CRATE_CC_NO_DEFAULTS = None
+  cargo:rerun-if-env-changed=CFLAGS_wasm32-wasi
+  CFLAGS_wasm32-wasi = None
+  cargo:rerun-if-env-changed=CFLAGS_wasm32_wasi
+  CFLAGS_wasm32_wasi = None
+  cargo:rerun-if-env-changed=TARGET_CFLAGS
+  TARGET_CFLAGS = None
+  cargo:rerun-if-env-changed=CFLAGS
+  CFLAGS = None
+  cargo:rerun-if-env-changed=CC_wasm32-wasi
+  CC_wasm32-wasi = None
+  cargo:rerun-if-env-changed=CC_wasm32_wasi
+  CC_wasm32_wasi = None
+  cargo:rerun-if-env-changed=TARGET_CC
+  TARGET_CC = None
+  cargo:rerun-if-env-changed=CC
+  CC = None
+  cargo:rerun-if-env-changed=CRATE_CC_NO_DEFAULTS
+  CRATE_CC_NO_DEFAULTS = None
+  cargo:rerun-if-env-changed=CFLAGS_wasm32-wasi
+  CFLAGS_wasm32-wasi = None
+  cargo:rerun-if-env-changed=CFLAGS_wasm32_wasi
+  CFLAGS_wasm32_wasi = None
+  cargo:rerun-if-env-changed=TARGET_CFLAGS
+  TARGET_CFLAGS = None
+  cargo:rerun-if-env-changed=CFLAGS
+  CFLAGS = None
+  running: "clang" "-O3" "-ffunction-sections" "-fdata-sections" "-fPIC" "--target=wasm32-wasi" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-fvisibility=hidden" "-DXXH_STATIC_ASSERT=0" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-o" "/home/unixuser/code/wasm-assessment/target/wasm32-wasi/release/build/zstd-sys-6597f0f88add8d76/out/zstd/lib/common/debug.o" "-c" "zstd/lib/common/debug.c"
+  running: "clang" "-O3" "-ffunction-sections" "-fdata-sections" "-fPIC" "--target=wasm32-wasi" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-fvisibility=hidden" "-DXXH_STATIC_ASSERT=0" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-o" "/home/unixuser/code/wasm-assessment/target/wasm32-wasi/release/build/zstd-sys-6597f0f88add8d76/out/zstd/lib/common/entropy_common.o" "-c" "zstd/lib/common/entropy_common.c"
+  running: "clang" "-O3" "-ffunction-sections" "-fdata-sections" "-fPIC" "--target=wasm32-wasi" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-fvisibility=hidden" "-DXXH_STATIC_ASSERT=0" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-o" "/home/unixuser/code/wasm-assessment/target/wasm32-wasi/release/build/zstd-sys-6597f0f88add8d76/out/zstd/lib/common/error_private.o" "-c" "zstd/lib/common/error_private.c"
+  running: "clang" "-O3" "-ffunction-sections" "-fdata-sections" "-fPIC" "--target=wasm32-wasi" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-fvisibility=hidden" "-DXXH_STATIC_ASSERT=0" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-o" "/home/unixuser/code/wasm-assessment/target/wasm32-wasi/release/build/zstd-sys-6597f0f88add8d76/out/zstd/lib/common/fse_decompress.o" "-c" "zstd/lib/common/fse_decompress.c"
+  running: "clang" "-O3" "-ffunction-sections" "-fdata-sections" "-fPIC" "--target=wasm32-wasi" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-fvisibility=hidden" "-DXXH_STATIC_ASSERT=0" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-o" "/home/unixuser/code/wasm-assessment/target/wasm32-wasi/release/build/zstd-sys-6597f0f88add8d76/out/zstd/lib/common/pool.o" "-c" "zstd/lib/common/pool.c"
+  cargo:warning=In file included from zstd/lib/common/error_private.c:13:
+
+  cargo:warning=In file included from zstd/lib/common/error_private.h:27:
+
+  cargo:warning=In file included from zstd/lib/common/zstd_deps.h:27:
+
+  cargo:warning=In file included from /usr/lib/llvm-14/lib/clang/14.0.6/include/limits.h:21:
+
+  cargo:warning=/usr/include/limits.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+
+  cargo:warning=#include <bits/libc-header-start.h>
+
+  cargo:warning=         ^~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  cargo:warning=1 error generated.
+
+  cargo:warning=In file included from zstd/lib/common/fse_decompress.c:20:
+
+  cargo:warning=In file included from zstd/lib/common/bitstream.h:29:
+
+  cargo:warning=In file included from zstd/lib/common/mem.h:24:
+
+  cargo:warning=In file included from zstd/lib/common/zstd_deps.h:27:
+
+  cargo:warning=In file included from /usr/lib/llvm-14/lib/clang/14.0.6/include/limits.h:21:
+
+  cargo:warning=/usr/include/limits.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+
+  cargo:warning=#include <bits/libc-header-start.h>
+
+  cargo:warning=         ^~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  cargo:warning=In file included from zstd/lib/common/entropy_common.c:18:
+
+  cargo:warning=In file included from zstd/lib/common/mem.h:24:
+
+  cargo:warning=In file included from zstd/lib/common/zstd_deps.h:27:
+
+  cargo:warning=In file included from /usr/lib/llvm-14/lib/clang/14.0.6/include/limits.h:21:
+
+  cargo:warning=/usr/include/limits.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+
+  cargo:warning=#include <bits/libc-header-start.h>
+
+  cargo:warning=         ^~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  running: "clang" "-O3" "-ffunction-sections" "-fdata-sections" "-fPIC" "--target=wasm32-wasi" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-fvisibility=hidden" "-DXXH_STATIC_ASSERT=0" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-o" "/home/unixuser/code/wasm-assessment/target/wasm32-wasi/release/build/zstd-sys-6597f0f88add8d76/out/zstd/lib/common/threading.o" "-c" "zstd/lib/common/threading.c"
+  running: "clang" "-O3" "-ffunction-sections" "-fdata-sections" "-fPIC" "--target=wasm32-wasi" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-fvisibility=hidden" "-DXXH_STATIC_ASSERT=0" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-o" "/home/unixuser/code/wasm-assessment/target/wasm32-wasi/release/build/zstd-sys-6597f0f88add8d76/out/zstd/lib/common/zstd_common.o" "-c" "zstd/lib/common/zstd_common.c"
+  running: "clang" "-O3" "-ffunction-sections" "-fdata-sections" "-fPIC" "--target=wasm32-wasi" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-fvisibility=hidden" "-DXXH_STATIC_ASSERT=0" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-o" "/home/unixuser/code/wasm-assessment/target/wasm32-wasi/release/build/zstd-sys-6597f0f88add8d76/out/zstd/lib/compress/fse_compress.o" "-c" "zstd/lib/compress/fse_compress.c"
+  running: "clang" "-O3" "-ffunction-sections" "-fdata-sections" "-fPIC" "--target=wasm32-wasi" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-fvisibility=hidden" "-DXXH_STATIC_ASSERT=0" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-o" "/home/unixuser/code/wasm-assessment/target/wasm32-wasi/release/build/zstd-sys-6597f0f88add8d76/out/zstd/lib/compress/hist.o" "-c" "zstd/lib/compress/hist.c"
+  running: "clang" "-O3" "-ffunction-sections" "-fdata-sections" "-fPIC" "--target=wasm32-wasi" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-fvisibility=hidden" "-DXXH_STATIC_ASSERT=0" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-o" "/home/unixuser/code/wasm-assessment/target/wasm32-wasi/release/build/zstd-sys-6597f0f88add8d76/out/zstd/lib/compress/huf_compress.o" "-c" "zstd/lib/compress/huf_compress.c"
+  running: "clang" "-O3" "-ffunction-sections" "-fdata-sections" "-fPIC" "--target=wasm32-wasi" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-fvisibility=hidden" "-DXXH_STATIC_ASSERT=0" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-o" "/home/unixuser/code/wasm-assessment/target/wasm32-wasi/release/build/zstd-sys-6597f0f88add8d76/out/zstd/lib/compress/zstd_compress.o" "-c" "zstd/lib/compress/zstd_compress.c"
+  running: "clang" "-O3" "-ffunction-sections" "-fdata-sections" "-fPIC" "--target=wasm32-wasi" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-fvisibility=hidden" "-DXXH_STATIC_ASSERT=0" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-o" "/home/unixuser/code/wasm-assessment/target/wasm32-wasi/release/build/zstd-sys-6597f0f88add8d76/out/zstd/lib/compress/zstd_compress_literals.o" "-c" "zstd/lib/compress/zstd_compress_literals.c"
+  running: "clang" "-O3" "-ffunction-sections" "-fdata-sections" "-fPIC" "--target=wasm32-wasi" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-fvisibility=hidden" "-DXXH_STATIC_ASSERT=0" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-o" "/home/unixuser/code/wasm-assessment/target/wasm32-wasi/release/build/zstd-sys-6597f0f88add8d76/out/zstd/lib/compress/zstd_compress_sequences.o" "-c" "zstd/lib/compress/zstd_compress_sequences.c"
+  running: "clang" "-O3" "-ffunction-sections" "-fdata-sections" "-fPIC" "--target=wasm32-wasi" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-fvisibility=hidden" "-DXXH_STATIC_ASSERT=0" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-o" "/home/unixuser/code/wasm-assessment/target/wasm32-wasi/release/build/zstd-sys-6597f0f88add8d76/out/zstd/lib/compress/zstd_compress_superblock.o" "-c" "zstd/lib/compress/zstd_compress_superblock.c"
+  running: "clang" "-O3" "-ffunction-sections" "-fdata-sections" "-fPIC" "--target=wasm32-wasi" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-fvisibility=hidden" "-DXXH_STATIC_ASSERT=0" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-o" "/home/unixuser/code/wasm-assessment/target/wasm32-wasi/release/build/zstd-sys-6597f0f88add8d76/out/zstd/lib/compress/zstd_double_fast.o" "-c" "zstd/lib/compress/zstd_double_fast.c"
+  running: "clang" "-O3" "-ffunction-sections" "-fdata-sections" "-fPIC" "--target=wasm32-wasi" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-fvisibility=hidden" "-DXXH_STATIC_ASSERT=0" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-o" "/home/unixuser/code/wasm-assessment/target/wasm32-wasi/release/build/zstd-sys-6597f0f88add8d76/out/zstd/lib/compress/zstd_fast.o" "-c" "zstd/lib/compress/zstd_fast.c"
+  cargo:warning=1 error generated.
+
+  cargo:warning=In file included from zstd/lib/compress/fse_compress.c:19:
+
+  cargo:warning=In file included from zstd/lib/compress/../common/mem.h:24:
+
+  cargo:warning=In file included from zstd/lib/common/zstd_deps.h:27:
+
+  cargo:warning=In file included from /usr/lib/llvm-14/lib/clang/14.0.6/include/limits.h:21:
+
+  cargo:warning=/usr/include/limits.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+
+  cargo:warning=#include <bits/libc-header-start.h>
+
+  cargo:warning=         ^~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  cargo:warning=1 error generated.
+
+  exit status: 0
+  exit status: 1
+  cargo:warning=ToolExecError: Command "clang" "-O3" "-ffunction-sections" "-fdata-sections" "-fPIC" "--target=wasm32-wasi" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-fvisibility=hidden" "-DXXH_STATIC_ASSERT=0" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-o" "/home/unixuser/code/wasm-assessment/target/wasm32-wasi/release/build/zstd-sys-6597f0f88add8d76/out/zstd/lib/common/error_private.o" "-c" "zstd/lib/common/error_private.c" with args "clang" did not execute successfully (status code exit status: 1).
+  exit status: 1
+  cargo:warning=ToolExecError: Command "clang" "-O3" "-ffunction-sections" "-fdata-sections" "-fPIC" "--target=wasm32-wasi" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-fvisibility=hidden" "-DXXH_STATIC_ASSERT=0" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-o" "/home/unixuser/code/wasm-assessment/target/wasm32-wasi/release/build/zstd-sys-6597f0f88add8d76/out/zstd/lib/common/fse_decompress.o" "-c" "zstd/lib/common/fse_decompress.c" with args "clang" did not execute successfully (status code exit status: 1).running: "clang" "-O3" "-ffunction-sections" "-fdata-sections" "-fPIC" "--target=wasm32-wasi" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-fvisibility=hidden" "-DXXH_STATIC_ASSERT=0" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-o" "/home/unixuser/code/wasm-assessment/target/wasm32-wasi/release/build/zstd-sys-6597f0f88add8d76/out/zstd/lib/compress/zstd_lazy.o" "-c" "zstd/lib/compress/zstd_lazy.c"
+  cargo:warning=In file included from zstd/lib/common/zstd_common.c:17:
+
+  cargo:warning=In file included from zstd/lib/common/error_private.h:27:
+
+  cargo:warning=In file included from zstd/lib/common/zstd_deps.h:27:
+
+  cargo:warning=In file included from /usr/lib/llvm-14/lib/clang/14.0.6/include/limits.h:21:
+
+  cargo:warning=/usr/include/limits.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+
+  cargo:warning=#include <bits/libc-header-start.h>
+
+  cargo:warning=         ^~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  cargo:warning=In file included from zstd/lib/common/pool.c:13:
+
+  cargo:warning=In file included from zstd/lib/common/../common/allocations.h:15:
+
+  cargo:warning=In file included from zstd/lib/common/zstd_deps.h:27:
+
+  cargo:warning=In file included from /usr/lib/llvm-14/lib/clang/14.0.6/include/limits.h:21:
+
+  cargo:warning=/usr/include/limits.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+
+  cargo:warning=#include <bits/libc-header-start.h>
+
+  cargo:warning=         ^~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  cargo:warning=1 error generated.
+
+  cargo:warning=In file included from zstd/lib/compress/hist.c:17:
+
+  cargo:warning=In file included from zstd/lib/compress/../common/mem.h:24:
+
+  cargo:warning=In file included from zstd/lib/common/zstd_deps.h:27:
+
+  cargo:warning=In file included from /usr/lib/llvm-14/lib/clang/14.0.6/include/limits.h:21:
+
+  cargo:warning=/usr/include/limits.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+
+  cargo:warning=#include <bits/libc-header-start.h>
+
+  cargo:warning=         ^~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  cargo:warning=1 error generated.
+
+  cargo:warning=1 error generated.
+
+  cargo:warning=In file included from zstd/lib/compress/zstd_compress_superblock.c:14:
+
+  cargo:warning=In file included from zstd/lib/compress/zstd_compress_superblock.h:18:
+
+  cargo:warning=In file included from zstd/lib/compress/../zstd.h:18:
+
+  cargo:warning=In file included from /usr/lib/llvm-14/lib/clang/14.0.6/include/limits.h:21:
+
+  cargo:warning=/usr/include/limits.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+
+  cargo:warning=#include <bits/libc-header-start.h>
+
+  cargo:warning=         ^~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  cargo:warning=In file included from zstd/lib/compress/zstd_compress_literals.c:14:
+
+  cargo:warning=In file included from zstd/lib/compress/zstd_compress_literals.h:14:
+
+  cargo:warning=In file included from zstd/lib/compress/zstd_compress_internal.h:21:
+
+  cargo:warning=In file included from zstd/lib/compress/../common/zstd_internal.h:23:
+
+  cargo:warning=In file included from zstd/lib/common/cpu.h:19:
+
+  cargo:warning=In file included from zstd/lib/common/mem.h:24:
+
+  cargo:warning=In file included from zstd/lib/common/zstd_deps.h:27:
+
+  cargo:warning=In file included from /usr/lib/llvm-14/lib/clang/14.0.6/include/limits.h:21:
+
+  cargo:warning=/usr/include/limits.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+
+  cargo:warning=#include <bits/libc-header-start.h>
+
+  cargo:warning=         ^~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  running: "clang" "-O3" "-ffunction-sections" "-fdata-sections" "-fPIC" "--target=wasm32-wasi" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-fvisibility=hidden" "-DXXH_STATIC_ASSERT=0" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-o" "/home/unixuser/code/wasm-assessment/target/wasm32-wasi/release/build/zstd-sys-6597f0f88add8d76/out/zstd/lib/compress/zstd_ldm.o" "-c" "zstd/lib/compress/zstd_ldm.c"
+  cargo:warning=In file included from zstd/lib/compress/zstd_fast.c:11:
+
+  cargo:warning=In file included from zstd/lib/compress/zstd_compress_internal.h:21:
+
+  cargo:warning=In file included from zstd/lib/compress/../common/zstd_internal.h:23:
+
+  cargo:warning=In file included from zstd/lib/common/cpu.h:19:
+
+  cargo:warning=In file included from zstd/lib/common/mem.h:24:
+
+  cargo:warning=In file included from zstd/lib/common/zstd_deps.h:27:
+
+  cargo:warning=In file included from /usr/lib/llvm-14/lib/clang/14.0.6/include/limits.h:21:
+
+  cargo:warning=/usr/include/limits.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+
+  cargo:warning=#include <bits/libc-header-start.h>
+
+  cargo:warning=         ^~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  running: "clang" "-O3" "-ffunction-sections" "-fdata-sections" "-fPIC" "--target=wasm32-wasi" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-fvisibility=hidden" "-DXXH_STATIC_ASSERT=0" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-o" "/home/unixuser/code/wasm-assessment/target/wasm32-wasi/release/build/zstd-sys-6597f0f88add8d76/out/zstd/lib/compress/zstd_opt.o" "-c" "zstd/lib/compress/zstd_opt.c"
+  cargo:warning=1 error generated.
+
+  cargo:warning=In file included from zstd/lib/compress/zstd_compress.c:14:
+
+  cargo:warning=In file included from zstd/lib/compress/../common/allocations.h:15:
+
+  cargo:warning=In file included from zstd/lib/common/zstd_deps.h:27:
+
+  cargo:warning=In file included from /usr/lib/llvm-14/lib/clang/14.0.6/include/limits.h:21:
+
+  cargo:warning=/usr/include/limits.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+
+  cargo:warning=#include <bits/libc-header-start.h>
+
+  cargo:warning=         ^~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  cargo:warning=In file included from zstd/lib/compress/zstd_double_fast.c:11:
+
+  cargo:warning=In file included from zstd/lib/compress/zstd_compress_internal.h:21:
+
+  cargo:warning=In file included from zstd/lib/compress/../common/zstd_internal.h:23:
+
+  cargo:warning=In file included from zstd/lib/common/cpu.h:19:
+
+  cargo:warning=In file included from zstd/lib/common/mem.h:24:
+
+  cargo:warning=In file included from zstd/lib/common/zstd_deps.h:27:
+
+  cargo:warning=In file included from /usr/lib/llvm-14/lib/clang/14.0.6/include/limits.h:21:
+
+  cargo:warning=/usr/include/limits.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+
+  cargo:warning=#include <bits/libc-header-start.h>
+
+  cargo:warning=         ^~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  cargo:warning=In file included from zstd/lib/compress/huf_compress.c:26:
+
+  cargo:warning=In file included from zstd/lib/compress/../common/zstd_deps.h:27:
+
+  cargo:warning=In file included from /usr/lib/llvm-14/lib/clang/14.0.6/include/limits.h:21:
+
+  cargo:warning=/usr/include/limits.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+
+  cargo:warning=#include <bits/libc-header-start.h>
+
+  cargo:warning=         ^~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  cargo:warning=In file included from zstd/lib/compress/zstd_ldm.c:11:
+
+  cargo:warning=In file included from zstd/lib/compress/zstd_ldm.h:18:
+
+  cargo:warning=In file included from zstd/lib/compress/zstd_compress_internal.h:21:
+
+  cargo:warning=In file included from zstd/lib/compress/../common/zstd_internal.h:23:
+
+  cargo:warning=In file included from zstd/lib/common/cpu.h:19:
+
+  cargo:warning=In file included from zstd/lib/common/mem.h:24:
+
+  cargo:warning=In file included from zstd/lib/common/zstd_deps.h:27:
+
+  cargo:warning=In file included from /usr/lib/llvm-14/lib/clang/14.0.6/include/limits.h:21:
+
+  cargo:warning=/usr/include/limits.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+
+  cargo:warning=#include <bits/libc-header-start.h>
+
+  cargo:warning=         ^~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  cargo:warning=In file included from zstd/lib/compress/zstd_lazy.c:11:
+
+  cargo:warning=In file included from zstd/lib/compress/zstd_compress_internal.h:21:
+
+  cargo:warning=In file included from zstd/lib/compress/../common/zstd_internal.h:23:
+
+  cargo:warning=In file included from zstd/lib/common/cpu.h:19:
+
+  cargo:warning=In file included from zstd/lib/common/mem.h:24:
+
+  cargo:warning=In file included from zstd/lib/common/zstd_deps.h:27:
+
+  cargo:warning=In file included from /usr/lib/llvm-14/lib/clang/14.0.6/include/limits.h:21:
+
+  cargo:warning=/usr/include/limits.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+
+  cargo:warning=#include <bits/libc-header-start.h>
+
+  cargo:warning=         ^~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  cargo:warning=1 error generated.
+
+  cargo:warning=1 error generated.
+
+  cargo:warning=In file included from zstd/lib/compress/zstd_compress_sequences.c:14:
+
+  cargo:warning=In file included from zstd/lib/compress/zstd_compress_sequences.h:14:
+
+  cargo:warning=In file included from zstd/lib/compress/../common/fse.h:26:
+
+  cargo:warning=In file included from zstd/lib/common/zstd_deps.h:27:
+
+  cargo:warning=In file included from /usr/lib/llvm-14/lib/clang/14.0.6/include/limits.h:21:
+
+  cargo:warning=/usr/include/limits.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+
+  cargo:warning=#include <bits/libc-header-start.h>
+
+  cargo:warning=         ^~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  cargo:warning=1 error generated.
+
+  cargo:warning=1 error generated.
+
+  cargo:warning=In file included from zstd/lib/compress/zstd_opt.c:11:
+
+  cargo:warning=In file included from zstd/lib/compress/zstd_compress_internal.h:21:
+
+  cargo:warning=In file included from zstd/lib/compress/../common/zstd_internal.h:23:
+
+  cargo:warning=In file included from zstd/lib/common/cpu.h:19:
+
+  cargo:warning=In file included from zstd/lib/common/mem.h:24:
+
+  cargo:warning=In file included from zstd/lib/common/zstd_deps.h:27:
+
+  cargo:warning=In file included from /usr/lib/llvm-14/lib/clang/14.0.6/include/limits.h:21:
+
+  cargo:warning=/usr/include/limits.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+
+  cargo:warning=#include <bits/libc-header-start.h>
+
+  cargo:warning=         ^~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  cargo:warning=1 error generated.
+
+  cargo:warning=1 error generated.
+
+  cargo:warning=1 error generated.
+
+  cargo:warning=1 error generated.
+
+  cargo:warning=1 error generated.
+
+  cargo:warning=1 error generated.
+
+
+  exit status: 1
+  cargo:warning=ToolExecError: Command "clang" "-O3" "-ffunction-sections" "-fdata-sections" "-fPIC" "--target=wasm32-wasi" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-fvisibility=hidden" "-DXXH_STATIC_ASSERT=0" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-o" "/home/unixuser/code/wasm-assessment/target/wasm32-wasi/release/build/zstd-sys-6597f0f88add8d76/out/zstd/lib/common/entropy_common.o" "-c" "zstd/lib/common/entropy_common.c" with args "clang" did not execute successfully (status code exit status: 1).
+  exit status: 1
+  cargo:warning=ToolExecError: Command "clang" "-O3" "-ffunction-sections" "-fdata-sections" "-fPIC" "--target=wasm32-wasi" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-fvisibility=hidden" "-DXXH_STATIC_ASSERT=0" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-o" "/home/unixuser/code/wasm-assessment/target/wasm32-wasi/release/build/zstd-sys-6597f0f88add8d76/out/zstd/lib/common/pool.o" "-c" "zstd/lib/common/pool.c" with args "clang" did not execute successfully (status code exit status: 1).
+  exit status: 0
+  exit status: 1
+  cargo:warning=ToolExecError: Command "clang" "-O3" "-ffunction-sections" "-fdata-sections" "-fPIC" "--target=wasm32-wasi" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-fvisibility=hidden" "-DXXH_STATIC_ASSERT=0" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-o" "/home/unixuser/code/wasm-assessment/target/wasm32-wasi/release/build/zstd-sys-6597f0f88add8d76/out/zstd/lib/common/zstd_common.o" "-c" "zstd/lib/common/zstd_common.c" with args "clang" did not execute successfully (status code exit status: 1).
+  exit status: 1
+  cargo:warning=ToolExecError: Command "clang" "-O3" "-ffunction-sections" "-fdata-sections" "-fPIC" "--target=wasm32-wasi" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-fvisibility=hidden" "-DXXH_STATIC_ASSERT=0" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-o" "/home/unixuser/code/wasm-assessment/target/wasm32-wasi/release/build/zstd-sys-6597f0f88add8d76/out/zstd/lib/compress/fse_compress.o" "-c" "zstd/lib/compress/fse_compress.c" with args "clang" did not execute successfully (status code exit status: 1).
+  exit status: 1
+  cargo:warning=ToolExecError: Command "clang" "-O3" "-ffunction-sections" "-fdata-sections" "-fPIC" "--target=wasm32-wasi" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-fvisibility=hidden" "-DXXH_STATIC_ASSERT=0" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-o" "/home/unixuser/code/wasm-assessment/target/wasm32-wasi/release/build/zstd-sys-6597f0f88add8d76/out/zstd/lib/compress/hist.o" "-c" "zstd/lib/compress/hist.c" with args "clang" did not execute successfully (status code exit status: 1).
+  exit status: 1
+  cargo:warning=ToolExecError: Command "clang" "-O3" "-ffunction-sections" "-fdata-sections" "-fPIC" "--target=wasm32-wasi" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-fvisibility=hidden" "-DXXH_STATIC_ASSERT=0" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-o" "/home/unixuser/code/wasm-assessment/target/wasm32-wasi/release/build/zstd-sys-6597f0f88add8d76/out/zstd/lib/compress/huf_compress.o" "-c" "zstd/lib/compress/huf_compress.c" with args "clang" did not execute successfully (status code exit status: 1).
+  exit status: 1
+  cargo:warning=ToolExecError: Command "clang" "-O3" "-ffunction-sections" "-fdata-sections" "-fPIC" "--target=wasm32-wasi" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-fvisibility=hidden" "-DXXH_STATIC_ASSERT=0" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-o" "/home/unixuser/code/wasm-assessment/target/wasm32-wasi/release/build/zstd-sys-6597f0f88add8d76/out/zstd/lib/compress/zstd_compress.o" "-c" "zstd/lib/compress/zstd_compress.c" with args "clang" did not execute successfully (status code exit status: 1).
+  exit status: 1
+  cargo:warning=ToolExecError: Command "clang" "-O3" "-ffunction-sections" "-fdata-sections" "-fPIC" "--target=wasm32-wasi" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-fvisibility=hidden" "-DXXH_STATIC_ASSERT=0" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-o" "/home/unixuser/code/wasm-assessment/target/wasm32-wasi/release/build/zstd-sys-6597f0f88add8d76/out/zstd/lib/compress/zstd_compress_literals.o" "-c" "zstd/lib/compress/zstd_compress_literals.c" with args "clang" did not execute successfully (status code exit status: 1).
+  exit status: 1
+  cargo:warning=ToolExecError: Command "clang" "-O3" "-ffunction-sections" "-fdata-sections" "-fPIC" "--target=wasm32-wasi" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-fvisibility=hidden" "-DXXH_STATIC_ASSERT=0" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-o" "/home/unixuser/code/wasm-assessment/target/wasm32-wasi/release/build/zstd-sys-6597f0f88add8d76/out/zstd/lib/compress/zstd_compress_sequences.o" "-c" "zstd/lib/compress/zstd_compress_sequences.c" with args "clang" did not execute successfully (status code exit status: 1).
+  exit status: 1
+  cargo:warning=ToolExecError: Command "clang" "-O3" "-ffunction-sections" "-fdata-sections" "-fPIC" "--target=wasm32-wasi" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-fvisibility=hidden" "-DXXH_STATIC_ASSERT=0" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-o" "/home/unixuser/code/wasm-assessment/target/wasm32-wasi/release/build/zstd-sys-6597f0f88add8d76/out/zstd/lib/compress/zstd_compress_superblock.o" "-c" "zstd/lib/compress/zstd_compress_superblock.c" with args "clang" did not execute successfully (status code exit status: 1).
+  exit status: 1
+  cargo:warning=ToolExecError: Command "clang" "-O3" "-ffunction-sections" "-fdata-sections" "-fPIC" "--target=wasm32-wasi" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-fvisibility=hidden" "-DXXH_STATIC_ASSERT=0" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-o" "/home/unixuser/code/wasm-assessment/target/wasm32-wasi/release/build/zstd-sys-6597f0f88add8d76/out/zstd/lib/compress/zstd_double_fast.o" "-c" "zstd/lib/compress/zstd_double_fast.c" with args "clang" did not execute successfully (status code exit status: 1).running: "clang" "-O3" "-ffunction-sections" "-fdata-sections" "-fPIC" "--target=wasm32-wasi" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-fvisibility=hidden" "-DXXH_STATIC_ASSERT=0" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-o" "/home/unixuser/code/wasm-assessment/target/wasm32-wasi/release/build/zstd-sys-6597f0f88add8d76/out/zstd/lib/compress/zstdmt_compress.o" "-c" "zstd/lib/compress/zstdmt_compress.c"
+
+  exit status: 1
+  cargo:warning=ToolExecError: Command "clang" "-O3" "-ffunction-sections" "-fdata-sections" "-fPIC" "--target=wasm32-wasi" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-fvisibility=hidden" "-DXXH_STATIC_ASSERT=0" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-o" "/home/unixuser/code/wasm-assessment/target/wasm32-wasi/release/build/zstd-sys-6597f0f88add8d76/out/zstd/lib/compress/zstd_fast.o" "-c" "zstd/lib/compress/zstd_fast.c" with args "clang" did not execute successfully (status code exit status: 1).
+  exit status: 1
+  cargo:warning=ToolExecError: Command "clang" "-O3" "-ffunction-sections" "-fdata-sections" "-fPIC" "--target=wasm32-wasi" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-fvisibility=hidden" "-DXXH_STATIC_ASSERT=0" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-o" "/home/unixuser/code/wasm-assessment/target/wasm32-wasi/release/build/zstd-sys-6597f0f88add8d76/out/zstd/lib/compress/zstd_lazy.o" "-c" "zstd/lib/compress/zstd_lazy.c" with args "clang" did not execute successfully (status code exit status: 1).
+  exit status: 1
+  cargo:warning=ToolExecError: Command "clang" "-O3" "-ffunction-sections" "-fdata-sections" "-fPIC" "--target=wasm32-wasi" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-fvisibility=hidden" "-DXXH_STATIC_ASSERT=0" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-o" "/home/unixuser/code/wasm-assessment/target/wasm32-wasi/release/build/zstd-sys-6597f0f88add8d76/out/zstd/lib/compress/zstd_ldm.o" "-c" "zstd/lib/compress/zstd_ldm.c" with args "clang" did not execute successfully (status code exit status: 1).
+  exit status: 1
+  cargo:warning=ToolExecError: Command "clang" "-O3" "-ffunction-sections" "-fdata-sections" "-fPIC" "--target=wasm32-wasi" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-fvisibility=hidden" "-DXXH_STATIC_ASSERT=0" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-o" "/home/unixuser/code/wasm-assessment/target/wasm32-wasi/release/build/zstd-sys-6597f0f88add8d76/out/zstd/lib/compress/zstd_opt.o" "-c" "zstd/lib/compress/zstd_opt.c" with args "clang" did not execute successfully (status code exit status: 1).running: "clang" "-O3" "-ffunction-sections" "-fdata-sections" "-fPIC" "--target=wasm32-wasi" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-fvisibility=hidden" "-DXXH_STATIC_ASSERT=0" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-o" "/home/unixuser/code/wasm-assessment/target/wasm32-wasi/release/build/zstd-sys-6597f0f88add8d76/out/zstd/lib/decompress/huf_decompress.o" "-c" "zstd/lib/decompress/huf_decompress.c"
+  running: "clang" "-O3" "-ffunction-sections" "-fdata-sections" "-fPIC" "--target=wasm32-wasi" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-fvisibility=hidden" "-DXXH_STATIC_ASSERT=0" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-o" "/home/unixuser/code/wasm-assessment/target/wasm32-wasi/release/build/zstd-sys-6597f0f88add8d76/out/zstd/lib/decompress/zstd_ddict.o" "-c" "zstd/lib/decompress/zstd_ddict.c"
+  running: "clang" "-O3" "-ffunction-sections" "-fdata-sections" "-fPIC" "--target=wasm32-wasi" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-fvisibility=hidden" "-DXXH_STATIC_ASSERT=0" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-o" "/home/unixuser/code/wasm-assessment/target/wasm32-wasi/release/build/zstd-sys-6597f0f88add8d76/out/zstd/lib/decompress/zstd_decompress.o" "-c" "zstd/lib/decompress/zstd_decompress.c"
+  running: "clang" "-O3" "-ffunction-sections" "-fdata-sections" "-fPIC" "--target=wasm32-wasi" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-fvisibility=hidden" "-DXXH_STATIC_ASSERT=0" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-o" "/home/unixuser/code/wasm-assessment/target/wasm32-wasi/release/build/zstd-sys-6597f0f88add8d76/out/zstd/lib/decompress/zstd_decompress_block.o" "-c" "zstd/lib/decompress/zstd_decompress_block.c"
+  running: "clang" "-O3" "-ffunction-sections" "-fdata-sections" "-fPIC" "--target=wasm32-wasi" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-fvisibility=hidden" "-DXXH_STATIC_ASSERT=0" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-o" "/home/unixuser/code/wasm-assessment/target/wasm32-wasi/release/build/zstd-sys-6597f0f88add8d76/out/zstd/lib/decompress/huf_decompress_amd64.o" "-c" "zstd/lib/decompress/huf_decompress_amd64.S"
+  cargo:warning=In file included from In file included from zstd/lib/compress/zstdmt_compress.c:23:
+
+  cargo:warning=In file included from zstd/lib/compress/../common/allocations.h:15:
+
+  cargo:warning=In file included from zstd/lib/common/zstd_deps.h:27:
+
+  cargo:warning=In file included from /usr/lib/llvm-14/lib/clang/14.0.6/include/limits.h:21:
+
+  cargo:warning=/usr/include/limits.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+
+  cargo:warning=In file included from zstd/lib/decompress/zstd_decompress.c:58:
+
+  cargo:warning=In file included from zstd/lib/decompress/../common/allocations.h:15:
+
+  cargo:warning=In file included from zstd/lib/common/zstd_deps.h:27:
+
+  cargo:warning=In file included from /usr/lib/llvm-14/lib/clang/14.0.6/include/limits.h:21:
+
+  cargo:warning=/usr/include/limits.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+
+  cargo:warning=zstd/lib/decompress/zstd_ddict.c:17:
+
+  cargo:warning=In file included from zstd/lib/decompress/../common/allocations.h:15:
+
+  cargo:warning=In file included from zstd/lib/common/zstd_deps.h:27:
+
+  cargo:warning=In file included from /usr/lib/llvm-14/lib/clang/14.0.6/include/limits.h:21:
+
+  cargo:warning=/usr/include/limits.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+
+  cargo:warning=#include <bits/libc-header-start.h>
+
+  cargo:warning=         ^~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  cargo:warning=#include <bits/libc-header-start.h>
+
+  cargo:warning=         ^~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  cargo:warning=#include <bits/libc-header-start.h>
+
+  cargo:warning=         ^~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  cargo:warning=In file included from zstd/lib/decompress/huf_decompress.c:18:
+
+  cargo:warning=In file included from zstd/lib/decompress/../common/zstd_deps.h:27:
+
+  cargo:warning=In file included from /usr/lib/llvm-14/lib/clang/14.0.6/include/limits.h:21:
+
+  cargo:warning=/usr/include/limits.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+
+  cargo:warning=#include <bits/libc-header-start.h>
+
+  cargo:warning=         ^~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  cargo:warning=In file included from zstd/lib/decompress/zstd_decompress_block.c:17:
+
+  cargo:warning=In file included from zstd/lib/decompress/../common/zstd_deps.h:27:
+
+  cargo:warning=In file included from /usr/lib/llvm-14/lib/clang/14.0.6/include/limits.h:21:
+
+  cargo:warning=/usr/include/limits.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+
+  cargo:warning=#include <bits/libc-header-start.h>
+
+  cargo:warning=         ^~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  cargo:warning=1 error generated.
+
+  cargo:warning=1 error generated.
+
+  cargo:warning=1 error generated.
+
+  cargo:warning=1 error generated.
+
+  cargo:warning=1 error generated.
+
+
+  exit status: 1
+  cargo:warning=ToolExecError: Command "clang" "-O3" "-ffunction-sections" "-fdata-sections" "-fPIC" "--target=wasm32-wasi" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-fvisibility=hidden" "-DXXH_STATIC_ASSERT=0" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-o" "/home/unixuser/code/wasm-assessment/target/wasm32-wasi/release/build/zstd-sys-6597f0f88add8d76/out/zstd/lib/compress/zstdmt_compress.o" "-c" "zstd/lib/compress/zstdmt_compress.c" with args "clang" did not execute successfully (status code exit status: 1).
+  exit status: 1
+  cargo:warning=ToolExecError: Command "clang" "-O3" "-ffunction-sections" "-fdata-sections" "-fPIC" "--target=wasm32-wasi" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-fvisibility=hidden" "-DXXH_STATIC_ASSERT=0" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-o" "/home/unixuser/code/wasm-assessment/target/wasm32-wasi/release/build/zstd-sys-6597f0f88add8d76/out/zstd/lib/decompress/huf_decompress.o" "-c" "zstd/lib/decompress/huf_decompress.c" with args "clang" did not execute successfully (status code exit status: 1).
+  exit status: 1
+  cargo:warning=ToolExecError: Command "clang" "-O3" "-ffunction-sections" "-fdata-sections" "-fPIC" "--target=wasm32-wasi" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-fvisibility=hidden" "-DXXH_STATIC_ASSERT=0" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-o" "/home/unixuser/code/wasm-assessment/target/wasm32-wasi/release/build/zstd-sys-6597f0f88add8d76/out/zstd/lib/decompress/zstd_ddict.o" "-c" "zstd/lib/decompress/zstd_ddict.c" with args "clang" did not execute successfully (status code exit status: 1).
+  exit status: 1
+  cargo:warning=ToolExecError: Command "clang" "-O3" "-ffunction-sections" "-fdata-sections" "-fPIC" "--target=wasm32-wasi" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-fvisibility=hidden" "-DXXH_STATIC_ASSERT=0" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-o" "/home/unixuser/code/wasm-assessment/target/wasm32-wasi/release/build/zstd-sys-6597f0f88add8d76/out/zstd/lib/decompress/zstd_decompress.o" "-c" "zstd/lib/decompress/zstd_decompress.c" with args "clang" did not execute successfully (status code exit status: 1).
+  exit status: 1
+  cargo:warning=ToolExecError: Command "clang" "-O3" "-ffunction-sections" "-fdata-sections" "-fPIC" "--target=wasm32-wasi" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-fvisibility=hidden" "-DXXH_STATIC_ASSERT=0" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-o" "/home/unixuser/code/wasm-assessment/target/wasm32-wasi/release/build/zstd-sys-6597f0f88add8d76/out/zstd/lib/decompress/zstd_decompress_block.o" "-c" "zstd/lib/decompress/zstd_decompress_block.c" with args "clang" did not execute successfully (status code exit status: 1).
+  exit status: 0
+
+  --- stderr
+
+
+  error occurred: Command "clang" "-O3" "-ffunction-sections" "-fdata-sections" "-fPIC" "--target=wasm32-wasi" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-fvisibility=hidden" "-DXXH_STATIC_ASSERT=0" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-o" "/home/unixuser/code/wasm-assessment/target/wasm32-wasi/release/build/zstd-sys-6597f0f88add8d76/out/zstd/lib/decompress/zstd_decompress_block.o" "-c" "zstd/lib/decompress/zstd_decompress_block.c" with args "clang" did not execute successfully (status code exit status: 1).
+
+

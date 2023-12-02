@@ -1,13 +1,14 @@
-use parquet2;
-
 #[cfg(feature = "wasm_multithread")]
-fn read() {
+pub fn read() {
+    use parquet2;
     use std::fs::File;
     use std::thread;
 
-    use parquet2::read::{get_page_iterator, read_metadata, Page};
+    use parquet2::page::Page;
+    use parquet2::read::{get_page_iterator, read_metadata};
 
-    let mut file = File::open("resource/data1.parquet").unwrap();
+    let mut file = File::open("tmp/House_Price.parquet").unwrap();
+    /*
 
     /// here we read the metadata.
     let metadata = read_metadata(&mut file)?;
@@ -31,7 +32,7 @@ fn read() {
     let handles = vec![];
     for column in columns {
         let compressed_pages =
-            get_page_iterator(&metadata, row_group, column, &mut file, file)?.collect()?;
+        get_page_iterator(&metadata, row_group, column, &mut file, file)?.collect()?;
         // each compressed_page has a buffer; cloning is expensive(!). We move it so that the memory
         // is released at the end of the processing.
         handles.push(thread::spawn(move || {
@@ -39,4 +40,5 @@ fn read() {
         }))
     }
     let columns_from_all_groups = handles.join_all();
+    */
 }
