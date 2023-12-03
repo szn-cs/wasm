@@ -33,10 +33,11 @@ ___
 - WASI spec https://wasi.dev/
     - Wasmer extension WASIX https://wasix.org/docs 
     - https://doc.rust-lang.org/stable/nightly-rustc/rustc_target/spec/wasm32_wasi/index.html 
-    - https://github.com/bytecodealliance/wasmtime/blob/main/docs/WASI-tutorial.md
-- Threads draft spec & proposal
-    - https://github.com/WebAssembly/threads
-    - https://github.com/WebAssembly/wasi-threads
+    - https://github.com/bytecodealliance/wasmtime/blob/main/docs/WASI-tutorial.md 
+    - https://github.com/WebAssembly/WASI/tree/main
+        - https://github.com/WebAssembly/WASI/blob/main/Proposals.md
+            - https://github.com/WebAssembly/wasi-threads
+        - draft spec & proposal https://github.com/WebAssembly/threads
 - Capability based security https://github.com/bytecodealliance/wasmtime/blob/main/docs/WASI-capabilities.md
 
 
@@ -68,6 +69,15 @@ ___
 - Arrow thread https://arrow.apache.org/docs/cpp/threading.html
 - Mutlithread parquet2 Rust https://rustrepo.com/repo/jorgecarleitao-parquet2 
 - https://medium.com/@learnwithshobhit/web-assembly-feasibility-analysis-in-a-nutshell-wasi-wasm-762c231474ff
+- performance measurement wasm ("Exploit Parallelism for...") https://youtu.be/g8JHCcMc79s
+- WebAssembly Research Center https://www.cs.cmu.edu/wrc/
+- SIMD https://blog.dkwr.de/development/wasm-simd-operations/
+- wasm blog
+    - https://blog.dkwr.de/development/wasm-memory/
+    - https://blog.dkwr.de/development/wasm-control-flow/
+    - https://blog.dkwr.de/development/wasm-technical-view/
+    - https://blog.dkwr.de/development/wasi-rust/
+- https://pengowray.github.io/wasm-ops/
 
 # GPU 
 -   https://github.com/juj/wasm_webgpu

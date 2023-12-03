@@ -26,12 +26,19 @@ run() {
         cargo +nightly build -v --target wasm32-wasi --features example
         wasmer run ./target/wasm32-wasi/debug/example.wasm
         mkdir -p tmp && ./dependency/wabt/bin/wasm2wat ./target/wasm32-wasi/debug/example.wasm >tmp/example-\[wasm32-wasi,debug\].wat
+        hexdump -C -n64 ./target/wasm32-wasi/debug/example.wasm | head
     }
 
-    { # wasm-wasi - parquet parallel read → ❌ compilation error with parquet2
+    { # wasm-wasi - parquet2 → ❌ compilation error with parquet2
         cargo +nightly build -v --target wasm32-wasi --release --features wasm_multithread >./tmp/parquet2-compilation-error.txt 2>&1
         wasmer run ./target/wasm32-wasi/release/read_parquet_parallel.wasm
         wasmtime ./target/wasm32-wasi/release/read_parquet_parallel.wasm
+    }
+
+    { # wasm32-wasi-preview1-threads - parquet2 ✅
+        cargo +nightly build -v --target wasm32-wasi-preview1-threads --release --features wasm_multithread,example
+        RUST_BACKTRACE=1 wasmer run ./target/wasm32-wasi-preview1-threads/release/read_parquet_parallel.wasm
+        RUST_BACKTRACE=1 wasmer run ./target/wasm32-wasi-preview1-threads/release/example.wasm
     }
 
     { # wasm32-wasmer-wasi ✅
@@ -68,7 +75,8 @@ setup() {
     rustup target add wasm32-wasi
     rustup target add wasm32-unknown-unknown
     # rustup target add wasm64-unknown-unknown
-    # wasm32-wasi-preview1-threads https://doc.rust-lang.org/rustc/platform-support/wasm32-wasi-preview1-threads.html#wasm32-wasi-preview1-threads
+    # https://doc.rust-lang.org/rustc/platform-support/wasm32-wasi-preview1-threads.html#wasm32-wasi-preview1-threads
+    rustup target add wasm32-wasi-preview1-threads --toolchain nightly
 
     # Wasm runtimes
     curl https://wasmtime.dev/install.sh -sSf | bash
