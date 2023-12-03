@@ -1,3 +1,6 @@
 [submodule "dependency/wabt"]
 	path = dependency/wabt
 	url = https://github.com/WebAssembly/wabt
+[submodule "dependency/LangBench"]
+	path = dependency/LangBench
+	url = https://github.com/dsrg-uoft/LangBench

@@ -16,6 +16,14 @@ default-target = "wasm32-wasmer-wasi"
 # [package.metadata]
 # wasm-opt = true
 
+[[bin]]
+name = "example"
+required-features = ["example"]
+
+[[bin]]
+name = "read_parquet_parallel"
+required-features = ["wasm_multithread"]
+
 [dependencies]
 chrono = "0.4.31"
 parquet2 = { version = "0.17.2", optional = true }

@@ -1,8 +1,7 @@
 fn main() {
-    #[cfg(feature = "wasm_multithread")]
     {
         use wasm_assessment::parquet;
-        parquet::read();
+        let _ = parquet::read();
     }
 
     println!("done");

@@ -1,5 +1,3 @@
-#[cfg(feature = "example")]
-
 pub fn threads() {
     use rayon::prelude::*;
     use std::time;

@@ -1,4 +1,6 @@
+#[cfg(feature = "example")]
 pub mod example;
+#[cfg(feature = "wasm_multithread")]
 pub mod parquet;
 
 #[cfg(test)]

@@ -62,12 +62,14 @@ ___
 - ✅ https://hacks.mozilla.org/2019/03/standardizing-wasi-a-webassembly-system-interface/
 - UDF functions https://www.pingcap.com/blog/how-webassembly-powers-databases-build-a-udf-engine-with-wasm/
 - https://www.pingcap.com/blog/how-webassembly-powers-databases-build-a-udf-engine-with-wasm/
-- Different types of parquet files: https://www.legendu.net/misc/blog/read-and-write-parquet-files-in-rust/
-- Parquet in Rust https://jorgecarleitao.medium.com/parquet-with-rust-336a667a9426
-- Parquet info & wasm https://github.com/kylebarron/parquet-wasm/tree/main
-- Benchmark multithread parquet https://wesmckinney.com/blog/python-parquet-multithreading/
-- Arrow thread https://arrow.apache.org/docs/cpp/threading.html
-- Mutlithread parquet2 Rust https://rustrepo.com/repo/jorgecarleitao-parquet2 
+- Data formats:
+    - Different types of parquet files: https://www.legendu.net/misc/blog/read-and-write-parquet-files-in-rust/
+    - Parquet in Rust https://jorgecarleitao.medium.com/parquet-with-rust-336a667a9426
+    - Parquet info & wasm https://github.com/kylebarron/parquet-wasm/tree/main
+    - Benchmark multithread parquet https://wesmckinney.com/blog/python-parquet-multithreading/
+    - Arrow thread https://arrow.apache.org/docs/cpp/threading.html
+    - Mutlithread parquet2 Rust https://rustrepo.com/repo/jorgecarleitao-parquet2 
+    - https://dkharazi.github.io/blog/parquet 
 - https://medium.com/@learnwithshobhit/web-assembly-feasibility-analysis-in-a-nutshell-wasi-wasm-762c231474ff
 - performance measurement wasm ("Exploit Parallelism for...") https://youtu.be/g8JHCcMc79s
 - WebAssembly Research Center https://www.cs.cmu.edu/wrc/
