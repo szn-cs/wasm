@@ -8,6 +8,7 @@ edition = "2021"
 [features]
 wasm_multithread = ["parquet2"]
 example = []
+parallel_read = ["arrow2"]
 
 [package.metadata.docs.rs]
 all-features = true
@@ -24,7 +25,12 @@ required-features = ["example"]
 name = "read_parquet_parallel"
 required-features = ["wasm_multithread"]
 
+[[bin]]
+name = "parallel_read"
+required-features = ["parallel_read"]
+
 [dependencies]
+arrow2 = { version = "0.18.0", optional = true }
 chrono = "0.4.31"
 parquet2 = { version = "0.17.2", optional = true }
 rayon = "1.8.0"

@@ -19,7 +19,7 @@ run() {
     }
 
     { # wasm32-wasmer-wasi → ❌ error: linking with `rust-lld` failed: exit status: 1
-        cargo +nightly wasix build -v --features wasm_multithread
+        cargo +nightly wasix build -v --release --features wasm_multithread
         wasmer run --mapdir ./resource/:./resource/ ./target/wasm32-wasmer-wasi/release/read_parquet_parallel.wasm
     }
 

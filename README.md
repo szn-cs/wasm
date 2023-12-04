@@ -70,6 +70,7 @@ ___
     - Arrow thread https://arrow.apache.org/docs/cpp/threading.html
     - Mutlithread parquet2 Rust https://rustrepo.com/repo/jorgecarleitao-parquet2 
     - https://dkharazi.github.io/blog/parquet 
+- Arrow2 implementation [API](https://jorgecarleitao.github.io/arrow2/main/docs/arrow2); [Guide](https://jorgecarleitao.github.io/arrow2/main/guide)
 - https://medium.com/@learnwithshobhit/web-assembly-feasibility-analysis-in-a-nutshell-wasi-wasm-762c231474ff
 - performance measurement wasm ("Exploit Parallelism for...") https://youtu.be/g8JHCcMc79s
 - WebAssembly Research Center https://www.cs.cmu.edu/wrc/
