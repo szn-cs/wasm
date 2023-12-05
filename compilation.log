@@ -1,0 +1,94 @@
+     Running "cargo" "+wasix" "build" "--target" "wasm32-wasmer-wasi" "--message-format" "json-render-diagnostics" "-v" "--release" "--features" "parallel_read"
+       Fresh autocfg v1.1.0
+       Fresh unicode-ident v1.0.12
+       Fresh cfg-if v1.0.0
+       Fresh pkg-config v0.3.27
+       Fresh pin-project-lite v0.2.13
+       Fresh futures-sink v0.3.29
+       Fresh memchr v2.6.4
+       Fresh pin-utils v0.1.0
+       Fresh futures-io v0.3.29
+       Fresh alloc-no-stdlib v2.0.4
+       Fresh proc-macro2 v1.0.70
+       Fresh futures-core v0.3.29
+       Fresh slab v0.4.9
+       Fresh libc v0.2.150
+       Fresh futures-task v0.3.29
+       Fresh version_check v0.9.4
+       Fresh alloc-stdlib v0.2.2
+       Fresh memoffset v0.9.0
+       Fresh crossbeam-utils v0.8.16
+       Fresh quote v1.0.33
+       Fresh jobserver v0.1.27
+       Fresh futures-channel v0.3.29
+       Fresh semver v1.0.20
+       Fresh wasi v0.11.0+wasi-snapshot-preview1
+       Fresh adler v1.0.2
+       Fresh scopeguard v1.2.0
+       Fresh brotli-decompressor v2.5.1
+       Fresh once_cell v1.18.0
+       Fresh fallible-streaming-iterator v0.1.9
+       Fresh syn v2.0.39
+       Fresh cc v1.0.83
+       Fresh crossbeam-epoch v0.9.15
+       Fresh crc32fast v1.3.2
+       Fresh rustc_version v0.4.0
+       Fresh miniz_oxide v0.7.1
+       Fresh getrandom v0.2.11
+       Fresh zerocopy v0.7.29
+       Fresh array-init-cursor v0.2.0
+       Fresh streaming-decompression v0.1.2
+       Fresh snap v1.1.1
+       Fresh num-traits v0.2.17
+       Fresh brotli v3.4.0
+       Fresh futures-macro v0.3.29
+       Fresh async-trait v0.1.74
+       Fresh async-stream-impl v0.3.5
+       Fresh serde_derive v1.0.193
+       Fresh flate2 v1.0.28
+       Fresh planus v0.3.1
+       Fresh ahash v0.8.6
+       Fresh crossbeam-deque v0.8.3
+       Fresh bytemuck_derive v1.5.0
+       Fresh seq-macro v0.3.5
+       Fresh either v1.9.0
+       Fresh xxhash-rust v0.8.7
+       Fresh chrono v0.4.31
+       Fresh futures-util v0.3.29
+       Fresh async-stream v0.3.5
+       Fresh serde v1.0.193
+       Fresh bytemuck v1.14.0
+       Fresh hashbrown v0.14.3
+       Fresh rayon-core v1.12.0
+       Fresh foreign_vec v0.1.0
+       Fresh hash_hasher v2.0.3
+       Fresh ethnum v1.5.0
+       Fresh dyn-clone v1.0.16
+       Fresh base64 v0.21.5
+       Fresh streaming-iterator v0.1.9
+       Fresh simdutf8 v0.1.4
+       Fresh futures-executor v0.3.29
+       Fresh zstd-sys v2.0.9+zstd.1.5.5
+       Fresh lz4-sys v1.9.4
+       Fresh arrow-format v0.8.1
+       Fresh rayon v1.8.0
+       Fresh log v0.4.20
+       Fresh futures v0.3.29
+       Fresh zstd-safe v6.0.6
+       Fresh lz4 v1.24.0
+       Fresh parquet-format-safe v0.2.4
+       Fresh zstd v0.12.4
+       Fresh parquet2 v0.17.2
+       Fresh arrow2 v0.18.0
+warning: unused import: `error::Error`
+ --> src/parallel_read/mod.rs:6:5
+  |
+6 |     error::Error,
+  |     ^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` on by default
+
+warning: `wasm_assessment` (lib) generated 1 warning (run `cargo fix --lib -p wasm_assessment` to apply 1 suggestion)
+       Fresh wasm_assessment v0.1.0 (/home/unixuser/code/wasm-assessment)
+    Finished release [optimized] target(s) in 0.03s
+info: Post-processing WebAssembly files

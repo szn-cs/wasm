@@ -1,5 +1,15 @@
+___
 wasmer 4.2.4
 cargo-wasix 0.1.23
 wasmtime-cli 15.0.1
-rustc 1.76.0-nightly (87e1447aa 2023-11-30)
-cargo 1.76.0-nightly (26333c732 2023-11-28)
+rustc 1.76.0-nightly (0e2dac837 2023-12-04)
+cargo 1.76.0-nightly (623b78849 2023-12-02)
+gcc (Debian 12.2.0-14) 12.2.0
+Copyright (C) 2022 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+Debian clang version 14.0.6
+Target: x86_64-pc-linux-gnu
+Thread model: posix
+InstalledDir: /usr/bin
