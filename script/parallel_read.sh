@@ -19,7 +19,8 @@ run() {
     }
 
     { # wasm32-wasmer-wasi → ✅
-        CC=clang-17 cargo +nightly wasix build -v --release --features parallel_read >compilation.log 2>&1
+        CC=clang-17 cargo +nightly wasix build -v --release --features parallel_read 
+        # >./tmp/compilation.log 2>&1
         wasmer run --mapdir ./resource/:./resource/ ./target/wasm32-wasmer-wasi/release/parallel_read.wasm
     }
 

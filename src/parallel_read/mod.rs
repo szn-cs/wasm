@@ -1,5 +1,7 @@
 //! check guide https://jorgecarleitao.github.io/arrow2/main/guide/io/parquet_read.html
 
+pub mod generic_parallel_read;
+
 use arrow2::{
     array::{Array, PrimitiveArray, Utf8Array},
     chunk::Chunk,
