@@ -29,6 +29,14 @@ required-features = ["wasm_multithread"]
 name = "parallel_read"
 required-features = ["parallel_read"]
 
+[[bin]]
+name = "generic_parallel_read"
+required-features = ["parallel_read"]
+
+[[bin]]
+name = "parallel_write_parquet"
+required-features = ["parallel_read"]
+
 [dependencies]
 arrow2 = { version = "0.18.0", optional = true, default-features = false, features = [
     "io_parquet",
