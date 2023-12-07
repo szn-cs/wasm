@@ -89,6 +89,8 @@ ___
 
 ## TODO
 - [x] WASI + WASIX
-- [ ] Parquet2 parallel read
+- [x] Parquet2 parallel read (deserialization)
+- [x] Parquet2 parallel write (deserialization + compression) ❌ runtime error: `memory allocation of 811043 bytes failed
+error: RuntimeError: unreachable;` 
 - [ ] performance under docker
 - [ ] Intergrate benchmark implementations
