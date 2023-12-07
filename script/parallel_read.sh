@@ -25,9 +25,11 @@ run() {
     { # wasm32-wasmer-wasi → ❌ runtime error: parallel_write_parquet allocation of memory limit
         CC=clang-17 cargo +nightly wasix build -v --release --features parallel_read
         # >./tmp/compilation.log 2>&1
+
+        set RUST_BACKTRACE=full
         wasmer run --mapdir ./resource/:./resource/ ./target/wasm32-wasi/release/parallel_read.wasm
         wasmer run --mapdir ./resource/:./resource/ ./target/wasm32-wasi/release/generic_parallel_read.wasm
-        wasmer run --mapdir ./resource/:./resource/ ./target/wasm32-wasi/release/parallel_write_parquet.wasm
+        wasmer run --mapdir ./resource/:./resource/ ./target/wasm32-wasi/release/parallel_write_parquet.wasm >runtime-error-[parallel_write_parquet.wasm] 2>&1
     }
 
 }
