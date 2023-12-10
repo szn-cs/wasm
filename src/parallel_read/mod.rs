@@ -14,10 +14,6 @@ use arrow2::{
 use rayon::prelude::*;
 use std::{env, fs::File, io::BufReader, time::SystemTime};
 
-pub fn run() {
-    let _ = run_multithread();
-}
-
 /// Advances each iterator in parallel
 /// # Panic
 /// If the iterators are empty
@@ -112,19 +108,14 @@ fn parallel_read(path: &str, row_group: usize) -> Result<()> {
     Ok(())
 }
 
-pub fn run_multithread() -> Result<()> {
-    let args: Vec<String> = env::args().collect();
-    let file_path = if args.len() > 1 {
-        &args[1]
-    } else {
-        "./resource/House_Price.parquet"
-    };
+pub fn run_multithread(file_path: &str, num_threads: usize) -> Result<()> {
+    let row_group = 0; // row group to read
 
-    let row_group = if args.len() > 2 {
-        args[2].parse::<usize>().unwrap()
-    } else {
-        0
-    };
+    rayon::ThreadPoolBuilder::new()
+        .num_threads(num_threads)
+        .build_global()
+        // .build()
+        .unwrap();
 
     let start = SystemTime::now();
     parallel_read(file_path, row_group)?;

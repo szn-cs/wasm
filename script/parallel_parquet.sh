@@ -36,6 +36,5 @@ run() {
         # calc := size * 4 byte entry * 2 stack/heap; i.e. 4G / 4 / 2 - stack used by binary (~50 KB) - parallel_write function implementation used stack & heap;
 
         perf mem -a wasmer run -v --mapdir ./resource/:./resource/ ./target/wasm32-wasmer-wasi/release/parallel_write_parquet.wasm 10000000
-
     }
 }
