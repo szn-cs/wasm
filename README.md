@@ -30,6 +30,7 @@ ___
 - https://drive.google.com/drive/folders/1RMy9SZ-34iHI8cfmK6wWZ_RtFOJ25OfS
 - https://webassembly.github.io/spec/
     - https://webassembly.github.io/spec/core/index.html
+    - support https://bytecodealliance.zulipchat.com/ 
 - WASI spec https://wasi.dev/
     - Wasmer extension WASIX https://wasix.org/docs 
     - https://doc.rust-lang.org/stable/nightly-rustc/rustc_target/spec/wasm32_wasi/index.html 
@@ -39,6 +40,7 @@ ___
             - https://github.com/WebAssembly/wasi-threads
         - draft spec & proposal https://github.com/WebAssembly/threads
 - Capability based security https://github.com/bytecodealliance/wasmtime/blob/main/docs/WASI-capabilities.md
+
 
 
 - tools
@@ -71,6 +73,7 @@ ___
     - Mutlithread parquet2 Rust https://rustrepo.com/repo/jorgecarleitao-parquet2 
     - https://dkharazi.github.io/blog/parquet 
 - Arrow2 implementation [API](https://jorgecarleitao.github.io/arrow2/main/docs/arrow2); [Guide](https://jorgecarleitao.github.io/arrow2/main/guide)
+    - Arrow2 Arrays are always immutable (at least not growable), thus no append operation is possible;
 - https://medium.com/@learnwithshobhit/web-assembly-feasibility-analysis-in-a-nutshell-wasi-wasm-762c231474ff
 - performance measurement wasm ("Exploit Parallelism for...") https://youtu.be/g8JHCcMc79s
 - WebAssembly Research Center https://www.cs.cmu.edu/wrc/
@@ -92,5 +95,20 @@ ___
 - [x] Parquet2 parallel read (deserialization)
 - [x] Parquet2 parallel write (deserialization + compression) ❌ runtime error: `memory allocation of 811043 bytes failed
 error: RuntimeError: unreachable;` 
+- [ ] wasm64-unknown-unknown target for larger space x64
 - [ ] performance under docker
 - [ ] Intergrate benchmark implementations
+- [ ] scales not linearily with array size growth (marshelling and copying data); Individual processes on chucks of data; Show that there is a big gap between wasm and native execution; 
+
+
+___
+
+# memory
+- 64KiB memory page
+- 2^16 * 64KiB = 4GiB bytes   i.e. 32-bit address = 16-bits for pages & 16-bits dedicated for bytes
+    - mem spec https://webassembly.github.io/spec/core/exec/runtime.html#memory-instances 
+    - In the current version of WebAssembly, at most one memory is allowed in a module.
+- Multiple-memory proposal: https://github.com/WebAssembly/multi-memory/blob/main/proposals/multi-memory/Overview.md
+- shared-memory is imported to the module from the host: https://github.com/wasmerio/wasmer/issues/2284
+- memories: in current version only a single memory can be defined/imported in a single module; 
+

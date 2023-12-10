@@ -70,8 +70,8 @@ fn parallel_write(path: &str, schema: Schema, chunks: &[Chunk]) -> Result<()> {
     let row_groups = chunks.iter().map(|chunk| {
         // write batch to pages; parallelized by rayon
         let columns = chunk
-            .columns()
-            .par_iter()
+            .columns() // Arrays in the Chunk
+            .par_iter() // parallelize
             .zip(parquet_schema.fields().to_vec())
             .zip(encodings.par_iter())
             .flat_map(move |((array, type_), encoding)| {
@@ -117,9 +117,15 @@ fn parallel_write(path: &str, schema: Schema, chunks: &[Chunk]) -> Result<()> {
 }
 
 fn create_chunk(size: usize) -> Result<Chunk> {
+    // NOTE: all types implementing Array are immutable (no append operation);
+    // let c1: Int32Array = Int32Array::new_empty(DataType::Int32);
+    // let c1: Box<dyn Array> = c1.boxed();
+    // println!("{}", c1.is_empty());
+
     let c1: Int32Array = (0..size)
         .map(|x| if x % 9 == 0 { None } else { Some(x as i32) })
-        .collect();
+        .collect::<Int32Array>();
+
     let c2: Utf8Array<i64> = (0..size)
         .map(|x| {
             if x % 8 == 0 {
@@ -138,24 +144,24 @@ fn create_chunk(size: usize) -> Result<Chunk> {
     ])
 }
 
-pub fn run() -> Result<()> {
+pub fn run(array_size: usize, num_threads: usize) -> Result<()> {
+    rayon::ThreadPoolBuilder::new()
+        .num_threads(num_threads)
+        .build_global()
+        // .build()
+        .unwrap();
+
+    let chunk = create_chunk(array_size)?;
     let fields = vec![
         Field::new("c1", DataType::Int32, true),
         Field::new("c2", DataType::Int32, true),
         Field::new("c3", DataType::Int32, true),
         Field::new("c4", DataType::LargeUtf8, true),
     ];
-    let args: Vec<String> = env::args().collect();
-
-    let size = if args.len() > 1 {
-        args[1].parse::<usize>().unwrap()
-    } else {
-        100_000_000
-    };
-    let chunk = create_chunk(size)?;
 
     let start = std::time::SystemTime::now();
     parallel_write("./resource/example.parquet", fields.into(), &[chunk])?;
     println!("took: {} ms", start.elapsed().unwrap().as_millis());
+
     Ok(())
 }

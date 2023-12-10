@@ -5,6 +5,10 @@ name = "wasm_assessment"
 version = "0.1.0"
 edition = "2021"
 
+[package.metadata]
+# speedup compilation by disabling wasm optimization step
+# wasm-opt = false
+
 [features]
 wasm_multithread = ["parquet2"]
 example = []
@@ -13,9 +17,6 @@ parallel_read = ["arrow2", "parquet2"]
 [package.metadata.docs.rs]
 all-features = true
 default-target = "wasm32-wasmer-wasi"
-
-# [package.metadata]
-# wasm-opt = true
 
 [[bin]]
 name = "example"
@@ -44,5 +45,9 @@ arrow2 = { version = "0.18.0", optional = true, default-features = false, featur
 ] }
 chrono = "0.4.31"
 log = "0.4.20"
+num_cpus = "1.16.0"
 parquet2 = { version = "0.17.2", optional = true }
 rayon = "1.8.0"
+
+[dev-dependencies]
+wasmer = "4.2.4"

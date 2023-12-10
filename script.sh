@@ -8,6 +8,10 @@ run() {
     source ./script/wasm_multithread.sh
 }
 
+tool() {
+    ./dependency/wabt/bin/wasm-objdump -x export.wasm
+}
+
 benchmark_env() {
     sbatch ./slurm.sh && watch -n 2 --differences=cumulative "squeue -u <user>"
 }
@@ -70,6 +74,11 @@ setup() {
     {
         sudo apt install -y build-essential cmake ninja-build
         (cd ./dependency/wabt && git submodule update --init && make)
+    }
+
+    # general tools
+    {
+        sudo apt install linux-perf
     }
 }
 
