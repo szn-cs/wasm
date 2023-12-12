@@ -13,7 +13,7 @@ fn main() {
             n = args[1].clone().trim_end().parse::<usize>().unwrap(); // e.g. n = 50_000_000
             t = args[2].clone().trim_end().parse::<usize>().unwrap();
         } else {
-            n = 50_000_000;
+            n = 10_000_000;
             t = num_cpus::get();
         }
 
