@@ -1,5 +1,6 @@
 use num_cpus;
 use std::env;
+use wasm_assessment::parallel_read::parallel_write_parquet;
 
 fn main() {
     {
@@ -16,9 +17,9 @@ fn main() {
             t = num_cpus::get();
         }
 
-        use wasm_assessment::parallel_read::parallel_write_parquet;
-        let _ = parallel_write_parquet::run(n, t);
-    }
+        let maximum_vthreads = 40; // Euler: logical cores = 2 sockets * 10 cores per socket * 2  Threads per core
+        let num_columns = maximum_vthreads; // aim for maximum number of vThreds (# cores * 2)
 
-    println!("done");
+        let _ = parallel_write_parquet::run(num_columns, n, t);
+    }
 }

@@ -6,7 +6,11 @@ run() {
         CC=clang-17 cargo +nightly build -v --features parallel_read &&
             RUST_BACKTRACE=1 ./target/debug/parallel_read &&
             RUST_BACKTRACE=1 ./target/debug/generic_parallel_read &&
-            RUST_BACKTRACE=1 ./target/debug/parallel_write_parquet
+            RUST_BACKTRACE=1 ./target/debug/parallel_write_parquet 10000000 16
+
+        # release
+        CC=clang-17 cargo +nightly build -v --release --features parallel_read && RUST_BACKTRACE=1 ./target/release/parallel_write_parquet 10000000 16
+
     }
 
     { # wasm-wasi → ❌ runtime error: parallel_write_parquet allocation of memory limit
@@ -29,12 +33,16 @@ run() {
         set RUST_BACKTRACE=full
         wasmer run -v --mapdir ./resource/:./resource/ ./target/wasm32-wasmer-wasi/release/parallel_read.wasm
         wasmer run -v --mapdir ./resource/:./resource/ ./target/wasm32-wasmer-wasi/release/generic_parallel_read.wasm
-        wasmer run -v --enable-all --mapdir ./resource/:./resource/ ./target/wasm32-wasmer-wasi/release/parallel_write_parquet.wasm 50000000 8
+        wasmer run -v --enable-all --mapdir ./resource/:./resource/ ./target/wasm32-wasmer-wasi/release/parallel_write_parquet.wasm 10000000 16
         wasmer cache clean
 
         # Max size = ~536,865,000
         # calc := size * 4 byte entry * 2 stack/heap; i.e. 4G / 4 / 2 - stack used by binary (~50 KB) - parallel_write function implementation used stack & heap;
 
-        perf mem -a wasmer run -v --mapdir ./resource/:./resource/ ./target/wasm32-wasmer-wasi/release/parallel_write_parquet.wasm 10000000
+        # perf mem -a wasmer run -v --mapdir ./resource/:./resource/ ./target/wasm32-wasmer-wasi/release/parallel_write_parquet.wasm 10000000
     }
+}
+
+tmp() {
+    CC=clang-17 cargo +nightly build -v --features parallel_read && RUST_BACKTRACE=1 ./target/debug/parallel_write_parquet
 }

@@ -44,6 +44,7 @@ arrow2 = { version = "0.18.0", optional = true, default-features = false, featur
     "io_parquet_compression",
 ] }
 chrono = "0.4.31"
+cmd_lib = "1.9.3"
 log = "0.4.20"
 num_cpus = "1.16.0"
 parquet2 = { version = "0.17.2", optional = true }

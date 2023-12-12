@@ -13,6 +13,14 @@ tool() {
 }
 
 benchmark_env() {
+    # show infomation on Euler nodes
+    scontrol show node euler01
+    lscpu
+
+    # transfer files
+    export USER=username
+    scp -r ./*.toml ./script ./src ${USER}@euler.wacc.wisc.edu:~/code/wasm
+
     sbatch ./slurm.sh && watch -n 2 --differences=cumulative "squeue -u <user>"
 }
 

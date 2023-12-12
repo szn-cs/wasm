@@ -116,7 +116,7 @@ fn parallel_write(path: &str, schema: Schema, chunks: &[Chunk]) -> Result<()> {
     Ok(())
 }
 
-fn create_chunk(size: usize) -> Result<Chunk> {
+fn create_chunk(size: usize, num_columns: usize) -> Result<Chunk> {
     // NOTE: all types implementing Array are immutable (no append operation);
     // let c1: Int32Array = Int32Array::new_empty(DataType::Int32);
     // let c1: Box<dyn Array> = c1.boxed();
@@ -136,32 +136,59 @@ fn create_chunk(size: usize) -> Result<Chunk> {
         })
         .collect();
 
-    Chunk::try_new(vec![
-        c1.clone().boxed(),
-        c1.clone().boxed(),
-        c1.boxed(),
-        c2.boxed(),
-    ])
+    let mut column_vector = Vec::new();
+    for i in (0..num_columns).skip(2) {
+        column_vector.push(if i % 2 == 0 {
+            c1.clone().boxed()
+        } else {
+            c2.clone().boxed()
+        });
+    }
+    // move ownership for last 2 elements
+    if (num_columns > 1) {
+        column_vector.push(c1.boxed());
+        if (num_columns > 2) {
+            column_vector.push(c2.boxed());
+        }
+    }
+
+    Chunk::try_new(column_vector)
 }
 
-pub fn run(array_size: usize, num_threads: usize) -> Result<()> {
+pub fn run(num_columns: usize, column_size: usize, num_threads: usize) -> Result<()> {
+    // check memory limits: ensure the stack usage and heap together doesn't exceed the total address space (rough estimate).
+    let (a, b) = (
+        (column_size * num_columns * 2) as u32,
+        (u32::MAX /* 4GB limit of memory */ - 2_u32.pow(20)/* assuming amount needed for other parts of the running program */),
+    );
+    assert!(a < b);
+
+    let file_path = "./resource/example.parquet";
+
     rayon::ThreadPoolBuilder::new()
         .num_threads(num_threads)
         .build_global()
         // .build()
         .unwrap();
 
-    let chunk = create_chunk(array_size)?;
-    let fields = vec![
-        Field::new("c1", DataType::Int32, true),
-        Field::new("c2", DataType::Int32, true),
-        Field::new("c3", DataType::Int32, true),
-        Field::new("c4", DataType::LargeUtf8, true),
-    ];
+    let mut fields = Vec::new();
+    for i in 0..num_columns {
+        fields.push(if i % 2 == 0 {
+            Field::new(format!("c{}", i), DataType::Int32, true)
+        } else {
+            Field::new(format!("c{}", i), DataType::LargeUtf8, true)
+        });
+    }
+
+    let chunk = create_chunk(column_size, num_columns)?;
 
     let start = std::time::SystemTime::now();
-    parallel_write("./resource/example.parquet", fields.into(), &[chunk])?;
-    println!("took: {} ms", start.elapsed().unwrap().as_millis());
+    parallel_write(&file_path, fields.into(), &[chunk])?;
+    let duration_ms = start.elapsed().unwrap().as_millis();
+
+    let file_size = std::fs::metadata(file_path)?.len();
+
+    println!("{}\n{}", duration_ms, file_size);
 
     Ok(())
 }

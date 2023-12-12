@@ -1,12 +1,14 @@
 #!/usr/bin/env zsh
+
 #SBATCH -p instruction
 #SBATCH --job-name=task
-#SBATCH --nodes=2
+#SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
-#SBATCH --cpus-per-task=20
+#SBATCH --cpus-per-task=40
 #SBATCH --time=00:10:00
 
-# srun -n 2 --cpu-bind=none ./target/task
+mkdir -p resource
 
-./target/scaling-analysis
+cargo +nightly build -v --features parallel_read --release
 
+./target/release/scaling-analysis
