@@ -100,7 +100,6 @@ error: RuntimeError: unreachable;`
 - [ ] Intergrate benchmark implementations
 - [ ] scales not linearily with array size growth (marshelling and copying data); Individual processes on chucks of data; Show that there is a big gap between wasm and native execution; 
 
-
 ___
 
 # memory

@@ -13,7 +13,7 @@ run() {
 
     }
 
-    { # wasm-wasi → ❌ runtime error: parallel_write_parquet allocation of memory limit
+    { # wasm-wasi → ❌ compilation error: clib issues;
         CC=clang-17 cargo +nightly build -v --target wasm32-wasi --release --features parallel_read
         wasmer run -v --mapdir ./resource/:./resource/ ./target/wasm32-wasi/release/parallel_read.wasm
         wasmer run -v --mapdir ./resource/:./resource/ ./target/wasm32-wasi/release/generic_parallel_read.wasm
@@ -45,4 +45,7 @@ run() {
 
 tmp() {
     CC=clang-17 cargo +nightly build -v --features parallel_read && RUST_BACKTRACE=1 ./target/debug/parallel_write_parquet
+
+    CC=clang-17 cargo +nightly wasix build -v --release --features parallel_read --bin parallel_write_parquet
+
 }

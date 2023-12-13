@@ -6,6 +6,9 @@ run() {
     source ./script/example.sh
     source ./script/parallel_read.sh
     source ./script/wasm_multithread.sh
+
+    cargo +nightly run -v --release --features plot --bin plot -- ./result/parallel_write_parquet_[30M,native].out
+    cargo +nightly run -v --release --features plot --bin plot -- ./result/parallel_write_parquet_[10M,native].out ./result/parallel_write_parquet_[10M.wasix].out
 }
 
 tool() {
@@ -20,8 +23,10 @@ benchmark_env() {
     # transfer files
     export USER=username
     scp -r ./*.toml ./script ./src ${USER}@euler.wacc.wisc.edu:~/code/wasm
+    scp -r ./target/wasm32-wasmer-wasi/release/*.wasm ${USER}@euler.wacc.wisc.edu:~/code/wasm/target/wasm32-wasmer-wasi/release/
+    mkdir -p resource
 
-    sbatch ./slurm.sh && watch -n 2 --differences=cumulative "squeue -u <user>"
+    sbatch ./script/slurm.sh && watch -n 2 --differences=cumulative "squeue -u ${USER}"
 }
 
 setup() {
@@ -65,6 +70,7 @@ setup() {
     {
         rustup +nightly toolchain install nightly-x86_64-unknown-linux-gnu
         cargo install cargo-wasix && cargo wasix --version && rustup toolchain list | grep wasix
+        rustup target add wasm32-wasmer-wasi
         rustup target add wasm32-wasi
         rustup target add wasm32-unknown-unknown
         # rustup target add wasm64-unknown-unknown
