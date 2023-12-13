@@ -3,14 +3,12 @@
 run() {
 
     { # native ✅
-        CC=clang-17 cargo +nightly build -v --features parallel_read &&
-            RUST_BACKTRACE=1 ./target/debug/parallel_read &&
-            RUST_BACKTRACE=1 ./target/debug/generic_parallel_read &&
-            RUST_BACKTRACE=1 ./target/debug/parallel_write_parquet 10000000 16
 
-        # release
-        CC=clang-17 cargo +nightly build -v --release --features parallel_read && RUST_BACKTRACE=1 ./target/release/parallel_write_parquet 10000000 16
-
+        # debug mode
+        CC=clang-17 cargo +nightly build -v --release --features parallel_read &&
+            RUST_BACKTRACE=1 ./target/release/parallel_read "./resource/train.parquet" 16 &&
+            RUST_BACKTRACE=1 ./target/release/generic_parallel_read &&
+            RUST_BACKTRACE=1 ./target/release/parallel_write_parquet 10000000 16
     }
 
     { # wasm-wasi → ❌ compilation error: clib issues;
@@ -31,7 +29,7 @@ run() {
         # >./tmp/compilation.log 2>&1
 
         set RUST_BACKTRACE=full
-        wasmer run -v --mapdir ./resource/:./resource/ ./target/wasm32-wasmer-wasi/release/parallel_read.wasm
+        wasmer run -v --mapdir ./resource/:./resource/ ./target/wasm32-wasmer-wasi/release/parallel_read.wasm "./resource/train.parquet" 16
         wasmer run -v --mapdir ./resource/:./resource/ ./target/wasm32-wasmer-wasi/release/generic_parallel_read.wasm
         wasmer run -v --enable-all --mapdir ./resource/:./resource/ ./target/wasm32-wasmer-wasi/release/parallel_write_parquet.wasm 10000000 16
         wasmer cache clean
@@ -44,8 +42,15 @@ run() {
 }
 
 tmp() {
+
+    # release
+    CC=clang-17 cargo +nightly build -v --release --features parallel_read --bin parallel_write_parquet && RUST_BACKTRACE=1 ./target/release/parallel_write_parquet 10000000 16
+    CC=clang-17 cargo +nightly build -v --release --features parallel_read --bin parallel_read
+
     CC=clang-17 cargo +nightly build -v --features parallel_read && RUST_BACKTRACE=1 ./target/debug/parallel_write_parquet
 
     CC=clang-17 cargo +nightly wasix build -v --release --features parallel_read --bin parallel_write_parquet
+
+    CC=clang-17 cargo +nightly wasix build -v --release --features parallel_read --bin parallel_read
 
 }

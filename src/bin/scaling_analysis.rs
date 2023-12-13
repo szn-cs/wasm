@@ -23,3 +23,24 @@ fn parallel_write_parquet() {
     }
     */
 }
+
+// NOTE: run sub-sections separately to clear caches
+fn parallel_read_arquet() {
+    println!("Native execution of parallel read:");
+    for t in 1..=40 {
+        // println!("Executing {}", n);
+        run_cmd!(
+            ./target/release/parallel_read "./resource/House_Price.parquet" $t
+        )?;
+    }
+
+    // ___
+
+    // println!("Wasm execution of parallel read:");
+    // for t in 1..=40 {
+    //     // println!("Executing {}", n);
+    //     run_cmd!(
+    //         wasmer run --enable-all --mapdir ./resource/:./resource/ ./target/wasm32-wasmer-wasi/release/./target/release/parallel_read.wasm "./resource/House_Price.parquet" $t
+    //     )?;
+    // }
+}

@@ -27,7 +27,7 @@ fn deserialize_parallel(iters: &mut [ArrayIter<'static>]) -> Result<Chunk<Box<dy
     Chunk::try_new(arrays.into_iter().map(|x| x.unwrap()).collect())
 }
 
-fn parallel_read(path: &str, row_group: usize) -> Result<()> {
+fn parallel_read(path: &str, row_group: usize) -> Result<(u32, u32)> {
     // open the file
     let mut file = BufReader::new(File::open(path)?);
 
@@ -43,10 +43,12 @@ fn parallel_read(path: &str, row_group: usize) -> Result<()> {
         .collect::<Vec<_>>();
     // println!("{:?}", &names);
 
-    let row_group_num = row_group;
     // select the row group from the metadata
     // let row_group = &metadata.row_groups[row_group];
+    let mut duration_ms = 0;
+    let mut count_processed_rows = 0;
     for row_group in metadata.row_groups.into_iter() {
+        // println!("row group: {:?}", row_group);
         let chunk_size = 1024 * 8 * 8;
 
         // read (IO-bounded) all columns into memory (use a subset of the fields to project)
@@ -63,49 +65,22 @@ fn parallel_read(path: &str, row_group: usize) -> Result<()> {
         let mut num_rows = row_group.num_rows();
         while num_rows > 0 {
             num_rows = num_rows.saturating_sub(chunk_size);
-            println!("[parquet/deserialize][start]");
+
+            // println!("[parquet/deserialize][start]");
+            let start = SystemTime::now();
             let chunk = deserialize_parallel(&mut columns)?;
-            println!("[parquet/deserialize][end][{}]", chunk.len());
+            duration_ms += start.elapsed().unwrap().as_millis();
+            // println!("[parquet/deserialize][end][{}]", chunk.len());
+
             assert!(!chunk.is_empty());
-            // dbg!(&chunk);
 
-            let offset = 0; // offset in group
-            let row = row_group_num + offset; // index row within all data
-            let arrays = chunk.arrays();
-
-            {
-                let f1 = 0;
-                let f2 = 5;
-                let f3 = 10;
-
-                let array_f1 = arrays[f1]
-                    .as_any()
-                    .downcast_ref::<PrimitiveArray<i64>>()
-                    .unwrap();
-
-                let array_f2 = arrays[f2]
-                    .as_any()
-                    .downcast_ref::<Utf8Array<i32>>()
-                    .unwrap();
-
-                let array_f3 = arrays[f3]
-                    .as_any()
-                    .downcast_ref::<PrimitiveArray<i64>>()
-                    .unwrap();
-
-                println!(
-                    "entry[{row}] = {}: {:?}, {}: {:?}, {}: {:?}",
-                    &names[f1],
-                    array_f1.get(offset).unwrap(),
-                    &names[f2],
-                    array_f2.get(offset).unwrap(),
-                    &names[f3],
-                    array_f3.get(offset).unwrap(),
-                );
-            }
+            count_processed_rows += chunk.len();
+            // arrays = chunk.arrays();
+            // dbg!(arrays);
         }
     }
-    Ok(())
+
+    Ok((duration_ms as u32, count_processed_rows as u32))
 }
 
 pub fn run_multithread(file_path: &str, num_threads: usize) -> Result<()> {
@@ -117,9 +92,47 @@ pub fn run_multithread(file_path: &str, num_threads: usize) -> Result<()> {
         // .build()
         .unwrap();
 
-    let start = SystemTime::now();
-    parallel_read(file_path, row_group)?;
-    println!("took: {} ms", start.elapsed().unwrap().as_millis());
+    let (duration_ms, total_processed_rows) = parallel_read(file_path, row_group)?;
+
+    println!("{}\n{}", duration_ms, total_processed_rows);
+
+    // example decoding of data:
+    /*
+        {
+            let row_group_num = row_group;
+            let offset = 0; // offset in group
+            let row = row_group_num + offset; // index row within all data
+
+            let f1 = 0;
+            let f2 = 5;
+            let f3 = 10;
+
+            let array_f1 = arrays[f1]
+            .as_any()
+                .downcast_ref::<PrimitiveArray<i64>>()
+                .unwrap();
+
+            let array_f2 = arrays[f2]
+            .as_any()
+            .downcast_ref::<Utf8Array<i32>>()
+            .unwrap();
+
+            let array_f3 = arrays[f3]
+            .as_any()
+            .downcast_ref::<PrimitiveArray<i64>>()
+            .unwrap();
+
+            println!(
+                "entry[{row}] = {}: {:?}, {}: {:?}, {}: {:?}",
+                &names[f1],
+                array_f1.get(offset).unwrap(),
+                &names[f2],
+                array_f2.get(offset).unwrap(),
+                &names[f3],
+                array_f3.get(offset).unwrap(),
+            );
+        }
+    */
 
     Ok(())
 }

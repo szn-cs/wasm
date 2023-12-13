@@ -23,6 +23,7 @@ benchmark_env() {
     # transfer files
     export USER=username
     scp -r ./*.toml ./script ./src ${USER}@euler.wacc.wisc.edu:~/code/wasm
+    # compile wasm locally and push to remote testbed
     scp -r ./target/wasm32-wasmer-wasi/release/*.wasm ${USER}@euler.wacc.wisc.edu:~/code/wasm/target/wasm32-wasmer-wasi/release/
     mkdir -p resource
 
@@ -93,6 +94,13 @@ setup() {
     # general tools
     {
         sudo apt install linux-perf
+    }
+
+    # download datasets
+    {
+        # https://www.tablab.app/datasets/sample/
+        # https://platform.opentargets.org/downloads
+        echo ""
     }
 }
 

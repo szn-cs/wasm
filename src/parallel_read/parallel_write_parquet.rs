@@ -167,8 +167,8 @@ pub fn run(num_columns: usize, column_size: usize, num_threads: usize) -> Result
 
     rayon::ThreadPoolBuilder::new()
         .num_threads(num_threads)
-        .build_global()
-        // .build()
+        .build_global() // fixed number of threads in pool (to initialize only once);
+        // .build() // non-global setting exhibits a dynamic behavior (see docs);
         .unwrap();
 
     let mut fields = Vec::new();
