@@ -9,7 +9,7 @@
 	
 - Scale-out: handling 100k or 1000s of requests per second. 
     - what is worthwhile and what budget there is to parallelize. Typically many of these operations in terms of pushdown are not parallelizable;
-	- Many of the opreations are pushdown to a highlt optimized specialized services for a particular operation (e.g. parsing, aggregation);  
+	- Many of the opreations are pushdown to a highly optimized specialized services for a particular operation (e.g. parsing, aggregation, filters, etc.);  
 
 - CSV & Parquet
 	- Parsing a CSV can be broken into chunks although the bottleneck is the disk; But parsing a Parquet file has more indexing built into it; Especially if doing aggregation can be split more easily and do parallelism on them; 
@@ -48,7 +48,8 @@ ___
     - https://github.com/WebAssembly/binaryen
     - wasm-opt
     - https://bytecodealliance.github.io/cargo-wasi/steps.html
-    - Datasets https://www.tablab.app/datasets/sample/parquet
+    - Datasets https://www.tablab.app/datasets/sample/parquet 
+    - https://github.com/bheisler/criterion.rs 
 -   Rust wasm modules for npm https://rustwasm.github.io/docs/wasm-pack/
 - https://github.com/rustwasm
 - https://doc.rust-lang.org/rustc/ 
@@ -83,7 +84,10 @@ ___
     - https://blog.dkwr.de/development/wasm-control-flow/
     - https://blog.dkwr.de/development/wasm-technical-view/
     - https://blog.dkwr.de/development/wasi-rust/
-- https://pengowray.github.io/wasm-ops/
+- https://pengowray.github.io/wasm-ops/ 
+- Performance analysis https://easyperf.net/blog/2019/10/05/Performance-Analysis-Of-MT-apps
+- http://www.roylongbottom.org.uk/linux%20multithreading%20benchmarks.htm 
+- https://www.anandtech.com/show/11425/launching-the-cpu-overload-project-testing-every-x86-desktop-processor-since-2010
 
 # GPU 
 -   https://github.com/juj/wasm_webgpu
