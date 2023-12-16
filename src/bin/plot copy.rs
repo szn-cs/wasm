@@ -17,14 +17,19 @@ fn plot() -> Result<(), Box<dyn std::error::Error>> {
     let output_filename: String = format!("{name}.png");
     println!("output path: {}", output_filename);
 
+    let mut data_processing: Vec<Vec<(u32, f32)>> = vec![];
+    for filename in data_files.iter().skip(1) {
+        data_processing.push(get_data_skip(&filename, 0));
+        println!("{:?}", filename);
+    }
     let mut data_total: Vec<Vec<(u32, f32)>> = vec![];
     for filename in data_files.iter().skip(1) {
-        data_total.push(get_data_f32(&filename));
+        data_total.push(get_data_skip(&filename, 1));
         println!("{:?}", filename);
     }
 
     let mut max: f32 = 0.0;
-    for d in data_total.iter() {
+    for d in data_processing.iter().chain(data_total.iter()) {
         let m = d.iter().map(|e| e.1).max_by(|a, b| a.total_cmp(b)).unwrap();
         // let m = d.iter().map(|e| e.1).max().unwrap();
         max = max.max(m);
@@ -41,7 +46,7 @@ fn plot() -> Result<(), Box<dyn std::error::Error>> {
     let mut chart = ChartBuilder::on(&root)
         .caption(
             // "Scaling analysis — Parallel write of Parquet file (30M enteries per thread)",
-            "CPU utilization — Parallel write of Parquet file (10M enteries per thread)",
+            "Scaling analysis — Parallel write of Parquet file (10M enteries per thread)",
             ("sans-serif", 30).into_font(),
         )
         .margin(10)
@@ -52,50 +57,50 @@ fn plot() -> Result<(), Box<dyn std::error::Error>> {
         .build_cartesian_2d(
             (range_vec.first().unwrap().clone()..range_vec.last().unwrap().clone())
                 .with_key_points(range_vec.into_iter().map(|v| v).collect()),
-            (0.0..max.clone() + 1.0),
+            (1.0..max.clone() + 1.0),
         )?;
 
     chart
         .configure_mesh()
         .x_desc("# of threads")
-        .y_desc("CPU Utilization")
+        .y_desc("Execution duration (ms)")
         .label_style(("sans-serif", 18))
         // .x_label_style(("sans-serif", 10))
         // .y_label_style(("sans-serif", 10))
         .draw()?;
 
-    // chart
-    //     .draw_series(PointSeries::of_element(
-    //         data_processing[0].clone(),
-    //         5,
-    //         &GREEN,
-    //         &|c, s, st| {
-    //             return EmptyElement::at(c)    // We want to construct a composed element on-the-fly
-    //                     + Circle::new((0,0),s,st.filled()); // At this point, the new pixel coordinate is established
-    //         },
-    //     ))
-    //     .unwrap()
-    //     .label("Processing: Rust native")
-    //     .legend(|(x, y)| PathElement::new(vec![(x, y), (x + 20, y)], &GREEN));
+    chart
+        .draw_series(PointSeries::of_element(
+            data_processing[0].clone(),
+            5,
+            &GREEN,
+            &|c, s, st| {
+                return EmptyElement::at(c)    // We want to construct a composed element on-the-fly
+                        + Circle::new((0,0),s,st.filled()); // At this point, the new pixel coordinate is established
+            },
+        ))
+        .unwrap()
+        .label("Processing: Rust native")
+        .legend(|(x, y)| PathElement::new(vec![(x, y), (x + 20, y)], &GREEN));
 
-    // chart
-    //     .draw_series(PointSeries::of_element(
-    //         data_processing[1].clone(),
-    //         5,
-    //         &MAGENTA,
-    //         &|c, s, st| {
-    //             return EmptyElement::at(c)    // We want to construct a composed element on-the-fly
-    //                     + Circle::new((0,0),s,st.filled()); // At this point, the new pixel coordinate is established
-    //         },
-    //     ))
-    //     .unwrap()
-    //     .label("Processing: Wasmer + Wasix")
-    //     .legend(|(x, y)| PathElement::new(vec![(x, y), (x + 20, y)], &MAGENTA));
+    chart
+        .draw_series(PointSeries::of_element(
+            data_processing[1].clone(),
+            5,
+            &MAGENTA,
+            &|c, s, st| {
+                return EmptyElement::at(c)    // We want to construct a composed element on-the-fly
+                        + Circle::new((0,0),s,st.filled()); // At this point, the new pixel coordinate is established
+            },
+        ))
+        .unwrap()
+        .label("Processing: Wasmer + Wasix")
+        .legend(|(x, y)| PathElement::new(vec![(x, y), (x + 20, y)], &MAGENTA));
 
     chart
         .draw_series(PointSeries::of_element(
             data_total[0].clone(),
-            5,
+            4,
             &RED,
             &|c, s, st| {
                 return EmptyElement::at(c)    // We want to construct a composed element on-the-fly
@@ -124,7 +129,7 @@ fn plot() -> Result<(), Box<dyn std::error::Error>> {
         .configure_series_labels()
         .border_style(&BLACK)
         .background_style(&WHITE.mix(0.8))
-        .position(SeriesLabelPosition::LowerRight)
+        .position(SeriesLabelPosition::UpperRight)
         .draw()
         .unwrap();
 
@@ -154,25 +159,6 @@ fn get_data(s: &str) -> Vec<(u32, u32)> {
         for line in lines.step_by(2).enumerate() {
             if let (i, Ok(s)) = line {
                 let duration: u32 = s.parse().unwrap();
-                data.push((range_vec[i], duration));
-                // data.push((range_vec[i], duration));
-                println!("data: {} @ line {}", duration, i);
-            }
-        }
-    };
-
-    data
-}
-
-fn get_data_f32(s: &str) -> Vec<(u32, f32)> {
-    let range_vec = get_range_vec();
-    let mut data = vec![];
-
-    if let Ok(lines) = read_lines(s) {
-        // Consumes the iterator, returns an (Optional) String
-        for line in lines.step_by(1).enumerate() {
-            if let (i, Ok(s)) = line {
-                let duration: f32 = s.parse().unwrap();
                 data.push((range_vec[i], duration));
                 // data.push((range_vec[i], duration));
                 println!("data: {} @ line {}", duration, i);

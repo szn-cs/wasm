@@ -23,6 +23,7 @@ ___
 - Wasmtime is used by 50% of respondents, up from 36% in 2022, followed by Wasmer (40%, up from 36%), Wasm3 (18%, up from 14%), WasmEdge (15%, up from 7%), and WebAssembly Micro Runtime (WAMR) (12%, up from 6%). Wazeroo is used by 12% and it was not asked about in previous surveys.
 - Wrap wasm sandbox into another container VM; Firecracker; 
 - Create a market place of WASM plugins that can manipulate raw data. e.g. implement table joins targeting specific tradeoffs; 
+- GSL is applied not MSR;
 
 # Resouces
 - https://github.com/dsrg-uoft/LangBench 
@@ -50,7 +51,11 @@ ___
     - https://bytecodealliance.github.io/cargo-wasi/steps.html
     - Datasets https://www.tablab.app/datasets/sample/parquet 
     - https://github.com/bheisler/criterion.rs 
--   Rust wasm modules for npm https://rustwasm.github.io/docs/wasm-pack/
+    - https://github.com/quepas/Compiler-benchmark-suites
+    - https://github.com/bamos/parsec-benchmark 
+    - https://github.com/kostya/benchmarks
+    - https://www.tu.berlin/aes/forschung/projekte/completed-projects/starbench-parallel-benchmark-suite
+-   Rust wasm modules for npm https://rustwasm.github.io/docs/wasm-pack/ 
 - https://github.com/rustwasm
 - https://doc.rust-lang.org/rustc/ 
 - https://developer.mozilla.org/en-US/docs/WebAssembly
@@ -97,13 +102,13 @@ ___
 ## TODO
 - [x] WASI + WASIX
 - [x] Parquet2 parallel read (deserialization)
-- [x] Parquet2 parallel write (deserialization + compression) ❌ runtime error: `memory allocation of 811043 bytes failed
+- [x] Parquet2 parallel write (deserialization + compression)
 error: RuntimeError: unreachable;` 
 - [ ] wasm64-unknown-unknown target for larger space x64
 - [ ] performance under docker
 - [ ] Intergrate benchmark implementations
 - [ ] scales not linearily with array size growth (marshelling and copying data); Individual processes on chucks of data; Show that there is a big gap between wasm and native execution; 
-
+- [ ] analyse "bytecode", MT methodology, 
 ___
 
 # memory

@@ -1,6 +1,6 @@
 //! Example demonstrating how to write to parquet in parallel. https://jorgecarleitao.github.io/arrow2/main/guide/io/parquet_write.html
 //!
-use std::{collections::VecDeque, env};
+use std::{collections::VecDeque, env, sync::atomic};
 
 use rayon::prelude::*;
 
@@ -42,7 +42,11 @@ impl FallibleStreamingIterator for Bla {
     }
 }
 
-fn parallel_write(path: &str, schema: Schema, chunks: &[Chunk]) -> Result<()> {
+fn print_type_of<T>(_: &T) {
+    println!("{}", std::any::type_name::<T>())
+}
+
+fn parallel_write(path: &str, schema: Schema, chunks: &[Chunk]) -> Result<usize> {
     // declare the options
     let options = WriteOptions {
         write_statistics: true,
@@ -67,53 +71,73 @@ fn parallel_write(path: &str, schema: Schema, chunks: &[Chunk]) -> Result<()> {
     // derive the parquet schema (physical types) from arrow's schema.
     let parquet_schema = to_parquet_schema(&schema)?;
 
-    let row_groups = chunks.iter().map(|chunk| {
-        // write batch to pages; parallelized by rayon
-        let columns = chunk
-            .columns() // Arrays in the Chunk
-            .par_iter() // parallelize
-            .zip(parquet_schema.fields().to_vec())
-            .zip(encodings.par_iter())
-            .flat_map(move |((array, type_), encoding)| {
-                let encoded_columns = array_to_columns(array, type_, options, encoding).unwrap();
-                encoded_columns
-                    .into_iter()
-                    .map(|encoded_pages| {
-                        let encoded_pages = DynIter::new(
-                            encoded_pages
-                                .into_iter()
-                                .map(|x| x.map_err(|e| ParquetError::OutOfSpec(e.to_string()))),
-                        );
-                        encoded_pages
-                            .map(|page| {
-                                compress(page?, vec![], options.compression).map_err(|x| x.into())
-                            })
-                            .collect::<Result<VecDeque<_>>>()
-                    })
-                    .collect::<Vec<_>>()
-            })
-            .collect::<Result<Vec<VecDeque<CompressedPage>>>>()?;
+    // let mut duration_processing_ms = &atomic::AtomicUsize::new(0);
+    let row_groups;
+    {
+        row_groups = chunks.into_iter().map(|chunk| {
+            // write batch to pages; parallelized by rayon
+            let columns = chunk
+                .columns() // Arrays in the Chunk
+                .par_iter() // parallelize
+                .zip(parquet_schema.fields().to_vec())
+                .zip(encodings.par_iter())
+                .flat_map(move |((array, type_), encoding)| {
+                    let result;
 
-        let row_group = DynIter::new(
-            columns
-                .into_iter()
-                .map(|column| Ok(DynStreamingIterator::new(Bla::new(column)))),
-        );
-        Result::Ok(row_group)
-    });
+                    // let start = std::time::SystemTime::now();
+                    {
+                        let encoded_columns =
+                            array_to_columns(array, type_, options, encoding).unwrap();
+                        result = encoded_columns
+                            .into_iter()
+                            .map(|encoded_pages| {
+                                let encoded_pages =
+                                    DynIter::new(encoded_pages.into_iter().map(|x| {
+                                        x.map_err(|e| ParquetError::OutOfSpec(e.to_string()))
+                                    }));
+                                encoded_pages
+                                    .map(|page| {
+                                        compress(page?, vec![], options.compression)
+                                            .map_err(|x| x.into())
+                                    })
+                                    .collect::<Result<VecDeque<_>>>()
+                            })
+                            .collect::<Vec<_>>()
+                    }
+                    // let duration_ms = start.elapsed().unwrap().as_millis();
+                    // duration_processing_ms
+                    //     .fetch_add(duration_ms as usize, atomic::Ordering::Relaxed);
+
+                    result
+                })
+                .collect::<Result<Vec<VecDeque<CompressedPage>>>>()?;
+
+            let row_group = DynIter::new(
+                columns
+                    .into_iter()
+                    .map(|column| Ok(DynStreamingIterator::new(Bla::new(column)))),
+            );
+            Result::Ok(row_group)
+        });
+    }
 
     // Create a new empty file
     let file = std::io::BufWriter::new(std::fs::File::create(path)?);
 
     let mut writer = FileWriter::try_new(file, schema, options)?;
 
+    let start = std::time::SystemTime::now();
+    let c = row_groups.collect::<Vec<_>>(); // activate lazy parallel iterator
+    let duration_ms = start.elapsed().unwrap().as_millis();
+
     // Write the file.
-    for group in row_groups {
+    for group in c {
         writer.write(group?)?;
     }
     let _size = writer.end(None)?;
 
-    Ok(())
+    // Ok(duration_processing_ms.load(atomic::Ordering::Relaxed))
+    Ok(duration_ms as usize)
 }
 
 fn create_chunk(size: usize, num_columns: usize) -> Result<Chunk> {
@@ -164,6 +188,7 @@ pub fn run(num_columns: usize, column_size: usize, num_threads: usize) -> Result
     assert!(a < b);
 
     let file_path = "./resource/example.parquet";
+    let start = std::time::SystemTime::now();
 
     rayon::ThreadPoolBuilder::new()
         .num_threads(num_threads)
@@ -180,15 +205,17 @@ pub fn run(num_columns: usize, column_size: usize, num_threads: usize) -> Result
         });
     }
 
+    // generate data
     let chunk = create_chunk(column_size, num_columns)?;
+    // process & write data
+    let duration_processing_ms = parallel_write(&file_path, fields.into(), &[chunk])?;
 
-    let start = std::time::SystemTime::now();
-    parallel_write(&file_path, fields.into(), &[chunk])?;
-    let duration_ms = start.elapsed().unwrap().as_millis();
-
+    let duration_total_ms = start.elapsed().unwrap().as_millis();
     let file_size = std::fs::metadata(file_path)?.len();
-
-    println!("{}\n{}", duration_ms, file_size);
+    println!(
+        "{}\n{}\n{}",
+        duration_processing_ms, duration_total_ms, file_size
+    );
 
     Ok(())
 }

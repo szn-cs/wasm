@@ -17,9 +17,14 @@ fn plot() -> Result<(), Box<dyn std::error::Error>> {
     let output_filename: String = format!("{name}.png");
     println!("output path: {}", output_filename);
 
+    let mut data_processing: Vec<Vec<(u32, f32)>> = vec![];
+    for filename in data_files.iter().skip(1) {
+        data_processing.push(get_data_skip(&filename, 0));
+        println!("{:?}", filename);
+    }
     let mut data_total: Vec<Vec<(u32, f32)>> = vec![];
     for filename in data_files.iter().skip(1) {
-        data_total.push(get_data_f32(&filename));
+        data_total.push(get_data_skip(&filename, 1));
         println!("{:?}", filename);
     }
 
@@ -41,7 +46,7 @@ fn plot() -> Result<(), Box<dyn std::error::Error>> {
     let mut chart = ChartBuilder::on(&root)
         .caption(
             // "Scaling analysis — Parallel write of Parquet file (30M enteries per thread)",
-            "CPU utilization — Parallel write of Parquet file (10M enteries per thread)",
+            "Performance scaling — Parallel write of Parquet file (10M enteries per thread)",
             ("sans-serif", 30).into_font(),
         )
         .margin(10)
@@ -52,13 +57,13 @@ fn plot() -> Result<(), Box<dyn std::error::Error>> {
         .build_cartesian_2d(
             (range_vec.first().unwrap().clone()..range_vec.last().unwrap().clone())
                 .with_key_points(range_vec.into_iter().map(|v| v).collect()),
-            (0.0..max.clone() + 1.0),
+            (1.0..max.clone() + 1.0),
         )?;
 
     chart
         .configure_mesh()
         .x_desc("# of threads")
-        .y_desc("CPU Utilization")
+        .y_desc("Speedup factor")
         .label_style(("sans-serif", 18))
         // .x_label_style(("sans-serif", 10))
         // .y_label_style(("sans-serif", 10))
@@ -124,7 +129,7 @@ fn plot() -> Result<(), Box<dyn std::error::Error>> {
         .configure_series_labels()
         .border_style(&BLACK)
         .background_style(&WHITE.mix(0.8))
-        .position(SeriesLabelPosition::LowerRight)
+        .position(SeriesLabelPosition::UpperRight)
         .draw()
         .unwrap();
 
@@ -154,25 +159,6 @@ fn get_data(s: &str) -> Vec<(u32, u32)> {
         for line in lines.step_by(2).enumerate() {
             if let (i, Ok(s)) = line {
                 let duration: u32 = s.parse().unwrap();
-                data.push((range_vec[i], duration));
-                // data.push((range_vec[i], duration));
-                println!("data: {} @ line {}", duration, i);
-            }
-        }
-    };
-
-    data
-}
-
-fn get_data_f32(s: &str) -> Vec<(u32, f32)> {
-    let range_vec = get_range_vec();
-    let mut data = vec![];
-
-    if let Ok(lines) = read_lines(s) {
-        // Consumes the iterator, returns an (Optional) String
-        for line in lines.step_by(1).enumerate() {
-            if let (i, Ok(s)) = line {
-                let duration: f32 = s.parse().unwrap();
                 data.push((range_vec[i], duration));
                 // data.push((range_vec[i], duration));
                 println!("data: {} @ line {}", duration, i);

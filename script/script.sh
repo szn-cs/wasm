@@ -9,6 +9,15 @@ run() {
 
     cargo +nightly run -v --release --features plot --bin plot -- ./result/parallel_write_parquet_[30M,native].out
     cargo +nightly run -v --release --features plot --bin plot -- ./result/parallel_write_parquet_[10M,native].out ./result/parallel_write_parquet_[10M.wasix].out
+    cargo +nightly run -v --release --features plot --bin plot -- ./result/parallel_write_parquet_[10M,native]_2.out ./result/parallel_write_parquet_[10M.wasix]_2.out
+    cargo +nightly run -v --release --features plot --bin plot -- ./result/parallel_write_parquet_[10M,native,cpu_util].out ./result/parallel_write_parquet_[10M,wasix,cpu_util].out
+
+    cargo +nightly build -v --features script --release --bin scaling_analysis
+
+    perf stat -- ./target/release/parallel_write_parquet 100 16
+    perf report -- ./target/release/parallel_write_parquet 100 16
+    perf stat -- wasmer run -v --enable-all --mapdir ./resource/:./resource/ ./target/wasm32-wasmer-wasi/release/parallel_write_parquet.wasm 10000000 16
+
 }
 
 tool() {
@@ -28,6 +37,8 @@ benchmark_env() {
     mkdir -p resource
 
     sbatch ./script/slurm.sh && watch -n 2 --differences=cumulative "squeue -u ${USER}"
+
+    scp -r ${USER}@euler.wacc.wisc.edu:~/code/wasm/slurm-* ./tmp/
 }
 
 setup() {
