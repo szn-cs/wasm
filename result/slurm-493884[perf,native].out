@@ -1,0 +1,1074 @@
+       Fresh autocfg v1.1.0
+       Fresh unicode-ident v1.0.12
+       Fresh cfg-if v1.0.0
+       Fresh pkg-config v0.3.27
+       Fresh futures-sink v0.3.29
+       Fresh pin-project-lite v0.2.13
+       Fresh futures-io v0.3.29
+       Fresh memchr v2.6.4
+       Fresh pin-utils v0.1.0
+       Fresh alloc-no-stdlib v2.0.4
+       Fresh version_check v0.9.4
+       Fresh adler v1.0.2
+       Fresh scopeguard v1.2.0
+       Fresh array-init-cursor v0.2.0
+       Fresh zerocopy v0.7.30
+       Fresh fallible-streaming-iterator v0.1.9
+       Fresh once_cell v1.19.0
+       Fresh seq-macro v0.3.5
+       Fresh either v1.9.0
+       Fresh iana-time-zone v0.1.58
+       Fresh xxhash-rust v0.8.7
+       Fresh dyn-clone v1.0.16
+       Fresh base64 v0.21.5
+       Fresh alloc-stdlib v0.2.2
+       Fresh miniz_oxide v0.7.1
+       Fresh planus v0.3.1
+       Fresh streaming-decompression v0.1.2
+       Fresh simdutf8 v0.1.4
+       Fresh foreign_vec v0.1.0
+       Fresh hash_hasher v2.0.3
+       Fresh streaming-iterator v0.1.9
+       Fresh ethnum v1.5.0
+       Fresh log v0.4.20
+       Fresh proc-macro2 v1.0.70
+       Fresh libc v0.2.151
+       Fresh futures-core v0.3.29
+       Fresh futures-task v0.3.29
+       Fresh slab v0.4.9
+       Fresh memoffset v0.9.0
+       Fresh semver v1.0.20
+       Fresh crossbeam-utils v0.8.16
+       Fresh crc32fast v1.3.2
+       Fresh brotli-decompressor v2.5.1
+       Fresh snap v1.1.1
+       Fresh num-traits v0.2.17
+       Fresh quote v1.0.33
+       Fresh jobserver v0.1.27
+       Fresh futures-channel v0.3.29
+       Fresh getrandom v0.2.11
+       Fresh crossbeam-epoch v0.9.15
+       Fresh rustc_version v0.4.0
+       Fresh flate2 v1.0.28
+       Fresh brotli v3.4.0
+       Fresh chrono v0.4.31
+       Fresh num_cpus v1.16.0
+       Fresh syn v2.0.41
+       Fresh cc v1.0.83
+       Fresh crossbeam-deque v0.8.3
+       Fresh ahash v0.8.6
+       Fresh futures-macro v0.3.29
+       Fresh async-stream-impl v0.3.5
+       Fresh serde_derive v1.0.193
+       Fresh async-trait v0.1.74
+       Fresh bytemuck_derive v1.5.0
+       Fresh hashbrown v0.14.3
+       Fresh rayon-core v1.12.0
+       Fresh futures-util v0.3.29
+       Fresh async-stream v0.3.5
+       Fresh serde v1.0.193
+       Fresh bytemuck v1.14.0
+       Fresh rayon v1.8.0
+       Fresh zstd-sys v2.0.9+zstd.1.5.5
+       Fresh futures-executor v0.3.29
+       Fresh lz4-sys v1.9.4
+       Fresh arrow-format v0.8.1
+       Fresh zstd-safe v6.0.6
+       Fresh futures v0.3.29
+       Fresh lz4 v1.24.0
+       Fresh zstd v0.12.4
+       Fresh parquet-format-safe v0.2.4
+       Fresh parquet2 v0.17.2
+       Fresh arrow2 v0.18.0
+       Dirty wasm_assessment v0.1.0 (/srv/home/nassar2/code/wasm): the file `src/lib.rs` has changed (1702885837.437098856s, 2h 43m 53s after last build at 1702876004.123615579s)
+   Compiling wasm_assessment v0.1.0 (/srv/home/nassar2/code/wasm)
+     Running `/srv/home/nassar2/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/bin/rustc --crate-name wasm_assessment --edition=2021 src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --crate-type lib --emit=dep-info,metadata,link -C opt-level=3 -C embed-bitcode=no --cfg 'feature="arrow2"' --cfg 'feature="parallel_read"' --cfg 'feature="parquet2"' -C metadata=863b656ce2e22d31 -C extra-filename=-863b656ce2e22d31 --out-dir /srv/home/nassar2/code/wasm/target/release/deps -L dependency=/srv/home/nassar2/code/wasm/target/release/deps --extern arrow2=/srv/home/nassar2/code/wasm/target/release/deps/libarrow2-976ab542edaed099.rmeta --extern chrono=/srv/home/nassar2/code/wasm/target/release/deps/libchrono-d7e3afc552d5a749.rmeta --extern log=/srv/home/nassar2/code/wasm/target/release/deps/liblog-50dd9355eb44bcf9.rmeta --extern num_cpus=/srv/home/nassar2/code/wasm/target/release/deps/libnum_cpus-dbce32e4f3e48b04.rmeta --extern parquet2=/srv/home/nassar2/code/wasm/target/release/deps/libparquet2-bd22d50b8cd6b800.rmeta --extern rayon=/srv/home/nassar2/code/wasm/target/release/deps/librayon-9f086b8e338d2952.rmeta -L native=/srv/home/nassar2/code/wasm/target/release/build/lz4-sys-e7eb1191121ba8af/out -L native=/srv/home/nassar2/code/wasm/target/release/build/zstd-sys-fb912d16145e0051/out`
+warning: unused imports: `PrimitiveArray`, `Utf8Array`, `error::Error`
+ --> src/parallel_read/generic_parallel_read.rs:2:20
+  |
+2 |     array::{Array, PrimitiveArray, Utf8Array},
+  |                    ^^^^^^^^^^^^^^  ^^^^^^^^^
+3 |     chunk::Chunk,
+4 |     error::Error,
+  |     ^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` on by default
+
+warning: unused imports: `env`, `sync::atomic`
+ --> src/parallel_read/parallel_write_parquet.rs:3:34
+  |
+3 | use std::{collections::VecDeque, env, sync::atomic};
+  |                                  ^^^  ^^^^^^^^^^^^
+
+warning: unnecessary parentheses around `if` condition
+   --> src/parallel_read/parallel_write_parquet.rs:172:8
+    |
+172 |     if (num_columns > 1) {
+    |        ^               ^
+    |
+    = note: `#[warn(unused_parens)]` on by default
+help: remove these parentheses
+    |
+172 -     if (num_columns > 1) {
+172 +     if num_columns > 1 {
+    |
+
+warning: unnecessary parentheses around `if` condition
+   --> src/parallel_read/parallel_write_parquet.rs:174:12
+    |
+174 |         if (num_columns > 2) {
+    |            ^               ^
+    |
+help: remove these parentheses
+    |
+174 -         if (num_columns > 2) {
+174 +         if num_columns > 2 {
+    |
+
+warning: unused imports: `PrimitiveArray`, `Utf8Array`, `error::Error`
+ --> src/parallel_read/mod.rs:7:20
+  |
+7 |     array::{Array, PrimitiveArray, Utf8Array},
+  |                    ^^^^^^^^^^^^^^  ^^^^^^^^^
+8 |     chunk::Chunk,
+9 |     error::Error,
+  |     ^^^^^^^^^^^^
+
+warning: unused variable: `row_group`
+  --> src/parallel_read/generic_parallel_read.rs:33:9
+   |
+33 |     let row_group = if args.len() > 2 {
+   |         ^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_row_group`
+   |
+   = note: `#[warn(unused_variables)]` on by default
+
+warning: unused variable: `num_groups`
+  --> src/parallel_read/generic_parallel_read.rs:57:9
+   |
+57 |     let num_groups = metadata.row_groups.len();
+   |         ^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_num_groups`
+
+warning: unused variable: `names`
+  --> src/parallel_read/mod.rs:39:9
+   |
+39 |     let names = &schema
+   |         ^^^^^ help: if this is intentional, prefix it with an underscore: `_names`
+
+warning: unused variable: `row_group`
+  --> src/parallel_read/mod.rs:30:30
+   |
+30 | fn parallel_read(path: &str, row_group: usize) -> Result<(u32, u32)> {
+   |                              ^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_row_group`
+
+warning: function `print_type_of` is never used
+  --> src/parallel_read/parallel_write_parquet.rs:45:4
+   |
+45 | fn print_type_of<T>(_: &T) {
+   |    ^^^^^^^^^^^^^
+   |
+   = note: `#[warn(dead_code)]` on by default
+
+warning: `wasm_assessment` (lib) generated 10 warnings (run `cargo fix --lib -p wasm_assessment` to apply 9 suggestions)
+     Running `/srv/home/nassar2/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/bin/rustc --crate-name parallel_write_parquet --edition=2021 src/bin/parallel_write_parquet.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --crate-type bin --emit=dep-info,link -C opt-level=3 -C embed-bitcode=no --cfg 'feature="arrow2"' --cfg 'feature="parallel_read"' --cfg 'feature="parquet2"' -C metadata=2a249b1387d31b1f -C extra-filename=-2a249b1387d31b1f --out-dir /srv/home/nassar2/code/wasm/target/release/deps -L dependency=/srv/home/nassar2/code/wasm/target/release/deps --extern arrow2=/srv/home/nassar2/code/wasm/target/release/deps/libarrow2-976ab542edaed099.rlib --extern chrono=/srv/home/nassar2/code/wasm/target/release/deps/libchrono-d7e3afc552d5a749.rlib --extern log=/srv/home/nassar2/code/wasm/target/release/deps/liblog-50dd9355eb44bcf9.rlib --extern num_cpus=/srv/home/nassar2/code/wasm/target/release/deps/libnum_cpus-dbce32e4f3e48b04.rlib --extern parquet2=/srv/home/nassar2/code/wasm/target/release/deps/libparquet2-bd22d50b8cd6b800.rlib --extern rayon=/srv/home/nassar2/code/wasm/target/release/deps/librayon-9f086b8e338d2952.rlib --extern wasm_assessment=/srv/home/nassar2/code/wasm/target/release/deps/libwasm_assessment-863b656ce2e22d31.rlib -L native=/srv/home/nassar2/code/wasm/target/release/build/lz4-sys-e7eb1191121ba8af/out -L native=/srv/home/nassar2/code/wasm/target/release/build/zstd-sys-fb912d16145e0051/out`
+    Finished release [optimized] target(s) in 29.43s
+       Fresh autocfg v1.1.0
+       Fresh version_check v0.9.4
+       Fresh unicode-ident v1.0.12
+       Fresh memchr v2.6.4
+       Fresh cfg-if v1.0.0
+       Fresh scopeguard v1.2.0
+       Fresh bitflags v2.4.1
+       Fresh linux-raw-sys v0.4.12
+       Fresh regex-syntax v0.8.2
+       Fresh humantime v2.1.0
+       Fresh log v0.4.20
+       Fresh bitflags v1.3.2
+       Fresh termcolor v1.4.0
+       Fresh either v1.9.0
+       Fresh iana-time-zone v0.1.58
+       Fresh lazy_static v1.4.0
+       Fresh proc-macro2 v1.0.70
+       Fresh crossbeam-utils v0.8.16
+       Fresh memoffset v0.9.0
+       Fresh aho-corasick v1.1.2
+       Fresh libc v0.2.151
+       Fresh quote v1.0.33
+       Fresh regex-automata v0.4.3
+       Fresh crossbeam-epoch v0.9.15
+       Fresh rustix v0.38.28
+       Fresh faccess v0.2.4
+       Fresh num-traits v0.2.17
+       Fresh os_pipe v1.1.4
+       Fresh num_cpus v1.16.0
+       Fresh syn v1.0.109
+       Fresh proc-macro-error-attr v1.0.4
+       Fresh is-terminal v0.4.9
+       Fresh crossbeam-deque v0.8.3
+       Fresh regex v1.10.2
+       Fresh chrono v0.4.31
+       Fresh proc-macro-error v1.0.4
+       Fresh env_logger v0.10.1
+       Fresh rayon-core v1.12.0
+       Fresh cmd_lib_macros v1.9.3
+       Fresh rayon v1.8.0
+       Fresh cmd_lib v1.9.3
+       Dirty wasm_assessment v0.1.0 (/srv/home/nassar2/code/wasm): the file `src/lib.rs` has changed (1702885837.437098856s, 2h 43m 48s after last build at 1702876009.517604606s)
+   Compiling wasm_assessment v0.1.0 (/srv/home/nassar2/code/wasm)
+     Running `/srv/home/nassar2/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/bin/rustc --crate-name wasm_assessment --edition=2021 src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --crate-type lib --emit=dep-info,metadata,link -C opt-level=3 -C embed-bitcode=no --cfg 'feature="cmd_lib"' --cfg 'feature="script"' -C metadata=ac3b9085a9b26f70 -C extra-filename=-ac3b9085a9b26f70 --out-dir /srv/home/nassar2/code/wasm/target/release/deps -L dependency=/srv/home/nassar2/code/wasm/target/release/deps --extern chrono=/srv/home/nassar2/code/wasm/target/release/deps/libchrono-c1be1e4ebcfd14ed.rmeta --extern cmd_lib=/srv/home/nassar2/code/wasm/target/release/deps/libcmd_lib-3ef602b86cee2dfc.rmeta --extern log=/srv/home/nassar2/code/wasm/target/release/deps/liblog-39870f164cfb202f.rmeta --extern num_cpus=/srv/home/nassar2/code/wasm/target/release/deps/libnum_cpus-dbce32e4f3e48b04.rmeta --extern rayon=/srv/home/nassar2/code/wasm/target/release/deps/librayon-5b17eb50bfd37314.rmeta`
+     Running `/srv/home/nassar2/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/bin/rustc --crate-name scaling_analysis --edition=2021 src/bin/scaling_analysis.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --crate-type bin --emit=dep-info,link -C opt-level=3 -C embed-bitcode=no --cfg 'feature="cmd_lib"' --cfg 'feature="script"' -C metadata=0c50a912b40b34f2 -C extra-filename=-0c50a912b40b34f2 --out-dir /srv/home/nassar2/code/wasm/target/release/deps -L dependency=/srv/home/nassar2/code/wasm/target/release/deps --extern chrono=/srv/home/nassar2/code/wasm/target/release/deps/libchrono-c1be1e4ebcfd14ed.rlib --extern cmd_lib=/srv/home/nassar2/code/wasm/target/release/deps/libcmd_lib-3ef602b86cee2dfc.rlib --extern log=/srv/home/nassar2/code/wasm/target/release/deps/liblog-39870f164cfb202f.rlib --extern num_cpus=/srv/home/nassar2/code/wasm/target/release/deps/libnum_cpus-dbce32e4f3e48b04.rlib --extern rayon=/srv/home/nassar2/code/wasm/target/release/deps/librayon-5b17eb50bfd37314.rlib --extern wasm_assessment=/srv/home/nassar2/code/wasm/target/release/deps/libwasm_assessment-ac3b9085a9b26f70.rlib`
+warning: function `parallel_write_parquet` is never used
+ --> src/bin/scaling_analysis.rs:7:4
+  |
+7 | fn parallel_write_parquet() -> CmdResult {
+  |    ^^^^^^^^^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(dead_code)]` on by default
+
+warning: function `parallel_read_arquet` is never used
+  --> src/bin/scaling_analysis.rs:52:4
+   |
+52 | fn parallel_read_arquet() -> CmdResult {
+   |    ^^^^^^^^^^^^^^^^^^^^
+
+warning: `wasm_assessment` (bin "scaling_analysis") generated 2 warnings
+    Finished release [optimized] target(s) in 4.15s
+10753
+12363
+1523529192
+[INFO ] 
+[INFO ]  Performance counter stats for './target/release/parallel_write_parquet 10000000 1':
+[INFO ] 
+[INFO ]          12,525.00 msec task-clock:u                     #    1.000 CPUs utilized             
+[INFO ]                  0      context-switches:u               #    0.000 /sec                      
+[INFO ]                  0      cpu-migrations:u                 #    0.000 /sec                      
+[INFO ]            896,777      page-faults:u                    #   71.599 K/sec                     
+[INFO ]     28,797,112,596      cycles:u                         #    2.299 GHz                       
+[INFO ]     86,862,928,549      instructions:u                   #    3.02  insn per cycle            
+[INFO ]     18,035,107,702      branches:u                       #    1.440 G/sec                     
+[INFO ]         74,736,988      branch-misses:u                  #    0.41% of all branches           
+[INFO ] 
+[INFO ]       12.529382416 seconds time elapsed
+[INFO ] 
+[INFO ]        9.625802000 seconds user
+[INFO ]        2.846478000 seconds sys
+[INFO ] 
+[INFO ] 
+5521
+7446
+1523529192
+[INFO ] 
+[INFO ]  Performance counter stats for './target/release/parallel_write_parquet 10000000 2':
+[INFO ] 
+[INFO ]          12,920.18 msec task-clock:u                     #    1.690 CPUs utilized             
+[INFO ]                  0      context-switches:u               #    0.000 /sec                      
+[INFO ]                  0      cpu-migrations:u                 #    0.000 /sec                      
+[INFO ]            852,485      page-faults:u                    #   65.981 K/sec                     
+[INFO ]     28,842,696,396      cycles:u                         #    2.232 GHz                       
+[INFO ]     86,861,398,120      instructions:u                   #    3.01  insn per cycle            
+[INFO ]     18,034,702,560      branches:u                       #    1.396 G/sec                     
+[INFO ]         74,093,762      branch-misses:u                  #    0.41% of all branches           
+[INFO ] 
+[INFO ]        7.646280209 seconds time elapsed
+[INFO ] 
+[INFO ]        9.821378000 seconds user
+[INFO ]        3.039300000 seconds sys
+[INFO ] 
+[INFO ] 
+3944
+6199
+1523529192
+[INFO ] 
+[INFO ]  Performance counter stats for './target/release/parallel_write_parquet 10000000 3':
+[INFO ] 
+[INFO ]          13,705.36 msec task-clock:u                     #    2.139 CPUs utilized             
+[INFO ]                  0      context-switches:u               #    0.000 /sec                      
+[INFO ]                  0      cpu-migrations:u                 #    0.000 /sec                      
+[INFO ]            875,657      page-faults:u                    #   63.892 K/sec                     
+[INFO ]     28,957,647,057      cycles:u                         #    2.113 GHz                       
+[INFO ]     86,861,008,364      instructions:u                   #    3.00  insn per cycle            
+[INFO ]     18,034,615,484      branches:u                       #    1.316 G/sec                     
+[INFO ]         75,005,386      branch-misses:u                  #    0.42% of all branches           
+[INFO ] 
+[INFO ]        6.408265070 seconds time elapsed
+[INFO ] 
+[INFO ]       10.251067000 seconds user
+[INFO ]        3.385161000 seconds sys
+[INFO ] 
+[INFO ] 
+2967
+4989
+1523529192
+[INFO ] 
+[INFO ]  Performance counter stats for './target/release/parallel_write_parquet 10000000 4':
+[INFO ] 
+[INFO ]          13,043.18 msec task-clock:u                     #    2.518 CPUs utilized             
+[INFO ]                  0      context-switches:u               #    0.000 /sec                      
+[INFO ]                  0      cpu-migrations:u                 #    0.000 /sec                      
+[INFO ]            808,371      page-faults:u                    #   61.977 K/sec                     
+[INFO ]     28,586,677,671      cycles:u                         #    2.192 GHz                       
+[INFO ]     86,860,778,736      instructions:u                   #    3.04  insn per cycle            
+[INFO ]     18,034,521,860      branches:u                       #    1.383 G/sec                     
+[INFO ]         73,606,488      branch-misses:u                  #    0.41% of all branches           
+[INFO ] 
+[INFO ]        5.180270352 seconds time elapsed
+[INFO ] 
+[INFO ]        9.928939000 seconds user
+[INFO ]        3.056306000 seconds sys
+[INFO ] 
+[INFO ] 
+2539
+4374
+1523529192
+[INFO ] 
+[INFO ]  Performance counter stats for './target/release/parallel_write_parquet 10000000 5':
+[INFO ] 
+[INFO ]          13,836.71 msec task-clock:u                     #    3.038 CPUs utilized             
+[INFO ]                  0      context-switches:u               #    0.000 /sec                      
+[INFO ]                  0      cpu-migrations:u                 #    0.000 /sec                      
+[INFO ]            807,535      page-faults:u                    #   58.362 K/sec                     
+[INFO ]     28,785,379,246      cycles:u                         #    2.080 GHz                       
+[INFO ]     86,860,931,823      instructions:u                   #    3.02  insn per cycle            
+[INFO ]     18,034,547,462      branches:u                       #    1.303 G/sec                     
+[INFO ]         73,557,270      branch-misses:u                  #    0.41% of all branches           
+[INFO ] 
+[INFO ]        4.554331011 seconds time elapsed
+[INFO ] 
+[INFO ]       10.475418000 seconds user
+[INFO ]        3.297239000 seconds sys
+[INFO ] 
+[INFO ] 
+2272
+4176
+1523529192
+[INFO ] 
+[INFO ]  Performance counter stats for './target/release/parallel_write_parquet 10000000 6':
+[INFO ] 
+[INFO ]          14,083.38 msec task-clock:u                     #    3.225 CPUs utilized             
+[INFO ]                  0      context-switches:u               #    0.000 /sec                      
+[INFO ]                  0      cpu-migrations:u                 #    0.000 /sec                      
+[INFO ]            807,450      page-faults:u                    #   57.334 K/sec                     
+[INFO ]     28,802,633,747      cycles:u                         #    2.045 GHz                       
+[INFO ]     86,860,756,615      instructions:u                   #    3.02  insn per cycle            
+[INFO ]     18,034,513,260      branches:u                       #    1.281 G/sec                     
+[INFO ]         75,125,511      branch-misses:u                  #    0.42% of all branches           
+[INFO ] 
+[INFO ]        4.366463398 seconds time elapsed
+[INFO ] 
+[INFO ]       10.802987000 seconds user
+[INFO ]        3.212957000 seconds sys
+[INFO ] 
+[INFO ] 
+1963
+3855
+1523529192
+[INFO ] 
+[INFO ]  Performance counter stats for './target/release/parallel_write_parquet 10000000 7':
+[INFO ] 
+[INFO ]          14,464.59 msec task-clock:u                     #    3.590 CPUs utilized             
+[INFO ]                  0      context-switches:u               #    0.000 /sec                      
+[INFO ]                  0      cpu-migrations:u                 #    0.000 /sec                      
+[INFO ]            807,971      page-faults:u                    #   55.859 K/sec                     
+[INFO ]     28,501,304,729      cycles:u                         #    1.970 GHz                       
+[INFO ]     86,860,922,737      instructions:u                   #    3.05  insn per cycle            
+[INFO ]     18,034,556,605      branches:u                       #    1.247 G/sec                     
+[INFO ]         74,709,978      branch-misses:u                  #    0.41% of all branches           
+[INFO ] 
+[INFO ]        4.028815410 seconds time elapsed
+[INFO ] 
+[INFO ]       11.009001000 seconds user
+[INFO ]        3.382021000 seconds sys
+[INFO ] 
+[INFO ] 
+1782
+3658
+1523529192
+[INFO ] 
+[INFO ]  Performance counter stats for './target/release/parallel_write_parquet 10000000 8':
+[INFO ] 
+[INFO ]          14,575.98 msec task-clock:u                     #    3.773 CPUs utilized             
+[INFO ]                  0      context-switches:u               #    0.000 /sec                      
+[INFO ]                  0      cpu-migrations:u                 #    0.000 /sec                      
+[INFO ]            808,492      page-faults:u                    #   55.467 K/sec                     
+[INFO ]     28,894,535,390      cycles:u                         #    1.982 GHz                       
+[INFO ]     86,861,347,885      instructions:u                   #    3.01  insn per cycle            
+[INFO ]     18,034,660,911      branches:u                       #    1.237 G/sec                     
+[INFO ]         74,891,338      branch-misses:u                  #    0.42% of all branches           
+[INFO ] 
+[INFO ]        3.862987044 seconds time elapsed
+[INFO ] 
+[INFO ]       11.142057000 seconds user
+[INFO ]        3.361938000 seconds sys
+[INFO ] 
+[INFO ] 
+1643
+3536
+1523529192
+[INFO ] 
+[INFO ]  Performance counter stats for './target/release/parallel_write_parquet 10000000 9':
+[INFO ] 
+[INFO ]          14,573.50 msec task-clock:u                     #    3.927 CPUs utilized             
+[INFO ]                  0      context-switches:u               #    0.000 /sec                      
+[INFO ]                  0      cpu-migrations:u                 #    0.000 /sec                      
+[INFO ]            808,545      page-faults:u                    #   55.480 K/sec                     
+[INFO ]     28,439,512,027      cycles:u                         #    1.951 GHz                       
+[INFO ]     86,861,225,565      instructions:u                   #    3.05  insn per cycle            
+[INFO ]     18,034,638,662      branches:u                       #    1.237 G/sec                     
+[INFO ]         74,547,250      branch-misses:u                  #    0.41% of all branches           
+[INFO ] 
+[INFO ]        3.710978457 seconds time elapsed
+[INFO ] 
+[INFO ]       11.150200000 seconds user
+[INFO ]        3.350675000 seconds sys
+[INFO ] 
+[INFO ] 
+1477
+3426
+1523529192
+[INFO ] 
+[INFO ]  Performance counter stats for './target/release/parallel_write_parquet 10000000 10':
+[INFO ] 
+[INFO ]          15,000.35 msec task-clock:u                     #    4.143 CPUs utilized             
+[INFO ]                  0      context-switches:u               #    0.000 /sec                      
+[INFO ]                  0      cpu-migrations:u                 #    0.000 /sec                      
+[INFO ]            808,914      page-faults:u                    #   53.926 K/sec                     
+[INFO ]     28,583,549,357      cycles:u                         #    1.906 GHz                       
+[INFO ]     86,861,707,242      instructions:u                   #    3.04  insn per cycle            
+[INFO ]     18,034,734,733      branches:u                       #    1.202 G/sec                     
+[INFO ]         74,460,799      branch-misses:u                  #    0.41% of all branches           
+[INFO ] 
+[INFO ]        3.620995020 seconds time elapsed
+[INFO ] 
+[INFO ]       11.397615000 seconds user
+[INFO ]        3.517608000 seconds sys
+[INFO ] 
+[INFO ] 
+1460
+3266
+1523529192
+[INFO ] 
+[INFO ]  Performance counter stats for './target/release/parallel_write_parquet 10000000 11':
+[INFO ] 
+[INFO ]          15,099.73 msec task-clock:u                     #    4.373 CPUs utilized             
+[INFO ]                  0      context-switches:u               #    0.000 /sec                      
+[INFO ]                  0      cpu-migrations:u                 #    0.000 /sec                      
+[INFO ]            809,002      page-faults:u                    #   53.577 K/sec                     
+[INFO ]     28,435,730,030      cycles:u                         #    1.883 GHz                       
+[INFO ]     86,861,775,226      instructions:u                   #    3.05  insn per cycle            
+[INFO ]     18,034,753,325      branches:u                       #    1.194 G/sec                     
+[INFO ]         74,963,028      branch-misses:u                  #    0.42% of all branches           
+[INFO ] 
+[INFO ]        3.452870812 seconds time elapsed
+[INFO ] 
+[INFO ]       11.638349000 seconds user
+[INFO ]        3.380516000 seconds sys
+[INFO ] 
+[INFO ] 
+1362
+3173
+1523529192
+[INFO ] 
+[INFO ]  Performance counter stats for './target/release/parallel_write_parquet 10000000 12':
+[INFO ] 
+[INFO ]          15,374.09 msec task-clock:u                     #    4.563 CPUs utilized             
+[INFO ]                  0      context-switches:u               #    0.000 /sec                      
+[INFO ]                  0      cpu-migrations:u                 #    0.000 /sec                      
+[INFO ]            809,346      page-faults:u                    #   52.644 K/sec                     
+[INFO ]     28,444,838,393      cycles:u                         #    1.850 GHz                       
+[INFO ]     86,862,878,862      instructions:u                   #    3.05  insn per cycle            
+[INFO ]     18,035,000,869      branches:u                       #    1.173 G/sec                     
+[INFO ]         75,122,993      branch-misses:u                  #    0.42% of all branches           
+[INFO ] 
+[INFO ]        3.369039809 seconds time elapsed
+[INFO ] 
+[INFO ]       11.708118000 seconds user
+[INFO ]        3.581696000 seconds sys
+[INFO ] 
+[INFO ] 
+1259
+3089
+1523529192
+[INFO ] 
+[INFO ]  Performance counter stats for './target/release/parallel_write_parquet 10000000 13':
+[INFO ] 
+[INFO ]          15,232.56 msec task-clock:u                     #    4.654 CPUs utilized             
+[INFO ]                  0      context-switches:u               #    0.000 /sec                      
+[INFO ]                  0      cpu-migrations:u                 #    0.000 /sec                      
+[INFO ]            809,594      page-faults:u                    #   53.149 K/sec                     
+[INFO ]     28,689,718,188      cycles:u                         #    1.883 GHz                       
+[INFO ]     86,863,058,031      instructions:u                   #    3.03  insn per cycle            
+[INFO ]     18,035,041,989      branches:u                       #    1.184 G/sec                     
+[INFO ]         73,521,356      branch-misses:u                  #    0.41% of all branches           
+[INFO ] 
+[INFO ]        3.273349308 seconds time elapsed
+[INFO ] 
+[INFO ]       11.598896000 seconds user
+[INFO ]        3.553166000 seconds sys
+[INFO ] 
+[INFO ] 
+1238
+3099
+1523529192
+[INFO ] 
+[INFO ]  Performance counter stats for './target/release/parallel_write_parquet 10000000 14':
+[INFO ] 
+[INFO ]          15,518.02 msec task-clock:u                     #    4.721 CPUs utilized             
+[INFO ]                  0      context-switches:u               #    0.000 /sec                      
+[INFO ]                  0      cpu-migrations:u                 #    0.000 /sec                      
+[INFO ]            809,917      page-faults:u                    #   52.192 K/sec                     
+[INFO ]     28,790,608,321      cycles:u                         #    1.855 GHz                       
+[INFO ]     86,863,421,783      instructions:u                   #    3.02  insn per cycle            
+[INFO ]     18,035,129,365      branches:u                       #    1.162 G/sec                     
+[INFO ]         74,372,931      branch-misses:u                  #    0.41% of all branches           
+[INFO ] 
+[INFO ]        3.286688732 seconds time elapsed
+[INFO ] 
+[INFO ]       11.977514000 seconds user
+[INFO ]        3.457166000 seconds sys
+[INFO ] 
+[INFO ] 
+1185
+3046
+1523529192
+[INFO ] 
+[INFO ]  Performance counter stats for './target/release/parallel_write_parquet 10000000 15':
+[INFO ] 
+[INFO ]          15,434.92 msec task-clock:u                     #    4.765 CPUs utilized             
+[INFO ]                  0      context-switches:u               #    0.000 /sec                      
+[INFO ]                  0      cpu-migrations:u                 #    0.000 /sec                      
+[INFO ]            810,451      page-faults:u                    #   52.508 K/sec                     
+[INFO ]     28,246,229,161      cycles:u                         #    1.830 GHz                       
+[INFO ]     86,863,250,956      instructions:u                   #    3.08  insn per cycle            
+[INFO ]     18,035,091,211      branches:u                       #    1.168 G/sec                     
+[INFO ]         75,027,381      branch-misses:u                  #    0.42% of all branches           
+[INFO ] 
+[INFO ]        3.238888952 seconds time elapsed
+[INFO ] 
+[INFO ]       11.652398000 seconds user
+[INFO ]        3.698313000 seconds sys
+[INFO ] 
+[INFO ] 
+1180
+2945
+1523529192
+[INFO ] 
+[INFO ]  Performance counter stats for './target/release/parallel_write_parquet 10000000 16':
+[INFO ] 
+[INFO ]          15,877.04 msec task-clock:u                     #    5.109 CPUs utilized             
+[INFO ]                  0      context-switches:u               #    0.000 /sec                      
+[INFO ]                  0      cpu-migrations:u                 #    0.000 /sec                      
+[INFO ]            810,694      page-faults:u                    #   51.061 K/sec                     
+[INFO ]     28,498,575,748      cycles:u                         #    1.795 GHz                       
+[INFO ]     86,864,602,843      instructions:u                   #    3.05  insn per cycle            
+[INFO ]     18,035,393,640      branches:u                       #    1.136 G/sec                     
+[INFO ]         74,627,254      branch-misses:u                  #    0.41% of all branches           
+[INFO ] 
+[INFO ]        3.107802742 seconds time elapsed
+[INFO ] 
+[INFO ]       11.915344000 seconds user
+[INFO ]        3.872113000 seconds sys
+[INFO ] 
+[INFO ] 
+1133
+2871
+1523529192
+[INFO ] 
+[INFO ]  Performance counter stats for './target/release/parallel_write_parquet 10000000 17':
+[INFO ] 
+[INFO ]          16,345.20 msec task-clock:u                     #    5.372 CPUs utilized             
+[INFO ]                  0      context-switches:u               #    0.000 /sec                      
+[INFO ]                  0      cpu-migrations:u                 #    0.000 /sec                      
+[INFO ]            811,121      page-faults:u                    #   49.624 K/sec                     
+[INFO ]     28,563,451,933      cycles:u                         #    1.748 GHz                       
+[INFO ]     86,864,868,181      instructions:u                   #    3.04  insn per cycle            
+[INFO ]     18,035,452,544      branches:u                       #    1.103 G/sec                     
+[INFO ]         74,735,314      branch-misses:u                  #    0.41% of all branches           
+[INFO ] 
+[INFO ]        3.042878046 seconds time elapsed
+[INFO ] 
+[INFO ]       12.069921000 seconds user
+[INFO ]        4.181070000 seconds sys
+[INFO ] 
+[INFO ] 
+1069
+2896
+1523529192
+[INFO ] 
+[INFO ]  Performance counter stats for './target/release/parallel_write_parquet 10000000 18':
+[INFO ] 
+[INFO ]          15,896.42 msec task-clock:u                     #    5.165 CPUs utilized             
+[INFO ]                  0      context-switches:u               #    0.000 /sec                      
+[INFO ]                  0      cpu-migrations:u                 #    0.000 /sec                      
+[INFO ]            811,457      page-faults:u                    #   51.047 K/sec                     
+[INFO ]     28,483,454,381      cycles:u                         #    1.792 GHz                       
+[INFO ]     86,865,093,300      instructions:u                   #    3.05  insn per cycle            
+[INFO ]     18,035,502,598      branches:u                       #    1.135 G/sec                     
+[INFO ]         73,888,904      branch-misses:u                  #    0.41% of all branches           
+[INFO ] 
+[INFO ]        3.077478144 seconds time elapsed
+[INFO ] 
+[INFO ]       11.867695000 seconds user
+[INFO ]        3.933136000 seconds sys
+[INFO ] 
+[INFO ] 
+1115
+2827
+1523529192
+[INFO ] 
+[INFO ]  Performance counter stats for './target/release/parallel_write_parquet 10000000 19':
+[INFO ] 
+[INFO ]          16,973.83 msec task-clock:u                     #    5.563 CPUs utilized             
+[INFO ]                  0      context-switches:u               #    0.000 /sec                      
+[INFO ]                  0      cpu-migrations:u                 #    0.000 /sec                      
+[INFO ]            811,775      page-faults:u                    #   47.825 K/sec                     
+[INFO ]     28,350,406,788      cycles:u                         #    1.670 GHz                       
+[INFO ]     86,865,652,441      instructions:u                   #    3.06  insn per cycle            
+[INFO ]     18,035,623,664      branches:u                       #    1.063 G/sec                     
+[INFO ]         73,760,952      branch-misses:u                  #    0.41% of all branches           
+[INFO ] 
+[INFO ]        3.051343136 seconds time elapsed
+[INFO ] 
+[INFO ]       12.119101000 seconds user
+[INFO ]        4.757084000 seconds sys
+[INFO ] 
+[INFO ] 
+1089
+2907
+1523529192
+[INFO ] 
+[INFO ]  Performance counter stats for './target/release/parallel_write_parquet 10000000 20':
+[INFO ] 
+[INFO ]          17,696.64 msec task-clock:u                     #    5.764 CPUs utilized             
+[INFO ]                  0      context-switches:u               #    0.000 /sec                      
+[INFO ]                  0      cpu-migrations:u                 #    0.000 /sec                      
+[INFO ]            812,265      page-faults:u                    #   45.899 K/sec                     
+[INFO ]     29,607,375,841      cycles:u                         #    1.673 GHz                       
+[INFO ]     86,866,166,072      instructions:u                   #    2.93  insn per cycle            
+[INFO ]     18,035,737,760      branches:u                       #    1.019 G/sec                     
+[INFO ]         74,335,014      branch-misses:u                  #    0.41% of all branches           
+[INFO ] 
+[INFO ]        3.070016872 seconds time elapsed
+[INFO ] 
+[INFO ]       12.777984000 seconds user
+[INFO ]        4.811216000 seconds sys
+[INFO ] 
+[INFO ] 
+1028
+2934
+1523529192
+[INFO ] 
+[INFO ]  Performance counter stats for './target/release/parallel_write_parquet 10000000 21':
+[INFO ] 
+[INFO ]          16,841.18 msec task-clock:u                     #    5.416 CPUs utilized             
+[INFO ]                  0      context-switches:u               #    0.000 /sec                      
+[INFO ]                  0      cpu-migrations:u                 #    0.000 /sec                      
+[INFO ]            813,193      page-faults:u                    #   48.286 K/sec                     
+[INFO ]     29,577,898,609      cycles:u                         #    1.756 GHz                       
+[INFO ]     86,866,855,458      instructions:u                   #    2.94  insn per cycle            
+[INFO ]     18,035,892,279      branches:u                       #    1.071 G/sec                     
+[INFO ]         74,972,540      branch-misses:u                  #    0.42% of all branches           
+[INFO ] 
+[INFO ]        3.109273604 seconds time elapsed
+[INFO ] 
+[INFO ]       12.311317000 seconds user
+[INFO ]        4.429060000 seconds sys
+[INFO ] 
+[INFO ] 
+1056
+2845
+1523529192
+[INFO ] 
+[INFO ]  Performance counter stats for './target/release/parallel_write_parquet 10000000 22':
+[INFO ] 
+[INFO ]          17,937.59 msec task-clock:u                     #    5.963 CPUs utilized             
+[INFO ]                  0      context-switches:u               #    0.000 /sec                      
+[INFO ]                  0      cpu-migrations:u                 #    0.000 /sec                      
+[INFO ]            813,036      page-faults:u                    #   45.326 K/sec                     
+[INFO ]     30,603,733,980      cycles:u                         #    1.706 GHz                       
+[INFO ]     86,866,635,525      instructions:u                   #    2.84  insn per cycle            
+[INFO ]     18,035,842,794      branches:u                       #    1.005 G/sec                     
+[INFO ]         74,324,174      branch-misses:u                  #    0.41% of all branches           
+[INFO ] 
+[INFO ]        3.007908918 seconds time elapsed
+[INFO ] 
+[INFO ]       13.225710000 seconds user
+[INFO ]        4.601436000 seconds sys
+[INFO ] 
+[INFO ] 
+962
+2892
+1523529192
+[INFO ] 
+[INFO ]  Performance counter stats for './target/release/parallel_write_parquet 10000000 23':
+[INFO ] 
+[INFO ]          17,960.02 msec task-clock:u                     #    5.891 CPUs utilized             
+[INFO ]                  0      context-switches:u               #    0.000 /sec                      
+[INFO ]                  0      cpu-migrations:u                 #    0.000 /sec                      
+[INFO ]            814,132      page-faults:u                    #   45.330 K/sec                     
+[INFO ]     31,152,183,171      cycles:u                         #    1.735 GHz                       
+[INFO ]     86,868,206,635      instructions:u                   #    2.79  insn per cycle            
+[INFO ]     18,036,188,216      branches:u                       #    1.004 G/sec                     
+[INFO ]         74,340,089      branch-misses:u                  #    0.41% of all branches           
+[INFO ] 
+[INFO ]        3.048526311 seconds time elapsed
+[INFO ] 
+[INFO ]       13.407917000 seconds user
+[INFO ]        4.439303000 seconds sys
+[INFO ] 
+[INFO ] 
+950
+2791
+1523529192
+[INFO ] 
+[INFO ]  Performance counter stats for './target/release/parallel_write_parquet 10000000 24':
+[INFO ] 
+[INFO ]          18,389.38 msec task-clock:u                     #    6.261 CPUs utilized             
+[INFO ]                  0      context-switches:u               #    0.000 /sec                      
+[INFO ]                  0      cpu-migrations:u                 #    0.000 /sec                      
+[INFO ]            814,257      page-faults:u                    #   44.279 K/sec                     
+[INFO ]     31,848,812,938      cycles:u                         #    1.732 GHz                       
+[INFO ]     86,867,761,116      instructions:u                   #    2.73  insn per cycle            
+[INFO ]     18,036,092,735      branches:u                       #  980.789 M/sec                     
+[INFO ]         75,118,537      branch-misses:u                  #    0.42% of all branches           
+[INFO ] 
+[INFO ]        2.937220126 seconds time elapsed
+[INFO ] 
+[INFO ]       13.650269000 seconds user
+[INFO ]        4.625995000 seconds sys
+[INFO ] 
+[INFO ] 
+961
+2813
+1523529192
+[INFO ] 
+[INFO ]  Performance counter stats for './target/release/parallel_write_parquet 10000000 25':
+[INFO ] 
+[INFO ]          19,007.58 msec task-clock:u                     #    6.425 CPUs utilized             
+[INFO ]                  0      context-switches:u               #    0.000 /sec                      
+[INFO ]                  0      cpu-migrations:u                 #    0.000 /sec                      
+[INFO ]            814,636      page-faults:u                    #   42.858 K/sec                     
+[INFO ]     32,848,371,535      cycles:u                         #    1.728 GHz                       
+[INFO ]     86,869,237,410      instructions:u                   #    2.64  insn per cycle            
+[INFO ]     18,036,420,727      branches:u                       #  948.907 M/sec                     
+[INFO ]         74,515,978      branch-misses:u                  #    0.41% of all branches           
+[INFO ] 
+[INFO ]        2.958370366 seconds time elapsed
+[INFO ] 
+[INFO ]       14.278853000 seconds user
+[INFO ]        4.605397000 seconds sys
+[INFO ] 
+[INFO ] 
+997
+3158
+1523529192
+[INFO ] 
+[INFO ]  Performance counter stats for './target/release/parallel_write_parquet 10000000 26':
+[INFO ] 
+[INFO ]          20,024.75 msec task-clock:u                     #    6.054 CPUs utilized             
+[INFO ]                  0      context-switches:u               #    0.000 /sec                      
+[INFO ]                  0      cpu-migrations:u                 #    0.000 /sec                      
+[INFO ]            816,068      page-faults:u                    #   40.753 K/sec                     
+[INFO ]     34,096,219,270      cycles:u                         #    1.703 GHz                       
+[INFO ]     86,869,690,372      instructions:u                   #    2.55  insn per cycle            
+[INFO ]     18,036,520,229      branches:u                       #  900.711 M/sec                     
+[INFO ]         75,638,282      branch-misses:u                  #    0.42% of all branches           
+[INFO ] 
+[INFO ]        3.307938493 seconds time elapsed
+[INFO ] 
+[INFO ]       14.820817000 seconds user
+[INFO ]        5.076943000 seconds sys
+[INFO ] 
+[INFO ] 
+929
+2807
+1523529192
+[INFO ] 
+[INFO ]  Performance counter stats for './target/release/parallel_write_parquet 10000000 27':
+[INFO ] 
+[INFO ]          19,887.51 msec task-clock:u                     #    6.647 CPUs utilized             
+[INFO ]                  0      context-switches:u               #    0.000 /sec                      
+[INFO ]                  0      cpu-migrations:u                 #    0.000 /sec                      
+[INFO ]            815,676      page-faults:u                    #   41.014 K/sec                     
+[INFO ]     33,143,862,791      cycles:u                         #    1.667 GHz                       
+[INFO ]     86,870,449,557      instructions:u                   #    2.62  insn per cycle            
+[INFO ]     18,036,688,399      branches:u                       #  906.936 M/sec                     
+[INFO ]         74,698,515      branch-misses:u                  #    0.41% of all branches           
+[INFO ] 
+[INFO ]        2.991841949 seconds time elapsed
+[INFO ] 
+[INFO ]       14.624797000 seconds user
+[INFO ]        5.134567000 seconds sys
+[INFO ] 
+[INFO ] 
+952
+2802
+1523529192
+[INFO ] 
+[INFO ]  Performance counter stats for './target/release/parallel_write_parquet 10000000 28':
+[INFO ] 
+[INFO ]          20,292.46 msec task-clock:u                     #    6.889 CPUs utilized             
+[INFO ]                  0      context-switches:u               #    0.000 /sec                      
+[INFO ]                  0      cpu-migrations:u                 #    0.000 /sec                      
+[INFO ]            816,170      page-faults:u                    #   40.220 K/sec                     
+[INFO ]     34,226,670,000      cycles:u                         #    1.687 GHz                       
+[INFO ]     86,870,668,861      instructions:u                   #    2.54  insn per cycle            
+[INFO ]     18,036,740,470      branches:u                       #  888.839 M/sec                     
+[INFO ]         74,919,154      branch-misses:u                  #    0.42% of all branches           
+[INFO ] 
+[INFO ]        2.945481981 seconds time elapsed
+[INFO ] 
+[INFO ]       15.254043000 seconds user
+[INFO ]        4.910207000 seconds sys
+[INFO ] 
+[INFO ] 
+932
+2843
+1523529192
+[INFO ] 
+[INFO ]  Performance counter stats for './target/release/parallel_write_parquet 10000000 29':
+[INFO ] 
+[INFO ]          20,940.79 msec task-clock:u                     #    7.000 CPUs utilized             
+[INFO ]                  0      context-switches:u               #    0.000 /sec                      
+[INFO ]                  0      cpu-migrations:u                 #    0.000 /sec                      
+[INFO ]            816,596      page-faults:u                    #   38.995 K/sec                     
+[INFO ]     35,371,784,269      cycles:u                         #    1.689 GHz                       
+[INFO ]     86,872,222,335      instructions:u                   #    2.46  insn per cycle            
+[INFO ]     18,037,081,516      branches:u                       #  861.337 M/sec                     
+[INFO ]         99,639,364      branch-misses:u                  #    0.55% of all branches           
+[INFO ] 
+[INFO ]        2.991349936 seconds time elapsed
+[INFO ] 
+[INFO ]       15.562668000 seconds user
+[INFO ]        5.239121000 seconds sys
+[INFO ] 
+[INFO ] 
+937
+2872
+1523529192
+[INFO ] 
+[INFO ]  Performance counter stats for './target/release/parallel_write_parquet 10000000 30':
+[INFO ] 
+[INFO ]          20,906.12 msec task-clock:u                     #    6.943 CPUs utilized             
+[INFO ]                  0      context-switches:u               #    0.000 /sec                      
+[INFO ]                  0      cpu-migrations:u                 #    0.000 /sec                      
+[INFO ]            816,869      page-faults:u                    #   39.073 K/sec                     
+[INFO ]     34,917,237,057      cycles:u                         #    1.670 GHz                       
+[INFO ]     86,873,178,655      instructions:u                   #    2.49  insn per cycle            
+[INFO ]     18,037,295,663      branches:u                       #  862.776 M/sec                     
+[INFO ]         74,645,849      branch-misses:u                  #    0.41% of all branches           
+[INFO ] 
+[INFO ]        3.010972415 seconds time elapsed
+[INFO ] 
+[INFO ]       15.554974000 seconds user
+[INFO ]        5.211961000 seconds sys
+[INFO ] 
+[INFO ] 
+1025
+2884
+1523529192
+[INFO ] 
+[INFO ]  Performance counter stats for './target/release/parallel_write_parquet 10000000 31':
+[INFO ] 
+[INFO ]          21,910.08 msec task-clock:u                     #    7.254 CPUs utilized             
+[INFO ]                  0      context-switches:u               #    0.000 /sec                      
+[INFO ]                  0      cpu-migrations:u                 #    0.000 /sec                      
+[INFO ]            817,124      page-faults:u                    #   37.294 K/sec                     
+[INFO ]     35,166,338,804      cycles:u                         #    1.605 GHz                       
+[INFO ]     86,872,998,967      instructions:u                   #    2.47  insn per cycle            
+[INFO ]     18,037,260,675      branches:u                       #  823.240 M/sec                     
+[INFO ]         75,131,280      branch-misses:u                  #    0.42% of all branches           
+[INFO ] 
+[INFO ]        3.020228317 seconds time elapsed
+[INFO ] 
+[INFO ]       15.789833000 seconds user
+[INFO ]        5.977465000 seconds sys
+[INFO ] 
+[INFO ] 
+898
+2836
+1523529192
+[INFO ] 
+[INFO ]  Performance counter stats for './target/release/parallel_write_parquet 10000000 32':
+[INFO ] 
+[INFO ]          21,894.77 msec task-clock:u                     #    7.401 CPUs utilized             
+[INFO ]                  0      context-switches:u               #    0.000 /sec                      
+[INFO ]                  0      cpu-migrations:u                 #    0.000 /sec                      
+[INFO ]            818,023      page-faults:u                    #   37.362 K/sec                     
+[INFO ]     35,713,698,121      cycles:u                         #    1.631 GHz                       
+[INFO ]     86,874,141,427      instructions:u                   #    2.43  insn per cycle            
+[INFO ]     18,037,514,386      branches:u                       #  823.828 M/sec                     
+[INFO ]         75,276,002      branch-misses:u                  #    0.42% of all branches           
+[INFO ] 
+[INFO ]        2.958450493 seconds time elapsed
+[INFO ] 
+[INFO ]       15.786818000 seconds user
+[INFO ]        5.960577000 seconds sys
+[INFO ] 
+[INFO ] 
+948
+2883
+1523529192
+[INFO ] 
+[INFO ]  Performance counter stats for './target/release/parallel_write_parquet 10000000 33':
+[INFO ] 
+[INFO ]          22,460.97 msec task-clock:u                     #    7.462 CPUs utilized             
+[INFO ]                  0      context-switches:u               #    0.000 /sec                      
+[INFO ]                  0      cpu-migrations:u                 #    0.000 /sec                      
+[INFO ]            817,771      page-faults:u                    #   36.409 K/sec                     
+[INFO ]     36,379,915,702      cycles:u                         #    1.620 GHz                       
+[INFO ]     86,874,632,247      instructions:u                   #    2.39  insn per cycle            
+[INFO ]     18,037,622,422      branches:u                       #  803.065 M/sec                     
+[INFO ]         74,536,430      branch-misses:u                  #    0.41% of all branches           
+[INFO ] 
+[INFO ]        3.010000237 seconds time elapsed
+[INFO ] 
+[INFO ]       16.445469000 seconds user
+[INFO ]        5.854644000 seconds sys
+[INFO ] 
+[INFO ] 
+922
+2876
+1523529192
+[INFO ] 
+[INFO ]  Performance counter stats for './target/release/parallel_write_parquet 10000000 34':
+[INFO ] 
+[INFO ]          22,595.14 msec task-clock:u                     #    7.526 CPUs utilized             
+[INFO ]                  0      context-switches:u               #    0.000 /sec                      
+[INFO ]                  0      cpu-migrations:u                 #    0.000 /sec                      
+[INFO ]            818,618      page-faults:u                    #   36.230 K/sec                     
+[INFO ]     35,821,211,475      cycles:u                         #    1.585 GHz                       
+[INFO ]     86,875,393,659      instructions:u                   #    2.43  insn per cycle            
+[INFO ]     18,037,793,622      branches:u                       #  798.304 M/sec                     
+[INFO ]         74,542,905      branch-misses:u                  #    0.41% of all branches           
+[INFO ] 
+[INFO ]        3.002453431 seconds time elapsed
+[INFO ] 
+[INFO ]       16.401060000 seconds user
+[INFO ]        6.033754000 seconds sys
+[INFO ] 
+[INFO ] 
+1090
+2896
+1523529192
+[INFO ] 
+[INFO ]  Performance counter stats for './target/release/parallel_write_parquet 10000000 35':
+[INFO ] 
+[INFO ]          24,319.00 msec task-clock:u                     #    8.066 CPUs utilized             
+[INFO ]                  0      context-switches:u               #    0.000 /sec                      
+[INFO ]                  0      cpu-migrations:u                 #    0.000 /sec                      
+[INFO ]            817,992      page-faults:u                    #   33.636 K/sec                     
+[INFO ]     37,499,517,387      cycles:u                         #    1.542 GHz                       
+[INFO ]     86,877,537,700      instructions:u                   #    2.32  insn per cycle            
+[INFO ]     18,038,265,133      branches:u                       #  741.735 M/sec                     
+[INFO ]         74,040,511      branch-misses:u                  #    0.41% of all branches           
+[INFO ] 
+[INFO ]        3.015102318 seconds time elapsed
+[INFO ] 
+[INFO ]       16.860689000 seconds user
+[INFO ]        7.287372000 seconds sys
+[INFO ] 
+[INFO ] 
+908
+2816
+1523529192
+[INFO ] 
+[INFO ]  Performance counter stats for './target/release/parallel_write_parquet 10000000 36':
+[INFO ] 
+[INFO ]          22,951.05 msec task-clock:u                     #    7.829 CPUs utilized             
+[INFO ]                  0      context-switches:u               #    0.000 /sec                      
+[INFO ]                  0      cpu-migrations:u                 #    0.000 /sec                      
+[INFO ]            819,092      page-faults:u                    #   35.689 K/sec                     
+[INFO ]     37,010,999,800      cycles:u                         #    1.613 GHz                       
+[INFO ]     86,877,731,337      instructions:u                   #    2.35  insn per cycle            
+[INFO ]     18,038,313,006      branches:u                       #  785.947 M/sec                     
+[INFO ]         74,968,212      branch-misses:u                  #    0.42% of all branches           
+[INFO ] 
+[INFO ]        2.931477650 seconds time elapsed
+[INFO ] 
+[INFO ]       16.793799000 seconds user
+[INFO ]        5.991830000 seconds sys
+[INFO ] 
+[INFO ] 
+970
+2918
+1523529192
+[INFO ] 
+[INFO ]  Performance counter stats for './target/release/parallel_write_parquet 10000000 37':
+[INFO ] 
+[INFO ]          24,183.31 msec task-clock:u                     #    7.991 CPUs utilized             
+[INFO ]                  0      context-switches:u               #    0.000 /sec                      
+[INFO ]                  0      cpu-migrations:u                 #    0.000 /sec                      
+[INFO ]            819,537      page-faults:u                    #   33.889 K/sec                     
+[INFO ]     37,909,443,139      cycles:u                         #    1.568 GHz                       
+[INFO ]     86,879,904,489      instructions:u                   #    2.29  insn per cycle            
+[INFO ]     18,038,791,921      branches:u                       #  745.919 M/sec                     
+[INFO ]         74,416,150      branch-misses:u                  #    0.41% of all branches           
+[INFO ] 
+[INFO ]        3.026221328 seconds time elapsed
+[INFO ] 
+[INFO ]       17.378977000 seconds user
+[INFO ]        6.621022000 seconds sys
+[INFO ] 
+[INFO ] 
+1014
+2885
+1523529192
+[INFO ] 
+[INFO ]  Performance counter stats for './target/release/parallel_write_parquet 10000000 38':
+[INFO ] 
+[INFO ]          25,478.78 msec task-clock:u                     #    8.524 CPUs utilized             
+[INFO ]                  0      context-switches:u               #    0.000 /sec                      
+[INFO ]                  0      cpu-migrations:u                 #    0.000 /sec                      
+[INFO ]            819,941      page-faults:u                    #   32.181 K/sec                     
+[INFO ]     39,363,913,750      cycles:u                         #    1.545 GHz                       
+[INFO ]     86,880,512,874      instructions:u                   #    2.21  insn per cycle            
+[INFO ]     18,038,930,027      branches:u                       #  707.998 M/sec                     
+[INFO ]         74,551,821      branch-misses:u                  #    0.41% of all branches           
+[INFO ] 
+[INFO ]        2.988979606 seconds time elapsed
+[INFO ] 
+[INFO ]       17.878696000 seconds user
+[INFO ]        7.412313000 seconds sys
+[INFO ] 
+[INFO ] 
+946
+2913
+1523529192
+[INFO ] 
+[INFO ]  Performance counter stats for './target/release/parallel_write_parquet 10000000 39':
+[INFO ] 
+[INFO ]          25,523.07 msec task-clock:u                     #    8.468 CPUs utilized             
+[INFO ]                  0      context-switches:u               #    0.000 /sec                      
+[INFO ]                  0      cpu-migrations:u                 #    0.000 /sec                      
+[INFO ]            820,076      page-faults:u                    #   32.131 K/sec                     
+[INFO ]     38,408,755,665      cycles:u                         #    1.505 GHz                       
+[INFO ]     86,879,861,972      instructions:u                   #    2.26  insn per cycle            
+[INFO ]     18,038,788,834      branches:u                       #  706.764 M/sec                     
+[INFO ]         74,870,248      branch-misses:u                  #    0.42% of all branches           
+[INFO ] 
+[INFO ]        3.014035404 seconds time elapsed
+[INFO ] 
+[INFO ]       17.489713000 seconds user
+[INFO ]        7.833514000 seconds sys
+[INFO ] 
+[INFO ] 
+918
+2935
+1523529192
+[INFO ] 
+[INFO ]  Performance counter stats for './target/release/parallel_write_parquet 10000000 40':
+[INFO ] 
+[INFO ]          26,356.27 msec task-clock:u                     #    8.690 CPUs utilized             
+[INFO ]                  0      context-switches:u               #    0.000 /sec                      
+[INFO ]                  0      cpu-migrations:u                 #    0.000 /sec                      
+[INFO ]            820,686      page-faults:u                    #   31.138 K/sec                     
+[INFO ]     38,605,995,654      cycles:u                         #    1.465 GHz                       
+[INFO ]     86,882,025,167      instructions:u                   #    2.25  insn per cycle            
+[INFO ]     18,039,268,319      branches:u                       #  684.439 M/sec                     
+[INFO ]         75,041,297      branch-misses:u                  #    0.42% of all branches           
+[INFO ] 
+[INFO ]        3.032973872 seconds time elapsed
+[INFO ] 
+[INFO ]       17.959219000 seconds user
+[INFO ]        8.173288000 seconds sys
+[INFO ] 
+[INFO ] 

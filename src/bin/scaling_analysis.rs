@@ -1,7 +1,7 @@
 use cmd_lib::*;
 
 fn main() {
-    let _ = parallel_write_parquet_cpu_utilization();
+    let _ = parallel_write_parquet_perf_record();
 }
 
 fn parallel_write_parquet() -> CmdResult {
@@ -42,6 +42,28 @@ fn parallel_write_parquet_cpu_utilization() -> CmdResult {
         // println!("Executing {}", n);
         run_cmd!(
             perf stat -- wasmer run --enable-all --mapdir ./resource/:./resource/ ./target/wasm32-wasmer-wasi/release/parallel_write_parquet.wasm $num_iteration $t
+        )?;
+    }
+
+    Ok(())
+}
+
+fn parallel_write_parquet_perf_record() -> CmdResult {
+    let num_iteration = 10_000_000;
+
+    /*
+    for t in 1..=40 {
+        // println!("Executing {}", n);
+        run_cmd!(
+            perf record -o ./perf-native-$t.data -- ./target/release/parallel_write_parquet $num_iteration $t
+        )?;
+    }
+    */
+
+    for t in 1..=40 {
+        // println!("Executing {}", n);
+        run_cmd!(
+            perf record -o ./perf-wasix-$t.data -- wasmer run --enable-all --mapdir ./resource/:./resource/ ./target/wasm32-wasmer-wasi/release/parallel_write_parquet.wasm $num_iteration $t
         )?;
     }
 

@@ -15,9 +15,10 @@ run() {
     cargo +nightly build -v --features script --release --bin scaling_analysis
 
     perf stat -- ./target/release/parallel_write_parquet 100 16
-    perf report -- ./target/release/parallel_write_parquet 100 16
     perf stat -- wasmer run -v --enable-all --mapdir ./resource/:./resource/ ./target/wasm32-wasmer-wasi/release/parallel_write_parquet.wasm 10000000 16
 
+    perf record -o ./tmp/perf-example.data -- ./target/release/parallel_write_parquet 100 16
+    perf report -n -i ./tmp/perf-example.data --stdio
 }
 
 tool() {
@@ -39,12 +40,13 @@ benchmark_env() {
     sbatch ./script/slurm.sh && watch -n 2 --differences=cumulative "squeue -u ${USER}"
 
     scp -r ${USER}@euler.wacc.wisc.edu:~/code/wasm/slurm-* ./tmp/
+    scp -r ${USER}@euler.wacc.wisc.edu:~/code/wasm/perf-* ./tmp/
 }
 
 setup() {
     # repo
     cargo +nightly update
-    cargo +nightly doc --all-features
+    cargo +nightly doc --all-featuresd
     rustup upgrade && rustup update
 
     # LLVM, Clang https://apt.llvm.org/

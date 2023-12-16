@@ -1,0 +1,440 @@
+       Fresh autocfg v1.1.0
+       Fresh unicode-ident v1.0.12
+       Fresh cfg-if v1.0.0
+       Fresh pkg-config v0.3.27
+       Fresh futures-sink v0.3.29
+       Fresh pin-project-lite v0.2.13
+       Fresh futures-io v0.3.29
+       Fresh memchr v2.6.4
+       Fresh pin-utils v0.1.0
+       Fresh libc v0.2.151
+       Fresh version_check v0.9.4
+       Fresh alloc-no-stdlib v2.0.4
+       Fresh scopeguard v1.2.0
+       Fresh adler v1.0.2
+       Fresh once_cell v1.19.0
+       Fresh zerocopy v0.7.30
+       Fresh array-init-cursor v0.2.0
+       Fresh fallible-streaming-iterator v0.1.9
+       Fresh xxhash-rust v0.8.7
+       Fresh seq-macro v0.3.5
+       Fresh iana-time-zone v0.1.58
+       Fresh either v1.9.0
+       Fresh dyn-clone v1.0.16
+       Fresh streaming-iterator v0.1.9
+       Fresh hash_hasher v2.0.3
+       Fresh simdutf8 v0.1.4
+       Fresh foreign_vec v0.1.0
+       Fresh base64 v0.21.5
+       Fresh ethnum v1.5.0
+       Fresh log v0.4.20
+       Fresh proc-macro2 v1.0.70
+       Fresh jobserver v0.1.27
+       Fresh futures-core v0.3.29
+       Fresh futures-task v0.3.29
+       Fresh crossbeam-utils v0.8.16
+       Fresh alloc-stdlib v0.2.2
+       Fresh miniz_oxide v0.7.1
+       Fresh getrandom v0.2.11
+       Fresh streaming-decompression v0.1.2
+       Fresh planus v0.3.1
+       Fresh num_cpus v1.16.0
+       Fresh quote v1.0.33
+       Fresh cc v1.0.83
+       Fresh slab v0.4.9
+       Fresh futures-channel v0.3.29
+       Fresh memoffset v0.9.0
+       Fresh semver v1.0.20
+       Fresh brotli-decompressor v2.5.1
+       Fresh crc32fast v1.3.2
+       Fresh snap v1.1.1
+       Fresh num-traits v0.2.17
+       Fresh syn v2.0.41
+       Fresh crossbeam-epoch v0.9.15
+       Fresh rustc_version v0.4.0
+       Fresh brotli v3.4.0
+       Fresh flate2 v1.0.28
+       Fresh ahash v0.8.6
+       Fresh chrono v0.4.31
+       Fresh futures-macro v0.3.29
+       Fresh async-stream-impl v0.3.5
+       Fresh serde_derive v1.0.193
+       Fresh async-trait v0.1.74
+       Fresh crossbeam-deque v0.8.3
+       Fresh bytemuck_derive v1.5.0
+       Fresh hashbrown v0.14.3
+       Fresh futures-util v0.3.29
+       Fresh zstd-sys v2.0.9+zstd.1.5.5
+       Fresh lz4-sys v1.9.4
+       Fresh async-stream v0.3.5
+       Fresh serde v1.0.193
+       Fresh rayon-core v1.12.0
+       Fresh bytemuck v1.14.0
+       Fresh futures-executor v0.3.29
+       Fresh zstd-safe v6.0.6
+       Fresh lz4 v1.24.0
+       Fresh arrow-format v0.8.1
+       Fresh rayon v1.8.0
+       Fresh futures v0.3.29
+       Fresh zstd v0.12.4
+       Fresh parquet-format-safe v0.2.4
+       Fresh parquet2 v0.17.2
+       Fresh arrow2 v0.18.0
+       Dirty wasm_assessment v0.1.0 (/srv/home/nassar2/code/wasm): the file `src/lib.rs` has changed (1702890772.714124056s, 5m 31s after last build at 1702890441.041145591s)
+   Compiling wasm_assessment v0.1.0 (/srv/home/nassar2/code/wasm)
+     Running `/srv/home/nassar2/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/bin/rustc --crate-name wasm_assessment --edition=2021 src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --crate-type lib --emit=dep-info,metadata,link -C opt-level=3 -C embed-bitcode=no --cfg 'feature="arrow2"' --cfg 'feature="parallel_read"' --cfg 'feature="parquet2"' -C metadata=863b656ce2e22d31 -C extra-filename=-863b656ce2e22d31 --out-dir /srv/home/nassar2/code/wasm/target/release/deps -L dependency=/srv/home/nassar2/code/wasm/target/release/deps --extern arrow2=/srv/home/nassar2/code/wasm/target/release/deps/libarrow2-976ab542edaed099.rmeta --extern chrono=/srv/home/nassar2/code/wasm/target/release/deps/libchrono-d7e3afc552d5a749.rmeta --extern log=/srv/home/nassar2/code/wasm/target/release/deps/liblog-50dd9355eb44bcf9.rmeta --extern num_cpus=/srv/home/nassar2/code/wasm/target/release/deps/libnum_cpus-dbce32e4f3e48b04.rmeta --extern parquet2=/srv/home/nassar2/code/wasm/target/release/deps/libparquet2-bd22d50b8cd6b800.rmeta --extern rayon=/srv/home/nassar2/code/wasm/target/release/deps/librayon-9f086b8e338d2952.rmeta -L native=/srv/home/nassar2/code/wasm/target/release/build/lz4-sys-e7eb1191121ba8af/out -L native=/srv/home/nassar2/code/wasm/target/release/build/zstd-sys-fb912d16145e0051/out`
+warning: unused imports: `PrimitiveArray`, `Utf8Array`, `error::Error`
+ --> src/parallel_read/generic_parallel_read.rs:2:20
+  |
+2 |     array::{Array, PrimitiveArray, Utf8Array},
+  |                    ^^^^^^^^^^^^^^  ^^^^^^^^^
+3 |     chunk::Chunk,
+4 |     error::Error,
+  |     ^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` on by default
+
+warning: unused imports: `env`, `sync::atomic`
+ --> src/parallel_read/parallel_write_parquet.rs:3:34
+  |
+3 | use std::{collections::VecDeque, env, sync::atomic};
+  |                                  ^^^  ^^^^^^^^^^^^
+
+warning: unnecessary parentheses around `if` condition
+   --> src/parallel_read/parallel_write_parquet.rs:172:8
+    |
+172 |     if (num_columns > 1) {
+    |        ^               ^
+    |
+    = note: `#[warn(unused_parens)]` on by default
+help: remove these parentheses
+    |
+172 -     if (num_columns > 1) {
+172 +     if num_columns > 1 {
+    |
+
+warning: unnecessary parentheses around `if` condition
+   --> src/parallel_read/parallel_write_parquet.rs:174:12
+    |
+174 |         if (num_columns > 2) {
+    |            ^               ^
+    |
+help: remove these parentheses
+    |
+174 -         if (num_columns > 2) {
+174 +         if num_columns > 2 {
+    |
+
+warning: unused imports: `PrimitiveArray`, `Utf8Array`, `error::Error`
+ --> src/parallel_read/mod.rs:7:20
+  |
+7 |     array::{Array, PrimitiveArray, Utf8Array},
+  |                    ^^^^^^^^^^^^^^  ^^^^^^^^^
+8 |     chunk::Chunk,
+9 |     error::Error,
+  |     ^^^^^^^^^^^^
+
+warning: unused variable: `row_group`
+  --> src/parallel_read/generic_parallel_read.rs:33:9
+   |
+33 |     let row_group = if args.len() > 2 {
+   |         ^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_row_group`
+   |
+   = note: `#[warn(unused_variables)]` on by default
+
+warning: unused variable: `num_groups`
+  --> src/parallel_read/generic_parallel_read.rs:57:9
+   |
+57 |     let num_groups = metadata.row_groups.len();
+   |         ^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_num_groups`
+
+warning: unused variable: `names`
+  --> src/parallel_read/mod.rs:39:9
+   |
+39 |     let names = &schema
+   |         ^^^^^ help: if this is intentional, prefix it with an underscore: `_names`
+
+warning: unused variable: `row_group`
+  --> src/parallel_read/mod.rs:30:30
+   |
+30 | fn parallel_read(path: &str, row_group: usize) -> Result<(u32, u32)> {
+   |                              ^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_row_group`
+
+warning: function `print_type_of` is never used
+  --> src/parallel_read/parallel_write_parquet.rs:45:4
+   |
+45 | fn print_type_of<T>(_: &T) {
+   |    ^^^^^^^^^^^^^
+   |
+   = note: `#[warn(dead_code)]` on by default
+
+warning: `wasm_assessment` (lib) generated 10 warnings (run `cargo fix --lib -p wasm_assessment` to apply 9 suggestions)
+     Running `/srv/home/nassar2/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/bin/rustc --crate-name parallel_write_parquet --edition=2021 src/bin/parallel_write_parquet.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --crate-type bin --emit=dep-info,link -C opt-level=3 -C embed-bitcode=no --cfg 'feature="arrow2"' --cfg 'feature="parallel_read"' --cfg 'feature="parquet2"' -C metadata=2a249b1387d31b1f -C extra-filename=-2a249b1387d31b1f --out-dir /srv/home/nassar2/code/wasm/target/release/deps -L dependency=/srv/home/nassar2/code/wasm/target/release/deps --extern arrow2=/srv/home/nassar2/code/wasm/target/release/deps/libarrow2-976ab542edaed099.rlib --extern chrono=/srv/home/nassar2/code/wasm/target/release/deps/libchrono-d7e3afc552d5a749.rlib --extern log=/srv/home/nassar2/code/wasm/target/release/deps/liblog-50dd9355eb44bcf9.rlib --extern num_cpus=/srv/home/nassar2/code/wasm/target/release/deps/libnum_cpus-dbce32e4f3e48b04.rlib --extern parquet2=/srv/home/nassar2/code/wasm/target/release/deps/libparquet2-bd22d50b8cd6b800.rlib --extern rayon=/srv/home/nassar2/code/wasm/target/release/deps/librayon-9f086b8e338d2952.rlib --extern wasm_assessment=/srv/home/nassar2/code/wasm/target/release/deps/libwasm_assessment-863b656ce2e22d31.rlib -L native=/srv/home/nassar2/code/wasm/target/release/build/lz4-sys-e7eb1191121ba8af/out -L native=/srv/home/nassar2/code/wasm/target/release/build/zstd-sys-fb912d16145e0051/out`
+    Finished release [optimized] target(s) in 11.22s
+       Fresh autocfg v1.1.0
+       Fresh version_check v0.9.4
+       Fresh unicode-ident v1.0.12
+       Fresh memchr v2.6.4
+       Fresh cfg-if v1.0.0
+       Fresh regex-syntax v0.8.2
+       Fresh linux-raw-sys v0.4.12
+       Fresh scopeguard v1.2.0
+       Fresh bitflags v2.4.1
+       Fresh log v0.4.20
+       Fresh humantime v2.1.0
+       Fresh bitflags v1.3.2
+       Fresh termcolor v1.4.0
+       Fresh either v1.9.0
+       Fresh aho-corasick v1.1.2
+       Fresh iana-time-zone v0.1.58
+       Fresh lazy_static v1.4.0
+       Fresh proc-macro2 v1.0.70
+       Fresh crossbeam-utils v0.8.16
+       Fresh libc v0.2.151
+       Fresh memoffset v0.9.0
+       Fresh rustix v0.38.28
+       Fresh regex-automata v0.4.3
+       Fresh num-traits v0.2.17
+       Fresh quote v1.0.33
+       Fresh crossbeam-epoch v0.9.15
+       Fresh is-terminal v0.4.9
+       Fresh regex v1.10.2
+       Fresh faccess v0.2.4
+       Fresh os_pipe v1.1.4
+       Fresh num_cpus v1.16.0
+       Fresh chrono v0.4.31
+       Fresh proc-macro-error-attr v1.0.4
+       Fresh syn v1.0.109
+       Fresh crossbeam-deque v0.8.3
+       Fresh env_logger v0.10.1
+       Fresh proc-macro-error v1.0.4
+       Fresh rayon-core v1.12.0
+       Fresh cmd_lib_macros v1.9.3
+       Fresh rayon v1.8.0
+       Fresh cmd_lib v1.9.3
+       Dirty wasm_assessment v0.1.0 (/srv/home/nassar2/code/wasm): the file `src/lib.rs` has changed (1702890772.714124056s, 5m 15s after last build at 1702890457.995112017s)
+   Compiling wasm_assessment v0.1.0 (/srv/home/nassar2/code/wasm)
+     Running `/srv/home/nassar2/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/bin/rustc --crate-name wasm_assessment --edition=2021 src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --crate-type lib --emit=dep-info,metadata,link -C opt-level=3 -C embed-bitcode=no --cfg 'feature="cmd_lib"' --cfg 'feature="script"' -C metadata=ac3b9085a9b26f70 -C extra-filename=-ac3b9085a9b26f70 --out-dir /srv/home/nassar2/code/wasm/target/release/deps -L dependency=/srv/home/nassar2/code/wasm/target/release/deps --extern chrono=/srv/home/nassar2/code/wasm/target/release/deps/libchrono-c1be1e4ebcfd14ed.rmeta --extern cmd_lib=/srv/home/nassar2/code/wasm/target/release/deps/libcmd_lib-3ef602b86cee2dfc.rmeta --extern log=/srv/home/nassar2/code/wasm/target/release/deps/liblog-39870f164cfb202f.rmeta --extern num_cpus=/srv/home/nassar2/code/wasm/target/release/deps/libnum_cpus-dbce32e4f3e48b04.rmeta --extern rayon=/srv/home/nassar2/code/wasm/target/release/deps/librayon-5b17eb50bfd37314.rmeta`
+     Running `/srv/home/nassar2/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/bin/rustc --crate-name scaling_analysis --edition=2021 src/bin/scaling_analysis.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --crate-type bin --emit=dep-info,link -C opt-level=3 -C embed-bitcode=no --cfg 'feature="cmd_lib"' --cfg 'feature="script"' -C metadata=0c50a912b40b34f2 -C extra-filename=-0c50a912b40b34f2 --out-dir /srv/home/nassar2/code/wasm/target/release/deps -L dependency=/srv/home/nassar2/code/wasm/target/release/deps --extern chrono=/srv/home/nassar2/code/wasm/target/release/deps/libchrono-c1be1e4ebcfd14ed.rlib --extern cmd_lib=/srv/home/nassar2/code/wasm/target/release/deps/libcmd_lib-3ef602b86cee2dfc.rlib --extern log=/srv/home/nassar2/code/wasm/target/release/deps/liblog-39870f164cfb202f.rlib --extern num_cpus=/srv/home/nassar2/code/wasm/target/release/deps/libnum_cpus-dbce32e4f3e48b04.rlib --extern rayon=/srv/home/nassar2/code/wasm/target/release/deps/librayon-5b17eb50bfd37314.rlib --extern wasm_assessment=/srv/home/nassar2/code/wasm/target/release/deps/libwasm_assessment-ac3b9085a9b26f70.rlib`
+warning: function `parallel_write_parquet` is never used
+ --> src/bin/scaling_analysis.rs:7:4
+  |
+7 | fn parallel_write_parquet() -> CmdResult {
+  |    ^^^^^^^^^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(dead_code)]` on by default
+
+warning: function `parallel_write_parquet_cpu_utilization` is never used
+  --> src/bin/scaling_analysis.rs:29:4
+   |
+29 | fn parallel_write_parquet_cpu_utilization() -> CmdResult {
+   |    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: function `parallel_read_arquet` is never used
+  --> src/bin/scaling_analysis.rs:74:4
+   |
+74 | fn parallel_read_arquet() -> CmdResult {
+   |    ^^^^^^^^^^^^^^^^^^^^
+
+warning: `wasm_assessment` (bin "scaling_analysis") generated 3 warnings
+    Finished release [optimized] target(s) in 12.00s
+27284
+37130
+1523529192
+[INFO ] [ perf record: Woken up 20 times to write data ]
+[INFO ] [ perf record: Captured and wrote 5.776 MB ./perf-wasix-1.data (151155 samples) ]
+14004
+22788
+1523529192
+[INFO ] [ perf record: Woken up 20 times to write data ]
+[INFO ] [ perf record: Captured and wrote 5.730 MB ./perf-wasix-2.data (149959 samples) ]
+9631
+17339
+1523529192
+[INFO ] [ perf record: Woken up 18 times to write data ]
+[INFO ] [ perf record: Captured and wrote 5.488 MB ./perf-wasix-3.data (143608 samples) ]
+7303
+15156
+1523529192
+[INFO ] [ perf record: Woken up 19 times to write data ]
+[INFO ] [ perf record: Captured and wrote 5.664 MB ./perf-wasix-4.data (148215 samples) ]
+6578
+14553
+1523529192
+[INFO ] [ perf record: Woken up 19 times to write data ]
+[INFO ] [ perf record: Captured and wrote 6.004 MB ./perf-wasix-5.data (157103 samples) ]
+5618
+12629
+1523529192
+[INFO ] [ perf record: Woken up 17 times to write data ]
+[INFO ] [ perf record: Captured and wrote 5.815 MB ./perf-wasix-6.data (152153 samples) ]
+4927
+11824
+1523529192
+[INFO ] [ perf record: Woken up 17 times to write data ]
+[INFO ] [ perf record: Captured and wrote 5.864 MB ./perf-wasix-7.data (153460 samples) ]
+4581
+12303
+1523529192
+[INFO ] [ perf record: Woken up 19 times to write data ]
+[INFO ] [ perf record: Captured and wrote 6.104 MB ./perf-wasix-8.data (159748 samples) ]
+4322
+11402
+1523529192
+[INFO ] [ perf record: Woken up 18 times to write data ]
+[INFO ] [ perf record: Captured and wrote 6.098 MB ./perf-wasix-9.data (159584 samples) ]
+4058
+11009
+1523529192
+[INFO ] [ perf record: Woken up 17 times to write data ]
+[INFO ] [ perf record: Captured and wrote 6.104 MB ./perf-wasix-10.data (159743 samples) ]
+3498
+9947
+1523529192
+[INFO ] [ perf record: Woken up 15 times to write data ]
+[INFO ] [ perf record: Captured and wrote 5.971 MB ./perf-wasix-11.data (156239 samples) ]
+3458
+10602
+1523529192
+[INFO ] [ perf record: Woken up 16 times to write data ]
+[INFO ] [ perf record: Captured and wrote 6.291 MB ./perf-wasix-12.data (164629 samples) ]
+3204
+10479
+1523529192
+[INFO ] [ perf record: Woken up 13 times to write data ]
+[INFO ] [ perf record: Captured and wrote 6.500 MB ./perf-wasix-13.data (170066 samples) ]
+3249
+10357
+1523529192
+[INFO ] [ perf record: Woken up 18 times to write data ]
+[INFO ] [ perf record: Captured and wrote 6.836 MB ./perf-wasix-14.data (178911 samples) ]
+3173
+11014
+1523529192
+[INFO ] [ perf record: Woken up 14 times to write data ]
+[INFO ] [ perf record: Captured and wrote 6.779 MB ./perf-wasix-15.data (177405 samples) ]
+3148
+10258
+1523529192
+[INFO ] [ perf record: Woken up 16 times to write data ]
+[INFO ] [ perf record: Captured and wrote 7.125 MB ./perf-wasix-16.data (186480 samples) ]
+2863
+9265
+1523529192
+[INFO ] [ perf record: Woken up 11 times to write data ]
+[INFO ] [ perf record: Captured and wrote 6.563 MB ./perf-wasix-17.data (171747 samples) ]
+2977
+9926
+1523529192
+[INFO ] [ perf record: Woken up 15 times to write data ]
+[INFO ] [ perf record: Captured and wrote 7.603 MB ./perf-wasix-18.data (198983 samples) ]
+2947
+9702
+1523529192
+[INFO ] [ perf record: Woken up 18 times to write data ]
+[INFO ] [ perf record: Captured and wrote 7.646 MB ./perf-wasix-19.data (200127 samples) ]
+2933
+10318
+1523529192
+[INFO ] [ perf record: Woken up 14 times to write data ]
+[INFO ] [ perf record: Captured and wrote 8.070 MB ./perf-wasix-20.data (211215 samples) ]
+2689
+10281
+1523529192
+[INFO ] [ perf record: Woken up 19 times to write data ]
+[INFO ] [ perf record: Captured and wrote 7.488 MB ./perf-wasix-21.data (195961 samples) ]
+2442
+9550
+1523529192
+[INFO ] [ perf record: Woken up 16 times to write data ]
+[INFO ] [ perf record: Captured and wrote 7.424 MB ./perf-wasix-22.data (194277 samples) ]
+2470
+9118
+1523529192
+[INFO ] [ perf record: Woken up 18 times to write data ]
+[INFO ] [ perf record: Captured and wrote 7.686 MB ./perf-wasix-23.data (201152 samples) ]
+2649
+10084
+1523529192
+[INFO ] [ perf record: Woken up 17 times to write data ]
+[INFO ] [ perf record: Captured and wrote 7.806 MB ./perf-wasix-24.data (204295 samples) ]
+2167
+8403
+1523529192
+[INFO ] [ perf record: Woken up 15 times to write data ]
+[INFO ] [ perf record: Captured and wrote 7.362 MB ./perf-wasix-25.data (192638 samples) ]
+2291
+8801
+1523529192
+[INFO ] [ perf record: Woken up 14 times to write data ]
+[INFO ] [ perf record: Captured and wrote 7.776 MB ./perf-wasix-26.data (203499 samples) ]
+2304
+8721
+1523529192
+[INFO ] [ perf record: Woken up 11 times to write data ]
+[INFO ] [ perf record: Captured and wrote 7.495 MB ./perf-wasix-27.data (196127 samples) ]
+2183
+7150
+1523529192
+[INFO ] [ perf record: Woken up 13 times to write data ]
+[INFO ] [ perf record: Captured and wrote 7.300 MB ./perf-wasix-28.data (191025 samples) ]
+2047
+8039
+1523529192
+[INFO ] [ perf record: Woken up 11 times to write data ]
+[INFO ] [ perf record: Captured and wrote 7.305 MB ./perf-wasix-29.data (191148 samples) ]
+2072
+8217
+1523529192
+[INFO ] [ perf record: Woken up 13 times to write data ]
+[INFO ] [ perf record: Captured and wrote 7.518 MB ./perf-wasix-30.data (196705 samples) ]
+1948
+8420
+1523529192
+[INFO ] [ perf record: Woken up 14 times to write data ]
+[INFO ] [ perf record: Captured and wrote 7.779 MB ./perf-wasix-31.data (203543 samples) ]
+1926
+8191
+1523529192
+[INFO ] [ perf record: Woken up 16 times to write data ]
+[INFO ] [ perf record: Captured and wrote 7.726 MB ./perf-wasix-32.data (202151 samples) ]
+1957
+8393
+1523529192
+[INFO ] [ perf record: Woken up 11 times to write data ]
+[INFO ] [ perf record: Captured and wrote 7.743 MB ./perf-wasix-33.data (202562 samples) ]
+1934
+7773
+1523529192
+[INFO ] [ perf record: Woken up 13 times to write data ]
+[INFO ] [ perf record: Captured and wrote 7.637 MB ./perf-wasix-34.data (199818 samples) ]
+2194
+8209
+1523529192
+[INFO ] [ perf record: Woken up 14 times to write data ]
+[INFO ] [ perf record: Captured and wrote 7.903 MB ./perf-wasix-35.data (206798 samples) ]
+1993
+8087
+1523529192
+[INFO ] [ perf record: Woken up 11 times to write data ]
+[INFO ] [ perf record: Captured and wrote 7.936 MB ./perf-wasix-36.data (207650 samples) ]
+1886
+8036
+1523529192
+[INFO ] [ perf record: Woken up 14 times to write data ]
+[INFO ] [ perf record: Captured and wrote 8.123 MB ./perf-wasix-37.data (212542 samples) ]
+1894
+8165
+1523529192
+[INFO ] [ perf record: Woken up 17 times to write data ]
+[INFO ] [ perf record: Captured and wrote 8.310 MB ./perf-wasix-38.data (217446 samples) ]
+1806
+8548
+1523529192
+[INFO ] [ perf record: Woken up 14 times to write data ]
+[INFO ] [ perf record: Captured and wrote 8.372 MB ./perf-wasix-39.data (219027 samples) ]
+1802
+8220
+1523529192
+[INFO ] [ perf record: Woken up 18 times to write data ]
+[INFO ] [ perf record: Captured and wrote 8.345 MB ./perf-wasix-40.data (218375 samples) ]

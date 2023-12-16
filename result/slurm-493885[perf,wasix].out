@@ -1,0 +1,1074 @@
+       Fresh autocfg v1.1.0
+       Fresh unicode-ident v1.0.12
+       Fresh cfg-if v1.0.0
+       Fresh pkg-config v0.3.27
+       Fresh futures-sink v0.3.29
+       Fresh pin-project-lite v0.2.13
+       Fresh pin-utils v0.1.0
+       Fresh futures-io v0.3.29
+       Fresh memchr v2.6.4
+       Fresh alloc-no-stdlib v2.0.4
+       Fresh version_check v0.9.4
+       Fresh scopeguard v1.2.0
+       Fresh adler v1.0.2
+       Fresh fallible-streaming-iterator v0.1.9
+       Fresh once_cell v1.19.0
+       Fresh array-init-cursor v0.2.0
+       Fresh zerocopy v0.7.30
+       Fresh seq-macro v0.3.5
+       Fresh iana-time-zone v0.1.58
+       Fresh either v1.9.0
+       Fresh xxhash-rust v0.8.7
+       Fresh streaming-iterator v0.1.9
+       Fresh base64 v0.21.5
+       Fresh alloc-stdlib v0.2.2
+       Fresh miniz_oxide v0.7.1
+       Fresh streaming-decompression v0.1.2
+       Fresh planus v0.3.1
+       Fresh ethnum v1.5.0
+       Fresh dyn-clone v1.0.16
+       Fresh foreign_vec v0.1.0
+       Fresh simdutf8 v0.1.4
+       Fresh hash_hasher v2.0.3
+       Fresh log v0.4.20
+       Fresh proc-macro2 v1.0.70
+       Fresh libc v0.2.151
+       Fresh futures-core v0.3.29
+       Fresh slab v0.4.9
+       Fresh futures-task v0.3.29
+       Fresh memoffset v0.9.0
+       Fresh semver v1.0.20
+       Fresh crossbeam-utils v0.8.16
+       Fresh brotli-decompressor v2.5.1
+       Fresh crc32fast v1.3.2
+       Fresh num-traits v0.2.17
+       Fresh snap v1.1.1
+       Fresh quote v1.0.33
+       Fresh jobserver v0.1.27
+       Fresh futures-channel v0.3.29
+       Fresh rustc_version v0.4.0
+       Fresh crossbeam-epoch v0.9.15
+       Fresh getrandom v0.2.11
+       Fresh flate2 v1.0.28
+       Fresh brotli v3.4.0
+       Fresh chrono v0.4.31
+       Fresh num_cpus v1.16.0
+       Fresh syn v2.0.41
+       Fresh cc v1.0.83
+       Fresh ahash v0.8.6
+       Fresh crossbeam-deque v0.8.3
+       Fresh futures-macro v0.3.29
+       Fresh serde_derive v1.0.193
+       Fresh async-stream-impl v0.3.5
+       Fresh async-trait v0.1.74
+       Fresh bytemuck_derive v1.5.0
+       Fresh hashbrown v0.14.3
+       Fresh rayon-core v1.12.0
+       Fresh futures-util v0.3.29
+       Fresh serde v1.0.193
+       Fresh async-stream v0.3.5
+       Fresh bytemuck v1.14.0
+       Fresh rayon v1.8.0
+       Fresh futures-executor v0.3.29
+       Fresh zstd-sys v2.0.9+zstd.1.5.5
+       Fresh lz4-sys v1.9.4
+       Fresh arrow-format v0.8.1
+       Fresh futures v0.3.29
+       Fresh zstd-safe v6.0.6
+       Fresh lz4 v1.24.0
+       Fresh parquet-format-safe v0.2.4
+       Fresh zstd v0.12.4
+       Fresh parquet2 v0.17.2
+       Fresh arrow2 v0.18.0
+       Dirty wasm_assessment v0.1.0 (/srv/home/nassar2/code/wasm): the file `src/lib.rs` has changed (1702886679.725570282s, 13m 17s after last build at 1702885882.083443087s)
+   Compiling wasm_assessment v0.1.0 (/srv/home/nassar2/code/wasm)
+     Running `/srv/home/nassar2/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/bin/rustc --crate-name wasm_assessment --edition=2021 src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --crate-type lib --emit=dep-info,metadata,link -C opt-level=3 -C embed-bitcode=no --cfg 'feature="arrow2"' --cfg 'feature="parallel_read"' --cfg 'feature="parquet2"' -C metadata=863b656ce2e22d31 -C extra-filename=-863b656ce2e22d31 --out-dir /srv/home/nassar2/code/wasm/target/release/deps -L dependency=/srv/home/nassar2/code/wasm/target/release/deps --extern arrow2=/srv/home/nassar2/code/wasm/target/release/deps/libarrow2-976ab542edaed099.rmeta --extern chrono=/srv/home/nassar2/code/wasm/target/release/deps/libchrono-d7e3afc552d5a749.rmeta --extern log=/srv/home/nassar2/code/wasm/target/release/deps/liblog-50dd9355eb44bcf9.rmeta --extern num_cpus=/srv/home/nassar2/code/wasm/target/release/deps/libnum_cpus-dbce32e4f3e48b04.rmeta --extern parquet2=/srv/home/nassar2/code/wasm/target/release/deps/libparquet2-bd22d50b8cd6b800.rmeta --extern rayon=/srv/home/nassar2/code/wasm/target/release/deps/librayon-9f086b8e338d2952.rmeta -L native=/srv/home/nassar2/code/wasm/target/release/build/lz4-sys-e7eb1191121ba8af/out -L native=/srv/home/nassar2/code/wasm/target/release/build/zstd-sys-fb912d16145e0051/out`
+warning: unused imports: `PrimitiveArray`, `Utf8Array`, `error::Error`
+ --> src/parallel_read/generic_parallel_read.rs:2:20
+  |
+2 |     array::{Array, PrimitiveArray, Utf8Array},
+  |                    ^^^^^^^^^^^^^^  ^^^^^^^^^
+3 |     chunk::Chunk,
+4 |     error::Error,
+  |     ^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` on by default
+
+warning: unused imports: `env`, `sync::atomic`
+ --> src/parallel_read/parallel_write_parquet.rs:3:34
+  |
+3 | use std::{collections::VecDeque, env, sync::atomic};
+  |                                  ^^^  ^^^^^^^^^^^^
+
+warning: unnecessary parentheses around `if` condition
+   --> src/parallel_read/parallel_write_parquet.rs:172:8
+    |
+172 |     if (num_columns > 1) {
+    |        ^               ^
+    |
+    = note: `#[warn(unused_parens)]` on by default
+help: remove these parentheses
+    |
+172 -     if (num_columns > 1) {
+172 +     if num_columns > 1 {
+    |
+
+warning: unnecessary parentheses around `if` condition
+   --> src/parallel_read/parallel_write_parquet.rs:174:12
+    |
+174 |         if (num_columns > 2) {
+    |            ^               ^
+    |
+help: remove these parentheses
+    |
+174 -         if (num_columns > 2) {
+174 +         if num_columns > 2 {
+    |
+
+warning: unused imports: `PrimitiveArray`, `Utf8Array`, `error::Error`
+ --> src/parallel_read/mod.rs:7:20
+  |
+7 |     array::{Array, PrimitiveArray, Utf8Array},
+  |                    ^^^^^^^^^^^^^^  ^^^^^^^^^
+8 |     chunk::Chunk,
+9 |     error::Error,
+  |     ^^^^^^^^^^^^
+
+warning: unused variable: `row_group`
+  --> src/parallel_read/generic_parallel_read.rs:33:9
+   |
+33 |     let row_group = if args.len() > 2 {
+   |         ^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_row_group`
+   |
+   = note: `#[warn(unused_variables)]` on by default
+
+warning: unused variable: `num_groups`
+  --> src/parallel_read/generic_parallel_read.rs:57:9
+   |
+57 |     let num_groups = metadata.row_groups.len();
+   |         ^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_num_groups`
+
+warning: unused variable: `names`
+  --> src/parallel_read/mod.rs:39:9
+   |
+39 |     let names = &schema
+   |         ^^^^^ help: if this is intentional, prefix it with an underscore: `_names`
+
+warning: unused variable: `row_group`
+  --> src/parallel_read/mod.rs:30:30
+   |
+30 | fn parallel_read(path: &str, row_group: usize) -> Result<(u32, u32)> {
+   |                              ^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_row_group`
+
+warning: function `print_type_of` is never used
+  --> src/parallel_read/parallel_write_parquet.rs:45:4
+   |
+45 | fn print_type_of<T>(_: &T) {
+   |    ^^^^^^^^^^^^^
+   |
+   = note: `#[warn(dead_code)]` on by default
+
+warning: `wasm_assessment` (lib) generated 10 warnings (run `cargo fix --lib -p wasm_assessment` to apply 9 suggestions)
+     Running `/srv/home/nassar2/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/bin/rustc --crate-name parallel_write_parquet --edition=2021 src/bin/parallel_write_parquet.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --crate-type bin --emit=dep-info,link -C opt-level=3 -C embed-bitcode=no --cfg 'feature="arrow2"' --cfg 'feature="parallel_read"' --cfg 'feature="parquet2"' -C metadata=2a249b1387d31b1f -C extra-filename=-2a249b1387d31b1f --out-dir /srv/home/nassar2/code/wasm/target/release/deps -L dependency=/srv/home/nassar2/code/wasm/target/release/deps --extern arrow2=/srv/home/nassar2/code/wasm/target/release/deps/libarrow2-976ab542edaed099.rlib --extern chrono=/srv/home/nassar2/code/wasm/target/release/deps/libchrono-d7e3afc552d5a749.rlib --extern log=/srv/home/nassar2/code/wasm/target/release/deps/liblog-50dd9355eb44bcf9.rlib --extern num_cpus=/srv/home/nassar2/code/wasm/target/release/deps/libnum_cpus-dbce32e4f3e48b04.rlib --extern parquet2=/srv/home/nassar2/code/wasm/target/release/deps/libparquet2-bd22d50b8cd6b800.rlib --extern rayon=/srv/home/nassar2/code/wasm/target/release/deps/librayon-9f086b8e338d2952.rlib --extern wasm_assessment=/srv/home/nassar2/code/wasm/target/release/deps/libwasm_assessment-863b656ce2e22d31.rlib -L native=/srv/home/nassar2/code/wasm/target/release/build/lz4-sys-e7eb1191121ba8af/out -L native=/srv/home/nassar2/code/wasm/target/release/build/zstd-sys-fb912d16145e0051/out`
+    Finished release [optimized] target(s) in 5.91s
+       Fresh autocfg v1.1.0
+       Fresh version_check v0.9.4
+       Fresh unicode-ident v1.0.12
+       Fresh cfg-if v1.0.0
+       Fresh memchr v2.6.4
+       Fresh linux-raw-sys v0.4.12
+       Fresh regex-syntax v0.8.2
+       Fresh bitflags v2.4.1
+       Fresh scopeguard v1.2.0
+       Fresh bitflags v1.3.2
+       Fresh log v0.4.20
+       Fresh humantime v2.1.0
+       Fresh termcolor v1.4.0
+       Fresh either v1.9.0
+       Fresh iana-time-zone v0.1.58
+       Fresh lazy_static v1.4.0
+       Fresh proc-macro2 v1.0.70
+       Fresh aho-corasick v1.1.2
+       Fresh memoffset v0.9.0
+       Fresh quote v1.0.33
+       Fresh libc v0.2.151
+       Fresh crossbeam-utils v0.8.16
+       Fresh regex-automata v0.4.3
+       Fresh rustix v0.38.28
+       Fresh num-traits v0.2.17
+       Fresh proc-macro-error-attr v1.0.4
+       Fresh syn v1.0.109
+       Fresh crossbeam-epoch v0.9.15
+       Fresh is-terminal v0.4.9
+       Fresh regex v1.10.2
+       Fresh faccess v0.2.4
+       Fresh os_pipe v1.1.4
+       Fresh num_cpus v1.16.0
+       Fresh chrono v0.4.31
+       Fresh proc-macro-error v1.0.4
+       Fresh crossbeam-deque v0.8.3
+       Fresh env_logger v0.10.1
+       Fresh rayon-core v1.12.0
+       Fresh cmd_lib_macros v1.9.3
+       Fresh cmd_lib v1.9.3
+       Fresh rayon v1.8.0
+       Dirty wasm_assessment v0.1.0 (/srv/home/nassar2/code/wasm): the file `src/lib.rs` has changed (1702886679.725570282s, 13m 1s after last build at 1702885898.785429014s)
+   Compiling wasm_assessment v0.1.0 (/srv/home/nassar2/code/wasm)
+     Running `/srv/home/nassar2/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/bin/rustc --crate-name wasm_assessment --edition=2021 src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --crate-type lib --emit=dep-info,metadata,link -C opt-level=3 -C embed-bitcode=no --cfg 'feature="cmd_lib"' --cfg 'feature="script"' -C metadata=ac3b9085a9b26f70 -C extra-filename=-ac3b9085a9b26f70 --out-dir /srv/home/nassar2/code/wasm/target/release/deps -L dependency=/srv/home/nassar2/code/wasm/target/release/deps --extern chrono=/srv/home/nassar2/code/wasm/target/release/deps/libchrono-c1be1e4ebcfd14ed.rmeta --extern cmd_lib=/srv/home/nassar2/code/wasm/target/release/deps/libcmd_lib-3ef602b86cee2dfc.rmeta --extern log=/srv/home/nassar2/code/wasm/target/release/deps/liblog-39870f164cfb202f.rmeta --extern num_cpus=/srv/home/nassar2/code/wasm/target/release/deps/libnum_cpus-dbce32e4f3e48b04.rmeta --extern rayon=/srv/home/nassar2/code/wasm/target/release/deps/librayon-5b17eb50bfd37314.rmeta`
+     Running `/srv/home/nassar2/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/bin/rustc --crate-name scaling_analysis --edition=2021 src/bin/scaling_analysis.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat --crate-type bin --emit=dep-info,link -C opt-level=3 -C embed-bitcode=no --cfg 'feature="cmd_lib"' --cfg 'feature="script"' -C metadata=0c50a912b40b34f2 -C extra-filename=-0c50a912b40b34f2 --out-dir /srv/home/nassar2/code/wasm/target/release/deps -L dependency=/srv/home/nassar2/code/wasm/target/release/deps --extern chrono=/srv/home/nassar2/code/wasm/target/release/deps/libchrono-c1be1e4ebcfd14ed.rlib --extern cmd_lib=/srv/home/nassar2/code/wasm/target/release/deps/libcmd_lib-3ef602b86cee2dfc.rlib --extern log=/srv/home/nassar2/code/wasm/target/release/deps/liblog-39870f164cfb202f.rlib --extern num_cpus=/srv/home/nassar2/code/wasm/target/release/deps/libnum_cpus-dbce32e4f3e48b04.rlib --extern rayon=/srv/home/nassar2/code/wasm/target/release/deps/librayon-5b17eb50bfd37314.rlib --extern wasm_assessment=/srv/home/nassar2/code/wasm/target/release/deps/libwasm_assessment-ac3b9085a9b26f70.rlib`
+warning: function `parallel_write_parquet` is never used
+ --> src/bin/scaling_analysis.rs:7:4
+  |
+7 | fn parallel_write_parquet() -> CmdResult {
+  |    ^^^^^^^^^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(dead_code)]` on by default
+
+warning: function `parallel_read_arquet` is never used
+  --> src/bin/scaling_analysis.rs:52:4
+   |
+52 | fn parallel_read_arquet() -> CmdResult {
+   |    ^^^^^^^^^^^^^^^^^^^^
+
+warning: `wasm_assessment` (bin "scaling_analysis") generated 2 warnings
+    Finished release [optimized] target(s) in 1.48s
+26356
+32964
+1523529192
+[INFO ] 
+[INFO ]  Performance counter stats for 'wasmer run --enable-all --mapdir ./resource/:./resource/ ./target/wasm32-wasmer-wasi/release/parallel_write_parquet.wasm 10000000 1':
+[INFO ] 
+[INFO ]          33,453.67 msec task-clock:u                     #    0.956 CPUs utilized             
+[INFO ]                  0      context-switches:u               #    0.000 /sec                      
+[INFO ]                  0      cpu-migrations:u                 #    0.000 /sec                      
+[INFO ]          1,179,938      page-faults:u                    #   35.271 K/sec                     
+[INFO ]     83,405,104,048      cycles:u                         #    2.493 GHz                       
+[INFO ]    260,798,203,564      instructions:u                   #    3.13  insn per cycle            
+[INFO ]     25,843,439,938      branches:u                       #  772.514 M/sec                     
+[INFO ]        152,403,064      branch-misses:u                  #    0.59% of all branches           
+[INFO ] 
+[INFO ]       34.975791023 seconds time elapsed
+[INFO ] 
+[INFO ]       28.375787000 seconds user
+[INFO ]        4.960722000 seconds sys
+[INFO ] 
+[INFO ] 
+13499
+20707
+1523529192
+[INFO ] 
+[INFO ]  Performance counter stats for 'wasmer run --enable-all --mapdir ./resource/:./resource/ ./target/wasm32-wasmer-wasi/release/parallel_write_parquet.wasm 10000000 2':
+[INFO ] 
+[INFO ]          34,541.38 msec task-clock:u                     #    1.639 CPUs utilized             
+[INFO ]                  0      context-switches:u               #    0.000 /sec                      
+[INFO ]                  0      cpu-migrations:u                 #    0.000 /sec                      
+[INFO ]          1,398,448      page-faults:u                    #   40.486 K/sec                     
+[INFO ]     84,478,411,306      cycles:u                         #    2.446 GHz                       
+[INFO ]    260,825,139,428      instructions:u                   #    3.09  insn per cycle            
+[INFO ]     25,847,256,904      branches:u                       #  748.298 M/sec                     
+[INFO ]        151,709,139      branch-misses:u                  #    0.59% of all branches           
+[INFO ] 
+[INFO ]       21.075154050 seconds time elapsed
+[INFO ] 
+[INFO ]       28.885443000 seconds user
+[INFO ]        5.532922000 seconds sys
+[INFO ] 
+[INFO ] 
+9422
+16850
+1523529192
+[INFO ] 
+[INFO ]  Performance counter stats for 'wasmer run --enable-all --mapdir ./resource/:./resource/ ./target/wasm32-wasmer-wasi/release/parallel_write_parquet.wasm 10000000 3':
+[INFO ] 
+[INFO ]          34,719.48 msec task-clock:u                     #    2.009 CPUs utilized             
+[INFO ]                  0      context-switches:u               #    0.000 /sec                      
+[INFO ]                  0      cpu-migrations:u                 #    0.000 /sec                      
+[INFO ]          1,208,403      page-faults:u                    #   34.805 K/sec                     
+[INFO ]     84,810,737,535      cycles:u                         #    2.443 GHz                       
+[INFO ]    260,845,551,061      instructions:u                   #    3.08  insn per cycle            
+[INFO ]     25,849,660,948      branches:u                       #  744.529 M/sec                     
+[INFO ]        152,247,918      branch-misses:u                  #    0.59% of all branches           
+[INFO ] 
+[INFO ]       17.278771592 seconds time elapsed
+[INFO ] 
+[INFO ]       28.873990000 seconds user
+[INFO ]        5.724270000 seconds sys
+[INFO ] 
+[INFO ] 
+7315
+14968
+1523529192
+[INFO ] 
+[INFO ]  Performance counter stats for 'wasmer run --enable-all --mapdir ./resource/:./resource/ ./target/wasm32-wasmer-wasi/release/parallel_write_parquet.wasm 10000000 4':
+[INFO ] 
+[INFO ]          36,989.66 msec task-clock:u                     #    2.410 CPUs utilized             
+[INFO ]                  0      context-switches:u               #    0.000 /sec                      
+[INFO ]                  0      cpu-migrations:u                 #    0.000 /sec                      
+[INFO ]          1,350,557      page-faults:u                    #   36.512 K/sec                     
+[INFO ]     85,824,603,370      cycles:u                         #    2.320 GHz                       
+[INFO ]    261,037,047,852      instructions:u                   #    3.04  insn per cycle            
+[INFO ]     25,875,492,485      branches:u                       #  699.533 M/sec                     
+[INFO ]        152,105,501      branch-misses:u                  #    0.59% of all branches           
+[INFO ] 
+[INFO ]       15.348484910 seconds time elapsed
+[INFO ] 
+[INFO ]       30.644330000 seconds user
+[INFO ]        6.184393000 seconds sys
+[INFO ] 
+[INFO ] 
+6123
+14399
+1523529192
+[INFO ] 
+[INFO ]  Performance counter stats for 'wasmer run --enable-all --mapdir ./resource/:./resource/ ./target/wasm32-wasmer-wasi/release/parallel_write_parquet.wasm 10000000 5':
+[INFO ] 
+[INFO ]          37,573.96 msec task-clock:u                     #    2.528 CPUs utilized             
+[INFO ]                  0      context-switches:u               #    0.000 /sec                      
+[INFO ]                  0      cpu-migrations:u                 #    0.000 /sec                      
+[INFO ]          1,258,104      page-faults:u                    #   33.483 K/sec                     
+[INFO ]     85,682,457,314      cycles:u                         #    2.280 GHz                       
+[INFO ]    261,011,913,209      instructions:u                   #    3.05  insn per cycle            
+[INFO ]     25,871,490,385      branches:u                       #  688.548 M/sec                     
+[INFO ]        152,558,102      branch-misses:u                  #    0.59% of all branches           
+[INFO ] 
+[INFO ]       14.862033461 seconds time elapsed
+[INFO ] 
+[INFO ]       30.846166000 seconds user
+[INFO ]        6.611839000 seconds sys
+[INFO ] 
+[INFO ] 
+5573
+12060
+1523529192
+[INFO ] 
+[INFO ]  Performance counter stats for 'wasmer run --enable-all --mapdir ./resource/:./resource/ ./target/wasm32-wasmer-wasi/release/parallel_write_parquet.wasm 10000000 6':
+[INFO ] 
+[INFO ]          36,742.33 msec task-clock:u                     #    2.950 CPUs utilized             
+[INFO ]                  0      context-switches:u               #    0.000 /sec                      
+[INFO ]                  0      cpu-migrations:u                 #    0.000 /sec                      
+[INFO ]          1,042,071      page-faults:u                    #   28.362 K/sec                     
+[INFO ]     85,710,653,985      cycles:u                         #    2.333 GHz                       
+[INFO ]    260,986,771,574      instructions:u                   #    3.04  insn per cycle            
+[INFO ]     25,870,208,777      branches:u                       #  704.098 M/sec                     
+[INFO ]        152,598,305      branch-misses:u                  #    0.59% of all branches           
+[INFO ] 
+[INFO ]       12.453810411 seconds time elapsed
+[INFO ] 
+[INFO ]       31.472551000 seconds user
+[INFO ]        5.132775000 seconds sys
+[INFO ] 
+[INFO ] 
+4769
+11842
+1523529192
+[INFO ] 
+[INFO ]  Performance counter stats for 'wasmer run --enable-all --mapdir ./resource/:./resource/ ./target/wasm32-wasmer-wasi/release/parallel_write_parquet.wasm 10000000 7':
+[INFO ] 
+[INFO ]          37,628.68 msec task-clock:u                     #    3.058 CPUs utilized             
+[INFO ]                  0      context-switches:u               #    0.000 /sec                      
+[INFO ]                  0      cpu-migrations:u                 #    0.000 /sec                      
+[INFO ]          1,123,818      page-faults:u                    #   29.866 K/sec                     
+[INFO ]     86,092,483,742      cycles:u                         #    2.288 GHz                       
+[INFO ]    260,988,920,753      instructions:u                   #    3.03  insn per cycle            
+[INFO ]     25,870,106,871      branches:u                       #  687.510 M/sec                     
+[INFO ]        152,749,456      branch-misses:u                  #    0.59% of all branches           
+[INFO ] 
+[INFO ]       12.304961298 seconds time elapsed
+[INFO ] 
+[INFO ]       31.863087000 seconds user
+[INFO ]        5.623879000 seconds sys
+[INFO ] 
+[INFO ] 
+4441
+11586
+1523529192
+[INFO ] 
+[INFO ]  Performance counter stats for 'wasmer run --enable-all --mapdir ./resource/:./resource/ ./target/wasm32-wasmer-wasi/release/parallel_write_parquet.wasm 10000000 8':
+[INFO ] 
+[INFO ]          38,722.29 msec task-clock:u                     #    3.220 CPUs utilized             
+[INFO ]                  0      context-switches:u               #    0.000 /sec                      
+[INFO ]                  0      cpu-migrations:u                 #    0.000 /sec                      
+[INFO ]          1,168,203      page-faults:u                    #   30.169 K/sec                     
+[INFO ]     85,938,091,620      cycles:u                         #    2.219 GHz                       
+[INFO ]    261,265,964,564      instructions:u                   #    3.04  insn per cycle            
+[INFO ]     25,905,294,932      branches:u                       #  669.002 M/sec                     
+[INFO ]        152,996,251      branch-misses:u                  #    0.59% of all branches           
+[INFO ] 
+[INFO ]       12.026491248 seconds time elapsed
+[INFO ] 
+[INFO ]       32.653604000 seconds user
+[INFO ]        5.919504000 seconds sys
+[INFO ] 
+[INFO ] 
+4269
+11649
+1523529192
+[INFO ] 
+[INFO ]  Performance counter stats for 'wasmer run --enable-all --mapdir ./resource/:./resource/ ./target/wasm32-wasmer-wasi/release/parallel_write_parquet.wasm 10000000 9':
+[INFO ] 
+[INFO ]          39,358.14 msec task-clock:u                     #    3.249 CPUs utilized             
+[INFO ]                  0      context-switches:u               #    0.000 /sec                      
+[INFO ]                  0      cpu-migrations:u                 #    0.000 /sec                      
+[INFO ]          1,220,084      page-faults:u                    #   31.000 K/sec                     
+[INFO ]     85,660,951,896      cycles:u                         #    2.176 GHz                       
+[INFO ]    261,102,732,108      instructions:u                   #    3.05  insn per cycle            
+[INFO ]     25,884,931,415      branches:u                       #  657.677 M/sec                     
+[INFO ]        153,431,118      branch-misses:u                  #    0.59% of all branches           
+[INFO ] 
+[INFO ]       12.112117897 seconds time elapsed
+[INFO ] 
+[INFO ]       32.966782000 seconds user
+[INFO ]        6.233774000 seconds sys
+[INFO ] 
+[INFO ] 
+3738
+10719
+1523529192
+[INFO ] 
+[INFO ]  Performance counter stats for 'wasmer run --enable-all --mapdir ./resource/:./resource/ ./target/wasm32-wasmer-wasi/release/parallel_write_parquet.wasm 10000000 10':
+[INFO ] 
+[INFO ]          39,047.19 msec task-clock:u                     #    3.495 CPUs utilized             
+[INFO ]                  0      context-switches:u               #    0.000 /sec                      
+[INFO ]                  0      cpu-migrations:u                 #    0.000 /sec                      
+[INFO ]          1,037,157      page-faults:u                    #   26.562 K/sec                     
+[INFO ]     85,112,254,412      cycles:u                         #    2.180 GHz                       
+[INFO ]    260,957,173,392      instructions:u                   #    3.07  insn per cycle            
+[INFO ]     25,865,428,603      branches:u                       #  662.415 M/sec                     
+[INFO ]        152,198,780      branch-misses:u                  #    0.59% of all branches           
+[INFO ] 
+[INFO ]       11.171953831 seconds time elapsed
+[INFO ] 
+[INFO ]       33.179637000 seconds user
+[INFO ]        5.697919000 seconds sys
+[INFO ] 
+[INFO ] 
+3430
+9694
+1523529192
+[INFO ] 
+[INFO ]  Performance counter stats for 'wasmer run --enable-all --mapdir ./resource/:./resource/ ./target/wasm32-wasmer-wasi/release/parallel_write_parquet.wasm 10000000 11':
+[INFO ] 
+[INFO ]          38,589.02 msec task-clock:u                     #    3.804 CPUs utilized             
+[INFO ]                  0      context-switches:u               #    0.000 /sec                      
+[INFO ]                  0      cpu-migrations:u                 #    0.000 /sec                      
+[INFO ]          1,032,600      page-faults:u                    #   26.759 K/sec                     
+[INFO ]     85,801,014,075      cycles:u                         #    2.223 GHz                       
+[INFO ]    261,013,505,465      instructions:u                   #    3.04  insn per cycle            
+[INFO ]     25,873,929,920      branches:u                       #  670.500 M/sec                     
+[INFO ]        152,484,330      branch-misses:u                  #    0.59% of all branches           
+[INFO ] 
+[INFO ]       10.143483893 seconds time elapsed
+[INFO ] 
+[INFO ]       33.489590000 seconds user
+[INFO ]        4.946405000 seconds sys
+[INFO ] 
+[INFO ] 
+3202
+9860
+1523529192
+[INFO ] 
+[INFO ]  Performance counter stats for 'wasmer run --enable-all --mapdir ./resource/:./resource/ ./target/wasm32-wasmer-wasi/release/parallel_write_parquet.wasm 10000000 12':
+[INFO ] 
+[INFO ]          40,164.22 msec task-clock:u                     #    3.898 CPUs utilized             
+[INFO ]                  0      context-switches:u               #    0.000 /sec                      
+[INFO ]                  0      cpu-migrations:u                 #    0.000 /sec                      
+[INFO ]          1,069,231      page-faults:u                    #   26.621 K/sec                     
+[INFO ]     88,338,719,804      cycles:u                         #    2.199 GHz                       
+[INFO ]    261,090,400,730      instructions:u                   #    2.96  insn per cycle            
+[INFO ]     25,883,358,547      branches:u                       #  644.438 M/sec                     
+[INFO ]        153,082,316      branch-misses:u                  #    0.59% of all branches           
+[INFO ] 
+[INFO ]       10.302722739 seconds time elapsed
+[INFO ] 
+[INFO ]       34.529819000 seconds user
+[INFO ]        5.461261000 seconds sys
+[INFO ] 
+[INFO ] 
+3159
+9609
+1523529192
+[INFO ] 
+[INFO ]  Performance counter stats for 'wasmer run --enable-all --mapdir ./resource/:./resource/ ./target/wasm32-wasmer-wasi/release/parallel_write_parquet.wasm 10000000 13':
+[INFO ] 
+[INFO ]          40,220.33 msec task-clock:u                     #    3.999 CPUs utilized             
+[INFO ]                  0      context-switches:u               #    0.000 /sec                      
+[INFO ]                  0      cpu-migrations:u                 #    0.000 /sec                      
+[INFO ]          1,070,388      page-faults:u                    #   26.613 K/sec                     
+[INFO ]     89,142,110,996      cycles:u                         #    2.216 GHz                       
+[INFO ]    261,010,780,307      instructions:u                   #    2.93  insn per cycle            
+[INFO ]     25,873,263,417      branches:u                       #  643.288 M/sec                     
+[INFO ]        153,152,108      branch-misses:u                  #    0.59% of all branches           
+[INFO ] 
+[INFO ]       10.057026354 seconds time elapsed
+[INFO ] 
+[INFO ]       34.745574000 seconds user
+[INFO ]        5.290356000 seconds sys
+[INFO ] 
+[INFO ] 
+3079
+9480
+1523529192
+[INFO ] 
+[INFO ]  Performance counter stats for 'wasmer run --enable-all --mapdir ./resource/:./resource/ ./target/wasm32-wasmer-wasi/release/parallel_write_parquet.wasm 10000000 14':
+[INFO ] 
+[INFO ]          40,542.73 msec task-clock:u                     #    4.090 CPUs utilized             
+[INFO ]                  0      context-switches:u               #    0.000 /sec                      
+[INFO ]                  0      cpu-migrations:u                 #    0.000 /sec                      
+[INFO ]          1,058,797      page-faults:u                    #   26.116 K/sec                     
+[INFO ]     89,361,999,550      cycles:u                         #    2.204 GHz                       
+[INFO ]    261,106,582,845      instructions:u                   #    2.92  insn per cycle            
+[INFO ]     25,885,188,829      branches:u                       #  638.467 M/sec                     
+[INFO ]        152,724,642      branch-misses:u                  #    0.59% of all branches           
+[INFO ] 
+[INFO ]        9.912033458 seconds time elapsed
+[INFO ] 
+[INFO ]       35.114460000 seconds user
+[INFO ]        5.254313000 seconds sys
+[INFO ] 
+[INFO ] 
+2950
+9366
+1523529192
+[INFO ] 
+[INFO ]  Performance counter stats for 'wasmer run --enable-all --mapdir ./resource/:./resource/ ./target/wasm32-wasmer-wasi/release/parallel_write_parquet.wasm 10000000 15':
+[INFO ] 
+[INFO ]          42,056.96 msec task-clock:u                     #    4.288 CPUs utilized             
+[INFO ]                  0      context-switches:u               #    0.000 /sec                      
+[INFO ]                  0      cpu-migrations:u                 #    0.000 /sec                      
+[INFO ]          1,043,339      page-faults:u                    #   24.808 K/sec                     
+[INFO ]     92,412,633,598      cycles:u                         #    2.197 GHz                       
+[INFO ]    260,976,265,808      instructions:u                   #    2.82  insn per cycle            
+[INFO ]     25,869,430,724      branches:u                       #  615.105 M/sec                     
+[INFO ]        152,600,750      branch-misses:u                  #    0.59% of all branches           
+[INFO ] 
+[INFO ]        9.808627376 seconds time elapsed
+[INFO ] 
+[INFO ]       36.406375000 seconds user
+[INFO ]        5.457460000 seconds sys
+[INFO ] 
+[INFO ] 
+2871
+9235
+1523529192
+[INFO ] 
+[INFO ]  Performance counter stats for 'wasmer run --enable-all --mapdir ./resource/:./resource/ ./target/wasm32-wasmer-wasi/release/parallel_write_parquet.wasm 10000000 16':
+[INFO ] 
+[INFO ]          41,221.07 msec task-clock:u                     #    4.259 CPUs utilized             
+[INFO ]                  0      context-switches:u               #    0.000 /sec                      
+[INFO ]                  0      cpu-migrations:u                 #    0.000 /sec                      
+[INFO ]          1,033,240      page-faults:u                    #   25.066 K/sec                     
+[INFO ]     91,315,266,970      cycles:u                         #    2.215 GHz                       
+[INFO ]    261,032,081,930      instructions:u                   #    2.86  insn per cycle            
+[INFO ]     25,876,997,661      branches:u                       #  627.761 M/sec                     
+[INFO ]        152,400,930      branch-misses:u                  #    0.59% of all branches           
+[INFO ] 
+[INFO ]        9.677938017 seconds time elapsed
+[INFO ] 
+[INFO ]       35.867125000 seconds user
+[INFO ]        5.162393000 seconds sys
+[INFO ] 
+[INFO ] 
+2896
+9510
+1523529192
+[INFO ] 
+[INFO ]  Performance counter stats for 'wasmer run --enable-all --mapdir ./resource/:./resource/ ./target/wasm32-wasmer-wasi/release/parallel_write_parquet.wasm 10000000 17':
+[INFO ] 
+[INFO ]          43,240.78 msec task-clock:u                     #    4.338 CPUs utilized             
+[INFO ]                  0      context-switches:u               #    0.000 /sec                      
+[INFO ]                  0      cpu-migrations:u                 #    0.000 /sec                      
+[INFO ]          1,093,884      page-faults:u                    #   25.298 K/sec                     
+[INFO ]     94,651,691,206      cycles:u                         #    2.189 GHz                       
+[INFO ]    261,056,130,054      instructions:u                   #    2.76  insn per cycle            
+[INFO ]     25,880,345,400      branches:u                       #  598.517 M/sec                     
+[INFO ]        152,969,199      branch-misses:u                  #    0.59% of all branches           
+[INFO ] 
+[INFO ]        9.966783347 seconds time elapsed
+[INFO ] 
+[INFO ]       37.352788000 seconds user
+[INFO ]        5.675306000 seconds sys
+[INFO ] 
+[INFO ] 
+2876
+9183
+1523529192
+[INFO ] 
+[INFO ]  Performance counter stats for 'wasmer run --enable-all --mapdir ./resource/:./resource/ ./target/wasm32-wasmer-wasi/release/parallel_write_parquet.wasm 10000000 18':
+[INFO ] 
+[INFO ]          45,984.23 msec task-clock:u                     #    4.772 CPUs utilized             
+[INFO ]                  0      context-switches:u               #    0.000 /sec                      
+[INFO ]                  0      cpu-migrations:u                 #    0.000 /sec                      
+[INFO ]          1,051,018      page-faults:u                    #   22.856 K/sec                     
+[INFO ]    103,283,825,755      cycles:u                         #    2.246 GHz                       
+[INFO ]    261,034,854,241      instructions:u                   #    2.53  insn per cycle            
+[INFO ]     25,876,688,326      branches:u                       #  562.730 M/sec                     
+[INFO ]        152,594,574      branch-misses:u                  #    0.59% of all branches           
+[INFO ] 
+[INFO ]        9.635739488 seconds time elapsed
+[INFO ] 
+[INFO ]       40.612261000 seconds user
+[INFO ]        5.155980000 seconds sys
+[INFO ] 
+[INFO ] 
+2782
+8968
+1523529192
+[INFO ] 
+[INFO ]  Performance counter stats for 'wasmer run --enable-all --mapdir ./resource/:./resource/ ./target/wasm32-wasmer-wasi/release/parallel_write_parquet.wasm 10000000 19':
+[INFO ] 
+[INFO ]          45,824.80 msec task-clock:u                     #    4.868 CPUs utilized             
+[INFO ]                  0      context-switches:u               #    0.000 /sec                      
+[INFO ]                  0      cpu-migrations:u                 #    0.000 /sec                      
+[INFO ]            985,764      page-faults:u                    #   21.512 K/sec                     
+[INFO ]    101,649,607,660      cycles:u                         #    2.218 GHz                       
+[INFO ]    261,035,404,442      instructions:u                   #    2.57  insn per cycle            
+[INFO ]     25,877,884,918      branches:u                       #  564.714 M/sec                     
+[INFO ]        153,048,725      branch-misses:u                  #    0.59% of all branches           
+[INFO ] 
+[INFO ]        9.412720641 seconds time elapsed
+[INFO ] 
+[INFO ]       40.326506000 seconds user
+[INFO ]        5.265118000 seconds sys
+[INFO ] 
+[INFO ] 
+3084
+9755
+1523529192
+[INFO ] 
+[INFO ]  Performance counter stats for 'wasmer run --enable-all --mapdir ./resource/:./resource/ ./target/wasm32-wasmer-wasi/release/parallel_write_parquet.wasm 10000000 20':
+[INFO ] 
+[INFO ]          50,467.04 msec task-clock:u                     #    4.975 CPUs utilized             
+[INFO ]                  0      context-switches:u               #    0.000 /sec                      
+[INFO ]                  0      cpu-migrations:u                 #    0.000 /sec                      
+[INFO ]          1,098,986      page-faults:u                    #   21.776 K/sec                     
+[INFO ]    112,872,828,966      cycles:u                         #    2.237 GHz                       
+[INFO ]    261,170,601,171      instructions:u                   #    2.31  insn per cycle            
+[INFO ]     25,895,736,062      branches:u                       #  513.122 M/sec                     
+[INFO ]        152,923,390      branch-misses:u                  #    0.59% of all branches           
+[INFO ] 
+[INFO ]       10.143689326 seconds time elapsed
+[INFO ] 
+[INFO ]       44.427626000 seconds user
+[INFO ]        5.752656000 seconds sys
+[INFO ] 
+[INFO ] 
+2568
+8917
+1523529192
+[INFO ] 
+[INFO ]  Performance counter stats for 'wasmer run --enable-all --mapdir ./resource/:./resource/ ./target/wasm32-wasmer-wasi/release/parallel_write_parquet.wasm 10000000 21':
+[INFO ] 
+[INFO ]          45,116.20 msec task-clock:u                     #    4.819 CPUs utilized             
+[INFO ]                  0      context-switches:u               #    0.000 /sec                      
+[INFO ]                  0      cpu-migrations:u                 #    0.000 /sec                      
+[INFO ]          1,034,370      page-faults:u                    #   22.927 K/sec                     
+[INFO ]     98,449,234,915      cycles:u                         #    2.182 GHz                       
+[INFO ]    261,205,512,674      instructions:u                   #    2.65  insn per cycle            
+[INFO ]     25,899,803,365      branches:u                       #  574.069 M/sec                     
+[INFO ]        153,579,180      branch-misses:u                  #    0.59% of all branches           
+[INFO ] 
+[INFO ]        9.362671752 seconds time elapsed
+[INFO ] 
+[INFO ]       39.360728000 seconds user
+[INFO ]        5.519212000 seconds sys
+[INFO ] 
+[INFO ] 
+2582
+9147
+1523529192
+[INFO ] 
+[INFO ]  Performance counter stats for 'wasmer run --enable-all --mapdir ./resource/:./resource/ ./target/wasm32-wasmer-wasi/release/parallel_write_parquet.wasm 10000000 22':
+[INFO ] 
+[INFO ]          46,999.50 msec task-clock:u                     #    4.895 CPUs utilized             
+[INFO ]                  0      context-switches:u               #    0.000 /sec                      
+[INFO ]                  0      cpu-migrations:u                 #    0.000 /sec                      
+[INFO ]          1,075,860      page-faults:u                    #   22.891 K/sec                     
+[INFO ]    102,223,242,162      cycles:u                         #    2.175 GHz                       
+[INFO ]    261,113,451,196      instructions:u                   #    2.55  insn per cycle            
+[INFO ]     25,887,922,644      branches:u                       #  550.813 M/sec                     
+[INFO ]        153,050,096      branch-misses:u                  #    0.59% of all branches           
+[INFO ] 
+[INFO ]        9.601403295 seconds time elapsed
+[INFO ] 
+[INFO ]       40.865074000 seconds user
+[INFO ]        5.874202000 seconds sys
+[INFO ] 
+[INFO ] 
+2173
+8089
+1523529192
+[INFO ] 
+[INFO ]  Performance counter stats for 'wasmer run --enable-all --mapdir ./resource/:./resource/ ./target/wasm32-wasmer-wasi/release/parallel_write_parquet.wasm 10000000 23':
+[INFO ] 
+[INFO ]          46,495.92 msec task-clock:u                     #    5.481 CPUs utilized             
+[INFO ]                  0      context-switches:u               #    0.000 /sec                      
+[INFO ]                  0      cpu-migrations:u                 #    0.000 /sec                      
+[INFO ]            942,780      page-faults:u                    #   20.277 K/sec                     
+[INFO ]    102,838,510,039      cycles:u                         #    2.212 GHz                       
+[INFO ]    261,116,419,509      instructions:u                   #    2.54  insn per cycle            
+[INFO ]     25,888,689,390      branches:u                       #  556.795 M/sec                     
+[INFO ]        152,452,635      branch-misses:u                  #    0.59% of all branches           
+[INFO ] 
+[INFO ]        8.483043694 seconds time elapsed
+[INFO ] 
+[INFO ]       41.144998000 seconds user
+[INFO ]        5.093777000 seconds sys
+[INFO ] 
+[INFO ] 
+2417
+8493
+1523529192
+[INFO ] 
+[INFO ]  Performance counter stats for 'wasmer run --enable-all --mapdir ./resource/:./resource/ ./target/wasm32-wasmer-wasi/release/parallel_write_parquet.wasm 10000000 24':
+[INFO ] 
+[INFO ]          47,257.72 msec task-clock:u                     #    5.335 CPUs utilized             
+[INFO ]                  0      context-switches:u               #    0.000 /sec                      
+[INFO ]                  0      cpu-migrations:u                 #    0.000 /sec                      
+[INFO ]            987,079      page-faults:u                    #   20.887 K/sec                     
+[INFO ]    103,657,549,503      cycles:u                         #    2.193 GHz                       
+[INFO ]    261,142,228,698      instructions:u                   #    2.52  insn per cycle            
+[INFO ]     25,891,785,775      branches:u                       #  547.885 M/sec                     
+[INFO ]        152,352,327      branch-misses:u                  #    0.59% of all branches           
+[INFO ] 
+[INFO ]        8.858477683 seconds time elapsed
+[INFO ] 
+[INFO ]       41.605490000 seconds user
+[INFO ]        5.386465000 seconds sys
+[INFO ] 
+[INFO ] 
+2119
+7622
+1523529192
+[INFO ] 
+[INFO ]  Performance counter stats for 'wasmer run --enable-all --mapdir ./resource/:./resource/ ./target/wasm32-wasmer-wasi/release/parallel_write_parquet.wasm 10000000 25':
+[INFO ] 
+[INFO ]          46,978.58 msec task-clock:u                     #    5.821 CPUs utilized             
+[INFO ]                  0      context-switches:u               #    0.000 /sec                      
+[INFO ]                  0      cpu-migrations:u                 #    0.000 /sec                      
+[INFO ]            931,145      page-faults:u                    #   19.821 K/sec                     
+[INFO ]    103,214,993,900      cycles:u                         #    2.197 GHz                       
+[INFO ]    261,165,621,373      instructions:u                   #    2.53  insn per cycle            
+[INFO ]     25,895,892,169      branches:u                       #  551.228 M/sec                     
+[INFO ]        153,128,601      branch-misses:u                  #    0.59% of all branches           
+[INFO ] 
+[INFO ]        8.071014693 seconds time elapsed
+[INFO ] 
+[INFO ]       41.351943000 seconds user
+[INFO ]        5.332941000 seconds sys
+[INFO ] 
+[INFO ] 
+2407
+9240
+1523529192
+[INFO ] 
+[INFO ]  Performance counter stats for 'wasmer run --enable-all --mapdir ./resource/:./resource/ ./target/wasm32-wasmer-wasi/release/parallel_write_parquet.wasm 10000000 26':
+[INFO ] 
+[INFO ]          49,107.01 msec task-clock:u                     #    5.101 CPUs utilized             
+[INFO ]                  0      context-switches:u               #    0.000 /sec                      
+[INFO ]                  0      cpu-migrations:u                 #    0.000 /sec                      
+[INFO ]          1,075,121      page-faults:u                    #   21.893 K/sec                     
+[INFO ]    107,306,509,410      cycles:u                         #    2.185 GHz                       
+[INFO ]    261,338,197,740      instructions:u                   #    2.44  insn per cycle            
+[INFO ]     25,880,091,864      branches:u                       #  527.014 M/sec                     
+[INFO ]        153,057,462      branch-misses:u                  #    0.59% of all branches           
+[INFO ] 
+[INFO ]        9.627256444 seconds time elapsed
+[INFO ] 
+[INFO ]       42.760875000 seconds user
+[INFO ]        6.077459000 seconds sys
+[INFO ] 
+[INFO ] 
+2091
+9174
+1523529192
+[INFO ] 
+[INFO ]  Performance counter stats for 'wasmer run --enable-all --mapdir ./resource/:./resource/ ./target/wasm32-wasmer-wasi/release/parallel_write_parquet.wasm 10000000 27':
+[INFO ] 
+[INFO ]          48,421.64 msec task-clock:u                     #    5.049 CPUs utilized             
+[INFO ]                  0      context-switches:u               #    0.000 /sec                      
+[INFO ]                  0      cpu-migrations:u                 #    0.000 /sec                      
+[INFO ]          1,144,852      page-faults:u                    #   23.643 K/sec                     
+[INFO ]    104,039,738,854      cycles:u                         #    2.149 GHz                       
+[INFO ]    261,457,212,645      instructions:u                   #    2.51  insn per cycle            
+[INFO ]     25,934,309,000      branches:u                       #  535.593 M/sec                     
+[INFO ]        153,598,010      branch-misses:u                  #    0.59% of all branches           
+[INFO ] 
+[INFO ]        9.590154811 seconds time elapsed
+[INFO ] 
+[INFO ]       41.704815000 seconds user
+[INFO ]        6.426577000 seconds sys
+[INFO ] 
+[INFO ] 
+2130
+7984
+1523529192
+[INFO ] 
+[INFO ]  Performance counter stats for 'wasmer run --enable-all --mapdir ./resource/:./resource/ ./target/wasm32-wasmer-wasi/release/parallel_write_parquet.wasm 10000000 28':
+[INFO ] 
+[INFO ]          47,217.86 msec task-clock:u                     #    5.639 CPUs utilized             
+[INFO ]                  0      context-switches:u               #    0.000 /sec                      
+[INFO ]                  0      cpu-migrations:u                 #    0.000 /sec                      
+[INFO ]            937,948      page-faults:u                    #   19.864 K/sec                     
+[INFO ]    103,919,687,908      cycles:u                         #    2.201 GHz                       
+[INFO ]    261,160,125,092      instructions:u                   #    2.51  insn per cycle            
+[INFO ]     25,894,690,249      branches:u                       #  548.409 M/sec                     
+[INFO ]        153,056,784      branch-misses:u                  #    0.59% of all branches           
+[INFO ] 
+[INFO ]        8.373042430 seconds time elapsed
+[INFO ] 
+[INFO ]       41.778757000 seconds user
+[INFO ]        5.172317000 seconds sys
+[INFO ] 
+[INFO ] 
+2137
+7916
+1523529192
+[INFO ] 
+[INFO ]  Performance counter stats for 'wasmer run --enable-all --mapdir ./resource/:./resource/ ./target/wasm32-wasmer-wasi/release/parallel_write_parquet.wasm 10000000 29':
+[INFO ] 
+[INFO ]          48,647.71 msec task-clock:u                     #    5.832 CPUs utilized             
+[INFO ]                  0      context-switches:u               #    0.000 /sec                      
+[INFO ]                  0      cpu-migrations:u                 #    0.000 /sec                      
+[INFO ]            949,926      page-faults:u                    #   19.527 K/sec                     
+[INFO ]    105,716,810,691      cycles:u                         #    2.173 GHz                       
+[INFO ]    261,387,635,950      instructions:u                   #    2.47  insn per cycle            
+[INFO ]     25,887,305,051      branches:u                       #  532.138 M/sec                     
+[INFO ]        153,591,351      branch-misses:u                  #    0.59% of all branches           
+[INFO ] 
+[INFO ]        8.340868856 seconds time elapsed
+[INFO ] 
+[INFO ]       42.785332000 seconds user
+[INFO ]        5.529046000 seconds sys
+[INFO ] 
+[INFO ] 
+2015
+7910
+1523529192
+[INFO ] 
+[INFO ]  Performance counter stats for 'wasmer run --enable-all --mapdir ./resource/:./resource/ ./target/wasm32-wasmer-wasi/release/parallel_write_parquet.wasm 10000000 30':
+[INFO ] 
+[INFO ]          47,216.41 msec task-clock:u                     #    5.676 CPUs utilized             
+[INFO ]                  0      context-switches:u               #    0.000 /sec                      
+[INFO ]                  0      cpu-migrations:u                 #    0.000 /sec                      
+[INFO ]            917,641      page-faults:u                    #   19.435 K/sec                     
+[INFO ]    102,727,487,813      cycles:u                         #    2.176 GHz                       
+[INFO ]    261,216,519,247      instructions:u                   #    2.54  insn per cycle            
+[INFO ]     25,903,079,407      branches:u                       #  548.603 M/sec                     
+[INFO ]        153,624,898      branch-misses:u                  #    0.59% of all branches           
+[INFO ] 
+[INFO ]        8.318038131 seconds time elapsed
+[INFO ] 
+[INFO ]       41.675621000 seconds user
+[INFO ]        5.274570000 seconds sys
+[INFO ] 
+[INFO ] 
+1882
+8124
+1523529192
+[INFO ] 
+[INFO ]  Performance counter stats for 'wasmer run --enable-all --mapdir ./resource/:./resource/ ./target/wasm32-wasmer-wasi/release/parallel_write_parquet.wasm 10000000 31':
+[INFO ] 
+[INFO ]          48,847.29 msec task-clock:u                     #    5.699 CPUs utilized             
+[INFO ]                  0      context-switches:u               #    0.000 /sec                      
+[INFO ]                  0      cpu-migrations:u                 #    0.000 /sec                      
+[INFO ]          1,001,581      page-faults:u                    #   20.504 K/sec                     
+[INFO ]    104,805,464,659      cycles:u                         #    2.146 GHz                       
+[INFO ]    261,366,202,618      instructions:u                   #    2.49  insn per cycle            
+[INFO ]     25,922,513,466      branches:u                       #  530.685 M/sec                     
+[INFO ]        153,581,893      branch-misses:u                  #    0.59% of all branches           
+[INFO ] 
+[INFO ]        8.571176341 seconds time elapsed
+[INFO ] 
+[INFO ]       42.676885000 seconds user
+[INFO ]        5.834910000 seconds sys
+[INFO ] 
+[INFO ] 
+1868
+8079
+1523529192
+[INFO ] 
+[INFO ]  Performance counter stats for 'wasmer run --enable-all --mapdir ./resource/:./resource/ ./target/wasm32-wasmer-wasi/release/parallel_write_parquet.wasm 10000000 32':
+[INFO ] 
+[INFO ]          48,317.04 msec task-clock:u                     #    5.700 CPUs utilized             
+[INFO ]                  0      context-switches:u               #    0.000 /sec                      
+[INFO ]                  0      cpu-migrations:u                 #    0.000 /sec                      
+[INFO ]            983,959      page-faults:u                    #   20.365 K/sec                     
+[INFO ]    104,094,894,073      cycles:u                         #    2.154 GHz                       
+[INFO ]    261,478,147,943      instructions:u                   #    2.51  insn per cycle            
+[INFO ]     25,938,139,151      branches:u                       #  536.832 M/sec                     
+[INFO ]        152,939,465      branch-misses:u                  #    0.59% of all branches           
+[INFO ] 
+[INFO ]        8.476276152 seconds time elapsed
+[INFO ] 
+[INFO ]       42.321646000 seconds user
+[INFO ]        5.727357000 seconds sys
+[INFO ] 
+[INFO ] 
+1924
+8076
+1523529192
+[INFO ] 
+[INFO ]  Performance counter stats for 'wasmer run --enable-all --mapdir ./resource/:./resource/ ./target/wasm32-wasmer-wasi/release/parallel_write_parquet.wasm 10000000 33':
+[INFO ] 
+[INFO ]          49,897.42 msec task-clock:u                     #    5.905 CPUs utilized             
+[INFO ]                  0      context-switches:u               #    0.000 /sec                      
+[INFO ]                  0      cpu-migrations:u                 #    0.000 /sec                      
+[INFO ]            956,255      page-faults:u                    #   19.164 K/sec                     
+[INFO ]    107,460,067,124      cycles:u                         #    2.154 GHz                       
+[INFO ]    261,287,077,581      instructions:u                   #    2.43  insn per cycle            
+[INFO ]     25,912,032,934      branches:u                       #  519.306 M/sec                     
+[INFO ]        154,114,555      branch-misses:u                  #    0.59% of all branches           
+[INFO ] 
+[INFO ]        8.449882677 seconds time elapsed
+[INFO ] 
+[INFO ]       43.959313000 seconds user
+[INFO ]        5.626367000 seconds sys
+[INFO ] 
+[INFO ] 
+2061
+7850
+1523529192
+[INFO ] 
+[INFO ]  Performance counter stats for 'wasmer run --enable-all --mapdir ./resource/:./resource/ ./target/wasm32-wasmer-wasi/release/parallel_write_parquet.wasm 10000000 34':
+[INFO ] 
+[INFO ]          49,348.52 msec task-clock:u                     #    5.944 CPUs utilized             
+[INFO ]                  0      context-switches:u               #    0.000 /sec                      
+[INFO ]                  0      cpu-migrations:u                 #    0.000 /sec                      
+[INFO ]            914,688      page-faults:u                    #   18.535 K/sec                     
+[INFO ]    106,774,904,514      cycles:u                         #    2.164 GHz                       
+[INFO ]    261,270,292,183      instructions:u                   #    2.45  insn per cycle            
+[INFO ]     25,909,780,011      branches:u                       #  525.037 M/sec                     
+[INFO ]        153,237,735      branch-misses:u                  #    0.59% of all branches           
+[INFO ] 
+[INFO ]        8.302175947 seconds time elapsed
+[INFO ] 
+[INFO ]       43.628692000 seconds user
+[INFO ]        5.450685000 seconds sys
+[INFO ] 
+[INFO ] 
+1881
+7811
+1523529192
+[INFO ] 
+[INFO ]  Performance counter stats for 'wasmer run --enable-all --mapdir ./resource/:./resource/ ./target/wasm32-wasmer-wasi/release/parallel_write_parquet.wasm 10000000 35':
+[INFO ] 
+[INFO ]          50,468.54 msec task-clock:u                     #    6.148 CPUs utilized             
+[INFO ]                  0      context-switches:u               #    0.000 /sec                      
+[INFO ]                  0      cpu-migrations:u                 #    0.000 /sec                      
+[INFO ]            911,659      page-faults:u                    #   18.064 K/sec                     
+[INFO ]    109,081,832,795      cycles:u                         #    2.161 GHz                       
+[INFO ]    261,278,258,559      instructions:u                   #    2.40  insn per cycle            
+[INFO ]     25,911,055,365      branches:u                       #  513.410 M/sec                     
+[INFO ]        153,056,727      branch-misses:u                  #    0.59% of all branches           
+[INFO ] 
+[INFO ]        8.208620568 seconds time elapsed
+[INFO ] 
+[INFO ]       44.834222000 seconds user
+[INFO ]        5.355776000 seconds sys
+[INFO ] 
+[INFO ] 
+1969
+7598
+1523529192
+[INFO ] 
+[INFO ]  Performance counter stats for 'wasmer run --enable-all --mapdir ./resource/:./resource/ ./target/wasm32-wasmer-wasi/release/parallel_write_parquet.wasm 10000000 36':
+[INFO ] 
+[INFO ]          50,768.68 msec task-clock:u                     #    6.315 CPUs utilized             
+[INFO ]                  0      context-switches:u               #    0.000 /sec                      
+[INFO ]                  0      cpu-migrations:u                 #    0.000 /sec                      
+[INFO ]            923,015      page-faults:u                    #   18.181 K/sec                     
+[INFO ]    110,419,883,488      cycles:u                         #    2.175 GHz                       
+[INFO ]    261,328,281,469      instructions:u                   #    2.37  insn per cycle            
+[INFO ]     25,918,084,160      branches:u                       #  510.513 M/sec                     
+[INFO ]        153,841,481      branch-misses:u                  #    0.59% of all branches           
+[INFO ] 
+[INFO ]        8.039672140 seconds time elapsed
+[INFO ] 
+[INFO ]       44.920179000 seconds user
+[INFO ]        5.521091000 seconds sys
+[INFO ] 
+[INFO ] 
+1814
+7533
+1523529192
+[INFO ] 
+[INFO ]  Performance counter stats for 'wasmer run --enable-all --mapdir ./resource/:./resource/ ./target/wasm32-wasmer-wasi/release/parallel_write_parquet.wasm 10000000 37':
+[INFO ] 
+[INFO ]          51,581.88 msec task-clock:u                     #    6.488 CPUs utilized             
+[INFO ]                  0      context-switches:u               #    0.000 /sec                      
+[INFO ]                  0      cpu-migrations:u                 #    0.000 /sec                      
+[INFO ]            925,816      page-faults:u                    #   17.948 K/sec                     
+[INFO ]    111,358,884,323      cycles:u                         #    2.159 GHz                       
+[INFO ]    261,357,121,765      instructions:u                   #    2.35  insn per cycle            
+[INFO ]     25,922,500,285      branches:u                       #  502.551 M/sec                     
+[INFO ]        153,525,508      branch-misses:u                  #    0.59% of all branches           
+[INFO ] 
+[INFO ]        7.950717577 seconds time elapsed
+[INFO ] 
+[INFO ]       45.614813000 seconds user
+[INFO ]        5.614677000 seconds sys
+[INFO ] 
+[INFO ] 
+1864
+8015
+1523529192
+[INFO ] 
+[INFO ]  Performance counter stats for 'wasmer run --enable-all --mapdir ./resource/:./resource/ ./target/wasm32-wasmer-wasi/release/parallel_write_parquet.wasm 10000000 38':
+[INFO ] 
+[INFO ]          52,177.87 msec task-clock:u                     #    6.155 CPUs utilized             
+[INFO ]                  0      context-switches:u               #    0.000 /sec                      
+[INFO ]                  0      cpu-migrations:u                 #    0.000 /sec                      
+[INFO ]            994,024      page-faults:u                    #   19.051 K/sec                     
+[INFO ]    111,471,277,281      cycles:u                         #    2.136 GHz                       
+[INFO ]    261,549,425,096      instructions:u                   #    2.35  insn per cycle            
+[INFO ]     25,946,466,317      branches:u                       #  497.270 M/sec                     
+[INFO ]        153,288,324      branch-misses:u                  #    0.59% of all branches           
+[INFO ] 
+[INFO ]        8.477850931 seconds time elapsed
+[INFO ] 
+[INFO ]       45.846937000 seconds user
+[INFO ]        5.998403000 seconds sys
+[INFO ] 
+[INFO ] 
+1789
+7337
+1523529192
+[INFO ] 
+[INFO ]  Performance counter stats for 'wasmer run --enable-all --mapdir ./resource/:./resource/ ./target/wasm32-wasmer-wasi/release/parallel_write_parquet.wasm 10000000 39':
+[INFO ] 
+[INFO ]          52,416.17 msec task-clock:u                     #    6.773 CPUs utilized             
+[INFO ]                  0      context-switches:u               #    0.000 /sec                      
+[INFO ]                  0      cpu-migrations:u                 #    0.000 /sec                      
+[INFO ]            916,468      page-faults:u                    #   17.484 K/sec                     
+[INFO ]    113,201,320,297      cycles:u                         #    2.160 GHz                       
+[INFO ]    261,396,138,375      instructions:u                   #    2.31  insn per cycle            
+[INFO ]     25,927,012,201      branches:u                       #  494.638 M/sec                     
+[INFO ]        153,033,403      branch-misses:u                  #    0.59% of all branches           
+[INFO ] 
+[INFO ]        7.739416271 seconds time elapsed
+[INFO ] 
+[INFO ]       46.733980000 seconds user
+[INFO ]        5.364187000 seconds sys
+[INFO ] 
+[INFO ] 
+1765
+7318
+1523529192
+[INFO ] 
+[INFO ]  Performance counter stats for 'wasmer run --enable-all --mapdir ./resource/:./resource/ ./target/wasm32-wasmer-wasi/release/parallel_write_parquet.wasm 10000000 40':
+[INFO ] 
+[INFO ]          53,162.92 msec task-clock:u                     #    6.922 CPUs utilized             
+[INFO ]                  0      context-switches:u               #    0.000 /sec                      
+[INFO ]                  0      cpu-migrations:u                 #    0.000 /sec                      
+[INFO ]            928,879      page-faults:u                    #   17.472 K/sec                     
+[INFO ]    114,692,762,682      cycles:u                         #    2.157 GHz                       
+[INFO ]    261,388,073,963      instructions:u                   #    2.28  insn per cycle            
+[INFO ]     25,926,053,953      branches:u                       #  487.672 M/sec                     
+[INFO ]        153,408,974      branch-misses:u                  #    0.59% of all branches           
+[INFO ] 
+[INFO ]        7.679813069 seconds time elapsed
+[INFO ] 
+[INFO ]       47.373917000 seconds user
+[INFO ]        5.471903000 seconds sys
+[INFO ] 
+[INFO ] 
