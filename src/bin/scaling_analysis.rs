@@ -55,7 +55,7 @@ fn parallel_write_parquet_perf_record() -> CmdResult {
     for t in 1..=40 {
         // println!("Executing {}", n);
         run_cmd!(
-            perf record -o ./perf-native-$t.data -- ./target/release/parallel_write_parquet $num_iteration $t
+            perf record -F 99 -ag -o ./perf-graph-native-$t.data -- ./target/release/parallel_write_parquet $num_iteration $t
         )?;
     }
     */
@@ -63,7 +63,7 @@ fn parallel_write_parquet_perf_record() -> CmdResult {
     for t in 1..=40 {
         // println!("Executing {}", n);
         run_cmd!(
-            perf record -o ./perf-wasix-$t.data -- wasmer run --enable-all --mapdir ./resource/:./resource/ ./target/wasm32-wasmer-wasi/release/parallel_write_parquet.wasm $num_iteration $t
+            perf record -F 99 -ag -o ./perf-graph-wasix-$t.data -- wasmer run --enable-all --mapdir ./resource/:./resource/ ./target/wasm32-wasmer-wasi/release/parallel_write_parquet.wasm $num_iteration $t
         )?;
     }
 

@@ -41,6 +41,7 @@ benchmark_env() {
 
     scp -r ${USER}@euler.wacc.wisc.edu:~/code/wasm/slurm-* ./tmp/
     scp -r ${USER}@euler.wacc.wisc.edu:~/code/wasm/perf-* ./tmp/
+    scp -r ${USER}@euler.wacc.wisc.edu:~/code/wasm/perf-graph-* ./tmp/
 }
 
 setup() {
