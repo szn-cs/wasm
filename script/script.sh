@@ -19,6 +19,15 @@ run() {
 
     perf record -o ./tmp/perf-example.data -- ./target/release/parallel_write_parquet 100 16
     perf report -n -i ./tmp/perf-example.data --stdio
+
+    perf record -F 997 --all-cpus --call-graph dwarf,16384 -g -o ./result/perf_record/perf-record-[laptop,native].data -- ./target/release/parallel_write_parquet 10000000 8
+    perf record -F 997 --all-cpus --call-graph dwarf,16384 -g -o ./result/perf_record/perf-record-[laptop,wasix].data -- wasmer run --enable-all --mapdir ./resource/:./resource/ ./target/wasm32-wasmer-wasi/release/parallel_write_parquet.wasm 10000000 8
+
+    flamegraph -o tmp/flamegraph-parallel-write-[10M,native].svg -- ./target/release/parallel_write_parquet 10000000 16
+    flamegraph -o tmp/flamegraph-parallel-write-[10M,wasix].svg -- ./target/wasm32-wasmer-wasi/release/parallel_write_parquet.wasm 10000000 16
+
+    flamegraph --perfdata ./result/perf_record/perf-record-[laptop,native].data -o ./result/perf_record/perf-record-[laptop,native].svg
+    flamegraph --perfdata ./result/perf_record/perf-record-[laptop,wasix].data -o ./result/perf_record/perf-record-[laptop,wasix].svg
 }
 
 tool() {
