@@ -93,6 +93,7 @@ ___
 - Performance analysis https://easyperf.net/blog/2019/10/05/Performance-Analysis-Of-MT-apps
 - http://www.roylongbottom.org.uk/linux%20multithreading%20benchmarks.htm 
 - https://www.anandtech.com/show/11425/launching-the-cpu-overload-project-testing-every-x86-desktop-processor-since-2010
+- https://airbyte.com/data-engineering-resources/predicate-pushdown
 
 # GPU 
 -   https://github.com/juj/wasm_webgpu
